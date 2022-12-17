@@ -1,10 +1,13 @@
-import PokeAPI from "./PokeAPI";
+import Navbar from "./Navbar";
+
 
 function App() {
   return (
-    <>
-    <PokeAPI/>
-    </>
+
+    <Navbar/>
+    
+
+
   );
 }
 

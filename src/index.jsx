@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Navbar from './Navbar';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from './pages/Home.jsx';
+import Home from './pages/Home';
 import Pokedex from './pages/Pokedex';
 import News from './pages/News';
 import About from './pages/About';
@@ -21,5 +21,4 @@ root.render(
     </BrowserRouter>  
   </React.StrictMode>
 );
-
 
