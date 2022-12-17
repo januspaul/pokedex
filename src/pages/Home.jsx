@@ -1,7 +1,11 @@
 import{Container,Typography,Box} from '@mui/material';
+import Navbar from '../Navbar';
 const Home = () => {
     return(
-        <Container>
+        
+        <>
+            <Navbar/>
+            <Container>
             <Box component="header"
             height={300}
             backgroundSize="cover"
@@ -13,6 +17,8 @@ const Home = () => {
             </Box>
            <Typography>Home Routing </Typography>
         </Container>
+        </>
+        
     );
 }
 
