@@ -1,6 +1,6 @@
 const Contact = () => {
     return(
-        <div>
+        <div className="m-5 p-5">
             Contact Routing
         </div>
     );

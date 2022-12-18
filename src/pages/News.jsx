@@ -1,6 +1,6 @@
 const News = () => {
     return(
-        <div>
+        <div className="m-5 p-5 align-items-center">
             News Routing
         </div>
     );

@@ -1,6 +1,6 @@
 const About = () => {
     return(
-        <div>
+        <div className="m-5 p-5">
             About Routing
         </div>
     );

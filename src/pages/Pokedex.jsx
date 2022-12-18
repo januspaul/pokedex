@@ -1,6 +1,6 @@
 const Pokedex = () => {
     return(
-        <div>
+        <div className="m-5 p-5">
             Pokedex Routing
         </div>
     );

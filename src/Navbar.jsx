@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
-
     return (
-
         <AppBar position="absolute" style={{ backgroundImage: `linear-gradient(#2a2a72,#009ffd)` }}>
             <Toolbar>
                 <Grid container spacing={5} m={1} mx={5}>
@@ -51,7 +49,6 @@ const Navbar = () => {
                 </Grid>
             </Toolbar>
         </AppBar>
-
     );
 }
 export default Navbar;

@@ -1,0 +1,19 @@
+.img-style {
+    width: 150px;
+    height: 150px;
+    margin-left: 180px;
+    margin-top: 22px;
+    margin-bottom: 50px;
+}
+.text-style {
+    color: white;
+    font-weight: bold;
+}
+.text-style:hover{
+    color: yellow;
+}
+.vr {
+    border-left: 4px solid yellow;
+    height: 20px;
+    margin-right: 8px;
+}

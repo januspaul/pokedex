@@ -1,12 +1,14 @@
+import Footer from "./Footer";
 import Navbar from "./Navbar";
 
 
-function App() {
+function App({ children }) {
   return (
-
-    <Navbar/>
-    
-
+    <div>
+      <Navbar />
+      {children}
+      <Footer />
+    </div>
 
   );
 }
