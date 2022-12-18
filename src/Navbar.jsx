@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-        <AppBar position="absolute" style={{ backgroundImage: `linear-gradient(#2a2a72,#009ffd)` }}>
+        <AppBar position="sticky" style={{ backgroundImage: `linear-gradient(#2a2a72,#009ffd)` }}>
             <Toolbar>
                 <Grid container spacing={5} m={1} mx={5}>
                     <IconButton size="small" edge="start" sx={{ mx: 5 }}>
