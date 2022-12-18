@@ -7,7 +7,7 @@ const Home = () => {
             <Container>
                 <Box component="header"
                     height={300}
-                    backgroundSize="cover"
+                    backgroundsize="cover"
                     display="flex"
                     alignItems="center"
                     justifyContent="center">
