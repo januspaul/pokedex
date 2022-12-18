@@ -8,12 +8,13 @@ import News from './pages/News';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
+import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Navbar />
+      <App>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/Pokedex' element={<Pokedex />} />
@@ -22,6 +23,7 @@ root.render(
         <Route path='/Contact' element={<Contact />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
+      </App>
     </BrowserRouter>
   </React.StrictMode>
 );
