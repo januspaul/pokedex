@@ -1,19 +1,28 @@
+.row {
+    background-color: #B52323;
+    color: white;
+}
 .img-style {
     width: 150px;
     height: 150px;
     margin-left: 180px;
-    margin-top: 22px;
+    margin-right: 18px;
     margin-bottom: 50px;
+    padding: 30px;
 }
 .text-style {
     color: white;
-    font-weight: bold;
+    font-weight: 500;
+    text-decoration-line: none;
 }
 .text-style:hover{
     color: yellow;
 }
-.vr {
+.line {
     border-left: 4px solid yellow;
     height: 20px;
     margin-right: 8px;
+}
+.bg {
+    background-color: #6423B5;
 }
