@@ -13,8 +13,8 @@ const Home = () => {
                     justifyContent="center">
                     <Typography variant='h1'>Hello World!</Typography>
                 </Box>
-                <Typography>Home Routing </Typography>
             </Container>
+            <img className='img-fluid d-block w-100' src="hero2.png" alt="hero2 component background" />
         </>
 
     );
