@@ -1,3 +1,6 @@
+body {
+    overflow-x: hidden;
+}
 .bg-row {
     background-color: #B52323;
     color: white;
