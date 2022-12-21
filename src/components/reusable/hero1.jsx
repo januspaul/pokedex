@@ -14,12 +14,16 @@ const Hero = () => {
   };
 
   return (
-    <div className=" text-white text-center" style={{ 
-  backgroundImage: `url(${process.env.PUBLIC_URL + '/hero1.png'})` 
+    <div className=" text-white text-center img-fluid d-block w-100" style={{ 
+      backgroundImage: `url(${process.env.PUBLIC_URL + '/hero1.png'})`,
+      backgroundRepeat:'no-repeat',
+      backgroundSize: '100%', 
+      
 }}>
       <Container>
         <Row>
           <Col>
+            <img src="pokemonball2.png" style={{width:500,height:250}} alt="Pokemon Logo" />
             <h1 className="display-4">Find a Pokemon</h1>
             <p className="lead">Enter a Pokemon name to search for it using the PokeAPI</p>
           </Col>
