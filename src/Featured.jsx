@@ -1,4 +1,5 @@
 import React from 'react';
+import { Card, CardGroup } from 'react-bootstrap';
 
 const Featured = () => {
   const [pokemons, setPokemons] = React.useState([]);
@@ -13,15 +14,17 @@ const Featured = () => {
   }, []);
 
   return (
-    <div>
+    <CardGroup style={{ justifyContent: "space-around" }}>
       {pokemons.map((pokemon) => (
-        <div key={pokemon.id}>
-          <img src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name} />
-          <h1>{pokemon.name}</h1>
-          <p>{pokemon.types[0].type.name}</p>
-        </div>
+        <Card key={pokemon.id} style={{ width: "200px" }}>
+          <Card.Img variant="top" src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name} />
+          <Card.Body>
+            <Card.Title>{pokemon.name}</Card.Title>
+            <Card.Text>{pokemon.types[0].type.name}</Card.Text>
+          </Card.Body>
+        </Card>
       ))}
-    </div>
+    </CardGroup>
   );
 };
 
