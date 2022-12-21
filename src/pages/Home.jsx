@@ -1,5 +1,5 @@
 import { Container, Typography, Box } from '@mui/material';
-import Featured from '../Featured';
+import Featured from '../components/home/Featured';
 
 const Home = () => {
     return (
