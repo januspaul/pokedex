@@ -6,7 +6,7 @@ function Footer() {
         <div>
             <div className="row bg-row">
                 <div className="col-md-6">
-                    <div className="row">
+                    <div className="row ms-5">
                         <div className="col-md-4 img-style">
                             <img src="logoPokemon.png" alt="logo" className="img-fluid" />
                             <a href='https://caru.bbbprograms.org/seal/confirmation/1596150491'><img src="privacy.png" alt="logo" className="img-fluid" /></a>

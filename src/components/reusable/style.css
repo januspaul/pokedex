@@ -1,6 +1,21 @@
 body {
     overflow-x: hidden;
 }
+/* Hero 2 */
+.bg-hero2 {
+    background-image: url('C:\Users\Don\Desktop\Project 2\proj2\public\hero2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.img {
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* Footer */
 .bg-row {
     background-color: #B52323;
     color: white;

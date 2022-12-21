@@ -1,5 +1,6 @@
 import { Container, Typography, Box } from '@mui/material';
 import Featured from '../components/home/Featured';
+import Hero2 from '../components/home/Hero2';
 
 const Home = () => {
     return (
@@ -16,7 +17,7 @@ const Home = () => {
                 </Box>
                 <Featured />
             </Container>
-            <img className='img-fluid d-block w-100' src="hero2.png" alt="hero2 component background" />
+            <Hero2 />
         </>
 
     );
