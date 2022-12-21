@@ -3,7 +3,7 @@ body {
 }
 /* Hero 2 */
 .bg-hero2 {
-    background-image: url('C:\Users\Don\Desktop\Project 2\proj2\public\hero2.png');
+    background-image: url('/public/hero2.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
