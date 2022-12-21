@@ -1,5 +1,4 @@
 import React from 'react';
-import Fade from 'react-bootstrap/Fade';
 
 const Hero2 = () => {
     const [pokemons, setPokemons] = React.useState([]);
