@@ -2,6 +2,23 @@ body {
     overflow-x: hidden;
 }
 
+/* Navigation bar */
+.overlapping-logo {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+}
+.bg-activelink {
+    background-color: rgb(100, 1, 180);
+    width: fit-content;
+}
+.margin {
+    margin-left: 180px;
+    padding: 4px;
+}
+
+
+
 /* Hero 2 */
 .bg-hero2 {
     background-image: url('/public/hero2.png');
@@ -27,9 +44,7 @@ body {
     width: 170px;
     height: 170px;
     margin: auto;
-    margin-top: 10px;
-    margin-bottom: 90px;
-    padding: 1em;
+    margin-bottom: 50px;
 }
 
 .text-style {

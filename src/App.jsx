@@ -1,12 +1,12 @@
 import Footer from "./components/reusable/Footer";
-import Navbar from "./components/reusable/Navbar";
+import Navigation from "./components/reusable/Navigation";
 import Hero from "./components/reusable/hero1";
 
 
 function App({ children }) {
   return (
     <div>
-      <Navbar />
+      <Navigation />
       <Hero/>
       {children}
       
