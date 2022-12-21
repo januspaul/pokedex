@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 
+
 const Hero = () => {
   const [pokemon, setPokemon] = React.useState(null);
   const [search, setSearch] = React.useState('');
@@ -13,7 +14,9 @@ const Hero = () => {
   };
 
   return (
-    <div className="bg-primary text-white text-center">
+    <div className=" text-white text-center" style={{ 
+  backgroundImage: `url(${process.env.PUBLIC_URL + '/hero1.png'})` 
+}}>
       <Container>
         <Row>
           <Col>
