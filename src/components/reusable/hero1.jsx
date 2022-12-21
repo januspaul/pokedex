@@ -34,6 +34,7 @@ const Hero = () => {
               <Form.Group>
                 <Form.Control
                   type="text"
+                  className="input-text"
                   placeholder="Enter a Pokemon name"
                   value={search}
                   onChange={(event) => setSearch(event.target.value)}

@@ -1,12 +1,14 @@
 body {
     overflow-x: hidden;
 }
+
 /* Hero 2 */
 .bg-hero2 {
     background-image: url('/public/hero2.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 .img {
     width: 400px;
     height: 400px;
@@ -20,6 +22,7 @@ body {
     background-color: #B52323;
     color: white;
 }
+
 .img-style {
     width: 170px;
     height: 170px;
@@ -28,19 +31,28 @@ body {
     margin-bottom: 90px;
     padding: 1em;
 }
+
 .text-style {
     color: white;
     font-weight: 500;
     text-decoration-line: none;
 }
-.text-style:hover{
+
+.text-style:hover {
     color: yellow;
 }
+
 .line {
     border-left: 4px solid yellow;
     line-height: 45px;
     margin-right: 8px;
 }
+
 .bg-footer {
     background-color: #6423B5;
+}
+
+.input-text {
+    border: 3px solid blue;
+    border-radius: 4px;
 }
