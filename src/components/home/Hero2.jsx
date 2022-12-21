@@ -1,4 +1,5 @@
-import React from 'react';  
+import React from 'react';
+import Fade from 'react-bootstrap/Fade';
 
 const Hero2 = () => {
     const [pokemons, setPokemons] = React.useState([]);
@@ -11,7 +12,7 @@ const Hero2 = () => {
     }, []);
 
     return (
-        <div className='bg-hero2 mt-5'>
+        <div className='bg-hero2'>
             {pokemons.length > 0 && (
                 <div className="row text-white">
                     <div className="col-lg-6 bg-light bg-opacity-75 rounded-circle img mt-5 mb-5">
