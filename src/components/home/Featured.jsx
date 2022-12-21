@@ -16,7 +16,11 @@ const Featured = () => {
   return (
     <div style={{ backgroundColor: '#6423B5' }} >
       <Container>
-        <h1>Featured Pokemon</h1>
+        <div>
+        <span className='line'></span>
+        <h3 className='text-style'>Featured Pokemon</h3>
+        </div>
+        
       <CardGroup style={{ justifyContent: "space-around" }}>
         {pokemons.map((pokemon) => (
           <div className="row">
