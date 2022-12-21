@@ -19,7 +19,7 @@ const Featured = () => {
         <Card key={pokemon.id} style={{ width: "200px" }}>
           <Card.Img variant="top" src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name} />
           <Card.Body>
-            <Card.Title>{pokemon.name}</Card.Title>
+            <Card.Title>{pokemon.name.charAt(0).toUpperCase()+pokemon.name.slice(1)}</Card.Title>
             <Card.Text>{pokemon.types[0].type.name}</Card.Text>
           </Card.Body>
         </Card>
