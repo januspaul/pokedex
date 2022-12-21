@@ -1,4 +1,4 @@
-import { Container, Typography, Box } from '@mui/material';
+import { Container, Box } from '@mui/material';
 import Featured from '../components/home/Featured';
 import Hero2 from '../components/home/Hero2';
 
@@ -13,7 +13,6 @@ const Home = () => {
                     display="flex"
                     alignItems="center"
                     justifyContent="center">
-                    <Typography variant='h1'>Hello World!</Typography>
                 </Box>
                 <Featured />
             </Container>
