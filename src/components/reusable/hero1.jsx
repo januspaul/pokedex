@@ -40,7 +40,7 @@ const Hero = () => {
                   onChange={(event) => setSearch(event.target.value)}
                 />
               </Form.Group>
-              <Button variant="secondary" type="submit">
+              <Button variant="secondary" type="submit" className='m-4'>
                 Search
               </Button>
             </Form>
