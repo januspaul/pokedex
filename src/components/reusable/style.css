@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'Myfont-Exo';
+    src:  url('/public/fonts/Exo2-VariableFont_wght.ttf') format('truetype');
+  }
+
+@font-face {
+    font-family: 'Myfont-Flexo';
+    src:  url('/public/fonts/Flexo-Regular.ttf') format('truetype');
+}
+
+
 body {
     overflow-x: hidden;
 }
