@@ -20,12 +20,12 @@ function Navigation() {
                 /></Link>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" className="border border-1 m-1" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="margin my-2 my-lg-0 gap-4" style={{ fontFamily: `Myfont-Exo` }}>
-                        <NavLink to="/" className={({ isActive }) => (isActive ? activeLink : normalLink)}><Button className="border-0" variant="outline-transparent text-white" >HOME</Button>{' '}</NavLink>
-                        <NavLink to="/Pokedex" className={({ isActive }) => (isActive ? activeLink : normalLink)}><Button className="border-0" variant="outline-transparent text-white">POKEDEX</Button>{' '}</NavLink>
-                        <NavLink to="/News" className={({ isActive }) => (isActive ? activeLink : normalLink)}><Button className="border-0" variant="outline-transparent text-white">NEWS</Button>{' '}</NavLink>
-                        <NavLink to="/About" className={({ isActive }) => (isActive ? activeLink : normalLink)}><Button className="border-0" variant="outline-transparent text-white">ABOUT</Button>{' '}</NavLink>
-                        <NavLink to="/Contact" className={({ isActive }) => (isActive ? activeLink : normalLink)}><Button className="border-0" variant="outline-transparent text-white">CONTACT</Button>{' '}</NavLink>
+                    <Nav className="marginNavbar my-2 my-lg-0 gap-4" style={{ fontFamily: `Myfont-Exo` }}>
+                        <NavLink to="/" className={({ isActive }) => (isActive ? activeLink : normalLink)}><Button className="navbarHover border-0" variant="outline-transparent text-white" >HOME</Button>{' '}</NavLink>
+                        <NavLink to="/Pokedex" className={({ isActive }) => (isActive ? activeLink : normalLink)}><Button className="navbarHover border-0" variant="outline-transparent text-white">POKEDEX</Button>{' '}</NavLink>
+                        <NavLink to="/News" className={({ isActive }) => (isActive ? activeLink : normalLink)}><Button className="navbarHover border-0" variant="outline-transparent text-white">NEWS</Button>{' '}</NavLink>
+                        <NavLink to="/About" className={({ isActive }) => (isActive ? activeLink : normalLink)}><Button className="navbarHover border-0" variant="outline-transparent text-white">ABOUT</Button>{' '}</NavLink>
+                        <NavLink to="/Contact" className={({ isActive }) => (isActive ? activeLink : normalLink)}><Button className="navbarHover border-0" variant="outline-transparent text-white">CONTACT</Button>{' '}</NavLink>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

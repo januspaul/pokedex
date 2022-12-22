@@ -31,9 +31,13 @@ body {
     background-color: rgb(100, 1, 180);
     width: fit-content;
 }
-.margin {
+.marginNavbar {
     margin-left: 180px;
     padding: 4px;
+}
+
+.navbarHover:hover{
+    text-decoration: underline;
 }
 
 
