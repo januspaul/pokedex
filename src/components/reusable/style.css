@@ -1,3 +1,4 @@
+/*Font face start*/
 @font-face {
     font-family: 'Myfont-Exo';
     src:  url('/public/fonts/Exo2-VariableFont_wght.ttf') format('truetype');
@@ -7,13 +8,15 @@
     font-family: 'Myfont-Flexo';
     src:  url('/public/fonts/Flexo-Regular.ttf') format('truetype');
 }
+/*Font face end*/
 
-
+/*body start*/
 body {
     overflow-x: hidden;
 }
+/*body end*/
 
-/* Navigation bar */
+/* Navigation bar start*/
 .overlapping-logo {
     position: absolute;
     z-index: 10;
@@ -39,10 +42,10 @@ body {
 .navbarHover:hover{
     text-decoration: underline;
 }
+/* Navigation bar end*/
 
 
-
-/* Hero 2 */
+/* Hero 2 start*/
 .bg-hero2 {
     background-image: url('/public/hero2.png');
     background-size: cover;
