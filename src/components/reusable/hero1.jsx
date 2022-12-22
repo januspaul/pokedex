@@ -23,7 +23,7 @@ const Hero = () => {
       <Container>
         <Row>
           <Col>
-            <img src="pokemonball2.png" style={{width:500,height:250}} alt="Pokemon Logo" />
+            <img src="pokemonball2.png" style={{width:400,height: 400}} alt="Pokemon Logo" />
             <h1 className="display-4">Find a Pokemon</h1>
             <p className="lead">Enter a Pokemon name to search for it using the PokeAPI</p>
           </Col>
