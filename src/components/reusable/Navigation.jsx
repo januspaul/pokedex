@@ -11,7 +11,7 @@ function Navigation() {
     const normalLink = "";
 
     return (
-        <Navbar className="shadow" collapseOnSelect fixed="top" variant="dark" expand="lg" style={{ backgroundImage: `linear-gradient(#2a2a72,#009ffd)` }}>
+        <Navbar className="navbarBG shadow" collapseOnSelect fixed="top" variant="dark" expand="lg" style={{ backgroundImage: `linear-gradient(#2a2a72,#009ffd)` }}>
             <Container>
                 <Link href="#"><img
                     src="logoPokemon.png"
