@@ -15,7 +15,6 @@ function Navigation() {
             <Container>
                 <Link href="#"><img
                     src="logoPokemon.png"
-                    width="100"
                     className="overlapping-logo"
                     alt="Logo"
                 /></Link>
