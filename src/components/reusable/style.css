@@ -19,7 +19,14 @@ body {
     z-index: 10;
     top: 0;
     width:150px;
+    padding-top: 20px;
 }
+
+.navbarBG{
+    padding: 30px;
+
+}
+
 .bg-activelink {
     background-color: rgb(100, 1, 180);
     width: fit-content;
