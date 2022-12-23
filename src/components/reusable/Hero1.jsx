@@ -14,33 +14,34 @@ const Hero = () => {
   };
 
   return (
-    <div className=" text-white text-center img-fluid d-block w-100" style={{ 
+    <div className="hero1BG d-flex justify-content-center align-items-center wh-100 text-center vh-100" style={{
       backgroundImage: `url(${process.env.PUBLIC_URL + '/hero1.png'})`,
-      backgroundRepeat:'no-repeat',
-      backgroundSize: '100%', 
-      
-}}>
-      <Container>
+      backgroundRepeat: 'no-repeat',
+      backgroundSize:'100%',
+
+
+      }}>
+      <Container className='containerHero'>
         <Row>
           <Col>
-            <img src="pokemonball2.png" style={{width:400,height: 400}} alt="Pokemon Logo" />
-            <h1 className="display-4">Find a Pokemon</h1>
-            <p className="lead">Enter a Pokemon name to search for it using the PokeAPI</p>
+            
+            <img src="hero1gcta.png" alt="Pokemon Logo" />
+            
           </Col>
         </Row>
         <Row>
           <Col>
-            <Form onSubmit={handleSubmit}>
+            <Form className='hero1Search text-center d-flex justify-content-center align-items-center' onSubmit={handleSubmit}>
               <Form.Group>
-                <Form.Control
+                <Form.Control className='hero1Control rounded-5 px-4 border-primary'
                   type="text"
-                  className="input-text"
-                  placeholder="Enter a Pokemon name"
+                  placeholder="Search by Pokemon name..."
                   value={search}
                   onChange={(event) => setSearch(event.target.value)}
                 />
               </Form.Group>
-              <Button variant="secondary" type="submit" className='m-4'>
+              <Button className='hero1SearchButton rounded-5' type="submit">
+                <img className='hero1Pokeball' src="pokeball.png" alt="" />
                 Search
               </Button>
             </Form>

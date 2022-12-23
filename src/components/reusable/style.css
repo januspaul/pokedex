@@ -18,7 +18,7 @@ body {
 
 /* Navigation bar start*/
 .overlapping-logo {
-    position: absolute;
+    position:fixed;
     z-index: 10;
     top: 0;
     width:150px;
@@ -44,8 +44,46 @@ body {
 }
 /* Navigation bar end*/
 
+/*hero1 start*/
+.hero1BG{
+    margin-top: 104px;
+}
+
+.hero1SearchButton{
+    font-family: 'Myfont-Flexo';
+}
+
+.hero1Search{
+    margin-top: 10px;
+    
+}
+
+.hero1Control{
+    padding: 10px;
+    width: 1000px;
+    margin-right: 10px;
+    border-width: 3px;
+    font-family: 'Myfont-Flexo';
+    
+}
+
+.hero1Pokeball {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+}
+
+.containerHero{
+    margin-top: -225px;
+}
+/*hero1 end*/
+
+
+
+
 
 /* Hero 2 start*/
+
 .bg-hero2 {
     background-image: url('/public/hero2.png');
     background-size: cover;
@@ -60,7 +98,9 @@ body {
     justify-content: center;
 }
 
+
 /* Footer */
+
 .bg-row {
     background-color: #B52323;
     color: white;

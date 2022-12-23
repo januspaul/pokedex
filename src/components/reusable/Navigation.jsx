@@ -2,18 +2,19 @@ import { Navbar, Nav } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import { Link, NavLink } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
+import './style.css';
 
 
 
 function Navigation() {
     
-    const activeLink = "bg-activelink shadow rounded-4";
+    const activeLink = "bg-activelink shadow rounded-5";
     const normalLink = "";
 
     return (
         <Navbar className="navbarBG shadow" collapseOnSelect fixed="top" variant="dark" expand="lg" style={{ backgroundImage: `linear-gradient(#2a2a72,#009ffd)` }}>
             <Container>
-                <Link href="#"><img
+                <Link to="/"><img
                     src="logoPokemon.png"
                     className="overlapping-logo"
                     alt="Logo"
