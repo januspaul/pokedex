@@ -1,10 +1,11 @@
 import React from 'react';
-import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import { Form, Button, Container, Row, Col, Modal } from 'react-bootstrap';
 
 
 const Hero = () => {
   const [pokemon, setPokemon] = React.useState(null);
   const [search, setSearch] = React.useState('');
+  const [show, setShow] = React.useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -17,16 +18,16 @@ const Hero = () => {
     <div className="hero1BG d-flex justify-content-center align-items-center wh-100 text-center vh-100" style={{
       backgroundImage: `url(${process.env.PUBLIC_URL + '/hero1.png'})`,
       backgroundRepeat: 'no-repeat',
-      backgroundSize:'100%',
+      backgroundSize: '100%',
 
 
-      }}>
+    }}>
       <Container className='containerHero'>
         <Row>
           <Col>
-            
+
             <img src="hero1gcta.png" alt="Pokemon Logo" />
-            
+
           </Col>
         </Row>
         <Row>
@@ -40,7 +41,7 @@ const Hero = () => {
                   onChange={(event) => setSearch(event.target.value)}
                 />
               </Form.Group>
-              <Button className='hero1SearchButton rounded-5' type="submit">
+              <Button className='hero1SearchButton rounded-5' type="submit" onClick={() => setShow(true)} >
                 <img className='hero1Pokeball' src="pokeball.png" alt="" />
                 Search
               </Button>
@@ -50,8 +51,17 @@ const Hero = () => {
         {pokemon && (
           <Row>
             <Col>
-              <h2>{pokemon.name}</h2>
-              <p>Type: {pokemon.types[0].type.name}</p>
+              <Modal
+                show={show}
+                onHide={() => setShow(false)}
+                dialogClassName="modal-90w"
+                aria-labelledby="example-custom-modal-styling-title">
+                <Modal.Header closeButton>
+                  <Modal.Title>{pokemon.name}</Modal.Title>
+                </Modal.Header>
+
+                <p>Type: {pokemon.types[0].type.name}</p>
+              </Modal>
             </Col>
           </Row>
         )}
