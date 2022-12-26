@@ -1,4 +1,4 @@
-import PokemonCards from "../components/pokedex/pokedex";
+import PokemonCards from "../components/pokedex/Pokedex";
 const Pokedex = () => {
     return(
         <PokemonCards/>
