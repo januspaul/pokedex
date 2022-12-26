@@ -36,6 +36,7 @@ const PokemonCards = () => {
       <CardGroup style={{ justifyContent: "space-around" }}>
         {pokemons.map((pokemon) => (
           <Card key={pokemon.name} style={{ width: "200px" }} className="mb-3">
+            <Card.Img variant="top" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.url.split("/")[6]}.png`} alt={pokemon.name} />
             <Card.Body>
               <Card.Title>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</Card.Title>
               <Card.Text>#{pokemon.url.split("/")[6]}</Card.Text>
