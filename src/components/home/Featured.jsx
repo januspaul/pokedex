@@ -25,7 +25,7 @@ const Featured = () => {
   }, [currentSlide]);
 
   return (
-    <div style={{ backgroundColor: "#6423B5" }}>
+    <div style={{ backgroundColor: "#6423B5", backgroundSize:"100%" }} className="p-5">
       <Container>
         <div>
           <span className="line"></span>

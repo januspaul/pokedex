@@ -1,10 +1,11 @@
 import React from 'react';
-import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import { Form, Button, Container, Row, Col, Modal } from 'react-bootstrap';
 
 
 const Hero = () => {
   const [pokemon, setPokemon] = React.useState(null);
   const [search, setSearch] = React.useState('');
+  const [show, setShow] = React.useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -14,19 +15,17 @@ const Hero = () => {
   };
 
   return (
-    <div className="hero1BG d-flex justify-content-center align-items-center wh-100 text-center vh-100" style={{
+    <div className="hero1BG d-flex justify-content-center align-items-center text-center wh-100 vh-100" style={{
       backgroundImage: `url(${process.env.PUBLIC_URL + '/hero1.png'})`,
       backgroundRepeat: 'no-repeat',
-      backgroundSize:'100%',
-
-
-      }}>
+      backgroundSize: '100%',
+    }}>
       <Container className='containerHero'>
         <Row>
           <Col>
-            
+
             <img src="hero1gcta.png" alt="Pokemon Logo" />
-            
+
           </Col>
         </Row>
         <Row>
@@ -40,7 +39,7 @@ const Hero = () => {
                   onChange={(event) => setSearch(event.target.value)}
                 />
               </Form.Group>
-              <Button className='hero1SearchButton rounded-5' type="submit">
+              <Button className='hero1SearchButton rounded-5' type="submit" onClick={() => setShow(true)} >
                 <img className='hero1Pokeball' src="pokeball.png" alt="" />
                 Search
               </Button>
@@ -50,13 +49,35 @@ const Hero = () => {
         {pokemon && (
           <Row>
             <Col>
-              <h2>{pokemon.name}</h2>
-              <p>Type: {pokemon.types[0].type.name}</p>
+              <Modal
+                show={show}
+                onHide={() => setShow(false)}
+                dialogClassName="modal-90w"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered>
+                <Modal.Header closeButton>
+                  <Modal.Title>{pokemon.name.charAt(0).toUpperCase() +
+                    pokemon.name.slice(1)}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <ul>{pokemon.abilities.map((ability) => (
+                  <li key={ability.ability.name}>{ability.ability.name}</li>
+                ))}</ul>
+                <ul>{pokemon.types.map((type) => (
+                  <li key={type.type.name}>{type.type.name}</li>
+                ))}</ul>
+                </Modal.Body>
+                <Modal.Footer>
+                  {pokemon.id}
+                </Modal.Footer>
+                
+                
+              </Modal>
             </Col>
           </Row>
         )}
       </Container>
-    </div>
+    </div >
   );
 };
 
