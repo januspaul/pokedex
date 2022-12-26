@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Card, CardGroup, Button } from "react-bootstrap";
+import { Card, Button, Container } from "react-bootstrap";
 
 const PokemonCards = () => {
   const [pokemons, setPokemons] = useState([]);
@@ -32,21 +32,23 @@ const PokemonCards = () => {
   };
 
   return (
-    <div>
-      <CardGroup style={{ justifyContent: "space-around" }}>
+    <Container>
+      <div className="row">
         {pokemons.map((pokemon) => (
-          <Card key={pokemon.name} style={{ width: "200px" }} className="mb-3">
+          <div className="col-3" key={pokemon.name}>
+            <Card style={{ width: "200px" }} className="mb-3">
             <Card.Img variant="top" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.url.split("/")[6]}.png`} alt={pokemon.name} />
-            <Card.Body>
-              <Card.Title>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</Card.Title>
-              <Card.Text>#{pokemon.url.split("/")[6]}</Card.Text>
-            </Card.Body>
-          </Card>
+              <Card.Body>
+                <Card.Title>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</Card.Title>
+                <Card.Text>#{pokemon.url.split("/")[6]}</Card.Text>
+              </Card.Body>
+            </Card>
+          </div>
         ))}
-      </CardGroup>
+      </div>
       <Button onClick={handlePrevious}>Previous</Button>
       <Button onClick={handleNext}>Next</Button>
-    </div>
+    </Container>
   );
 };
 
