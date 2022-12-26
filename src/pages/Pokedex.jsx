@@ -1,8 +1,7 @@
+import PokemonCards from "../components/pokedex/pokedex";
 const Pokedex = () => {
     return(
-        <div className="m-5 p-5">
-            Pokedex Routing
-        </div>
+        <PokemonCards/>
     );
 }
 
