@@ -1,31 +1,33 @@
 /*Font face start*/
 @font-face {
     font-family: 'Myfont-Exo';
-    src:  url('/public/fonts/Exo2-VariableFont_wght.ttf') format('truetype');
-  }
+    src: url('/public/fonts/Exo2-VariableFont_wght.ttf') format('truetype');
+}
 
 @font-face {
     font-family: 'Myfont-Flexo';
-    src:  url('/public/fonts/Flexo-Regular.ttf') format('truetype');
+    src: url('/public/fonts/Flexo-Regular.ttf') format('truetype');
 }
+
 /*Font face end*/
 
 /*body start*/
 body {
     overflow-x: hidden;
 }
+
 /*body end*/
 
 /* Navigation bar start*/
 .overlapping-logo {
-    position:fixed;
+    position: fixed;
     z-index: 10;
     top: 0;
-    width:150px;
+    width: 150px;
     padding-top: 20px;
 }
 
-.navbarBG{
+.navbarBG {
     padding: 30px;
 
 }
@@ -34,37 +36,39 @@ body {
     background-color: rgb(100, 1, 180);
     width: fit-content;
 }
+
 .marginNavbar {
     margin-left: 180px;
     padding: 4px;
 }
 
-.navbarHover:hover{
+.navbarHover:hover {
     text-decoration: underline;
 }
+
 /* Navigation bar end*/
 
 /*hero1 start*/
-.hero1BG{
+.hero1BG {
     margin-top: 104px;
 }
 
-.hero1SearchButton{
+.hero1SearchButton {
     font-family: 'Myfont-Flexo';
 }
 
-.hero1Search{
+.hero1Search {
     margin-top: 10px;
-    
+
 }
 
-.hero1Control{
+.hero1Control {
     padding: 10px;
     width: 1000px;
     margin-right: 10px;
     border-width: 3px;
     font-family: 'Myfont-Flexo';
-    
+
 }
 
 .hero1Pokeball {
@@ -73,9 +77,10 @@ body {
     margin-right: 10px;
 }
 
-.containerHero{
+.containerHero {
     margin-top: -225px;
 }
+
 /*hero1 end*/
 
 
@@ -97,7 +102,6 @@ body {
     display: flex;
     justify-content: center;
 }
-
 
 /* Footer */
 
@@ -131,6 +135,7 @@ body {
 
 .bg-footer {
     background-color: #6423B5;
+    min-height: calc(12vh - 50px);
 }
 
 .input-text {
