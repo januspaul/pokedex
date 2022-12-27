@@ -48,6 +48,7 @@ const PokemonCards = () => {
       </div>
       <Button onClick={handlePrevious}>Previous</Button>
       <Button onClick={handleNext}>Next</Button>
+      <Button>Type</Button>
     </Container>
   );
 };

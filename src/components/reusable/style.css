@@ -157,3 +157,15 @@ body {
     border: 3px solid blue;
     border-radius: 4px;
 }
+
+.bgModalHeader {
+    background-image: url('/public/bgModalHeader.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bgModalBody {
+    background-image: url('/public/bgModalBody.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color:white;
+}
