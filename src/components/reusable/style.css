@@ -83,7 +83,12 @@ body {
 
 /*hero1 end*/
 
+/* News start */
 
+.radius-bottom {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
 
 
 
