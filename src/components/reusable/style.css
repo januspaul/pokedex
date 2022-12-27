@@ -90,7 +90,17 @@ body {
     border-bottom-right-radius: 20px;
 }
 
+.newsHeader-bg {
+    margin-top: 100px;
+    padding: 60px;
+    background-image: url('/public/hero1.png');
+    background-size: cover;
+}
 
+.pokeHoliday-border {
+    border-radius: 50px;
+    box-shadow: 5px 5px 15px #3b3b3b;
+}
 
 /* Hero 2 start*/
 
