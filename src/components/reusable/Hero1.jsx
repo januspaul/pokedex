@@ -60,21 +60,32 @@ const Hero = () => {
                     pokemon.name.slice(1)}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                  <img src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name} />
-                  <h3>Abilities</h3>
-                  <ul>{pokemon.abilities.map((ability) => (
-                    <li key={ability.ability.name}>{ability.ability.name}</li>
-                  ))}</ul>
-                  <h3>Type</h3>
-                  <ul>{pokemon.types.map((type) => (
-                    <li key={type.type.name}>{type.type.name}</li>
-                  ))}</ul>
-                  <div>
-                    <h3>Stats</h3>
-                    <ProgressBar variant='success' label={`${pokemon.stats[0].base_stat}%`} now={pokemon.stats[0].base_stat} />
-                    <ProgressBar variant='danger' label={`${pokemon.stats[1].base_stat}%`} now={pokemon.stats[1].base_stat} />
-                    <ProgressBar variant='primary' label={`${pokemon.stats[2].base_stat}%`} now={pokemon.stats[2].base_stat} />
+                  <div className="bgModalHeader">
+                    <img src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name} />
                   </div>
+                  <div className="bgModalBody">
+                    <div className="row">
+                      <div className="col">
+                        <h3>Abilities</h3>
+                        <ul>{pokemon.abilities.map((ability) => (
+                          <li key={ability.ability.name}>{ability.ability.name}</li>
+                        ))}</ul>
+                      </div>
+                      <div className="col">
+                        <h3>Type</h3>
+                        <ul>{pokemon.types.map((type) => (
+                          <li key={type.type.name}>{type.type.name}</li>
+                        ))}</ul>
+                      </div>
+                    </div>
+                    <div>
+                      <h3>Stats</h3>
+                      <ProgressBar variant='success' label={`${pokemon.stats[0].base_stat}%`} now={pokemon.stats[0].base_stat} />
+                      <ProgressBar variant='danger' label={`${pokemon.stats[1].base_stat}%`} now={pokemon.stats[1].base_stat} />
+                      <ProgressBar variant='primary' label={`${pokemon.stats[2].base_stat}%`} now={pokemon.stats[2].base_stat} />
+                    </div>
+                  </div>
+
                 </Modal.Body>
                 <Modal.Footer>
                   {pokemon.id}
