@@ -26,14 +26,13 @@ const Featured = () => {
   }, [currentSlide]);
 
   return (
-    <div style={{ backgroundColor: "#6423B5", backgroundSize:"100%" }} className="p-5">
+    <div style={{ backgroundColor: "#6423B5", backgroundSize:"100%" }} className="featuredContainer p-5">
       <Container>
         <div>
-          <span className="line"></span>
-          <h3 className="text-style">Featured Pokemon</h3>
+          <h3 className="text-styleFeatured"><span className="lineFeatured"></span>Featured Pokemon</h3>
         </div>
 
-        <Carousel activeIndex={currentSlide} onSelect={handleSlideChange}>
+        <Carousel activeIndex={currentSlide} onSelect={handleSlideChange} className="pb-5 mx-5">
           {[...Array(3)].map((_, index) => (
             <Carousel.Item key={index}>
               <CardGroup style={{ justifyContent: "space-around" }}>
@@ -42,8 +41,8 @@ const Featured = () => {
                     <div className="col-5">
                       <Card
                         key={pokemon.id}
-                        style={{ width: "200px" }}
-                        className="mb-3"
+                        style={{ width: "250px" }}
+                        className="mt-1 px-2"
                       >
                         <Card.Img
                           variant="top"
@@ -53,8 +52,9 @@ const Featured = () => {
                           }
                           alt={pokemon.name}
                         />
-                        <Card.Body>
-                          <Card.Title>
+                        <hr />
+                        <Card.Body className="text-center">
+                          <Card.Title className="">
                             {pokemon.name.charAt(0).toUpperCase() +
                               pokemon.name.slice(1)}
                           </Card.Title>
