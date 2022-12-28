@@ -184,3 +184,17 @@ body {
     background-repeat: no-repeat;
     color:white;
 }
+
+/*contact page start*/
+.contactContainer{
+    background-image: url('/public/BGcontact.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 104px;
+}
+
+.contactCol1{
+    margin-left:250px;
+    padding-top: 150px;
+}
+/*contact page end*/
