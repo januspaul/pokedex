@@ -12,7 +12,7 @@ const News = () => {
     return (
         <div className="bg-primary">
             <div className="row newsHeader-bg mb-3 text-white">
-                <div className="col-lg-6 mt-5 mb-5">
+                <div className="col-lg-6 mt-3 mb-5">
                     <span className="ms-5 badge text-bg-warning">Media</span>
                     <span className="ms-3">{formatter.format(today)}</span>
                     <h2 className="ms-5 mt-2 fw-bold">It’s Time for a Gift Exchange on Pokémon TV</h2>
