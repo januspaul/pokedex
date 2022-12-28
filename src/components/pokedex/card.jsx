@@ -35,7 +35,7 @@ function PokemonCard(props) {
                 </Card.Text>
               </Card.Body>
             </Card>
-    </div>
+    </div> 
   );
 }
 
