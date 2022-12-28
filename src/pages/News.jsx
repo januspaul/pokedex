@@ -1,11 +1,13 @@
 import { Button } from "@mui/material";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 
 const News = () => {
 
     const [articles, setArticles] = useState([]);
+    const itemsPerPage = 5;
 
     useEffect(() => {
 
@@ -20,6 +22,7 @@ const News = () => {
         fetchArticles();
     }, []);
 
+    const currentItems = articles.slice(0, itemsPerPage);
 
     const today = new Date();
     const options = {
@@ -28,8 +31,6 @@ const News = () => {
         day: 'numeric'
     };
     const formatter = new Intl.DateTimeFormat('en-US', options);
-
-
 
     return (
         <div className="bg-primary">
@@ -44,31 +45,29 @@ const News = () => {
                         Read More
                     </Button>
                 </div>
-
                 <div className="col-lg-6">
                     <img className="img-fluid d-block w-100 pokeHoliday-border" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/watch-pokemon-tv/_tiles/stunts/winter/2022/winter-169-en.png" alt="pokemon holiday" />
                 </div>
             </div>
-            
             <div className="d-flex justify-content-center text-white">
                 <p className="bg-primary ps-5 pe-5 pb-2 pt-2 fw-bold radius-bottom" style={{ position: "absolute", }}>LATEST NEWS</p>
             </div>
-            <div>
-                <h1>Latest News</h1>
-                <ul>
-                    {articles.map((article) => (
-                        <li key={article.url}>
-                            <img src={article.urlToImage} alt={article.title} />
-                            <h2>{article.title}</h2>
-                            <p>{article.description}</p>
-                        </li>
-                    ))}
-                </ul>
+            <div className="latestNews-bg">
+                {currentItems.map((article) => (
+                    <div key={article.url} className="text-white pt-5">
+                        <div className="d-flex align-items-center p-3">
+                            <Link><img src={article.urlToImage} alt={article.title} className="img-fluid imageStyle d-block w-100 text-center order-1 ms-5" /></Link>
+                            <div className="order-2 ms-5 ps-3 me-4">
+                                <span className="badge text-bg-danger">Animation</span>
+                                <span className="ms-3">{formatter.format(today)}</span>
+                                <h3 className="text-warning text-uppercase">{article.title}</h3>
+                                <p>{article.description}</p>
+                            </div>
+                        </div>
+                    </div>
+                ))}
             </div>
-            <img className="img-fluid d-block w-100" src="BGnews 1.png" alt="" />
         </div>
-
-
     )
 }
 

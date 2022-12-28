@@ -98,9 +98,26 @@ body {
     background-size: cover;
 }
 
+.latestNews-bg {
+    background-image: url('/public/BGnews 1.png');
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .pokeHoliday-border {
     border-radius: 50px;
     box-shadow: 5px 5px 15px #3b3b3b;
+}
+
+.imageStyle {
+    border-radius: 30px;
+    border-style: solid;
+    border-color: white;
+}
+
+.imageStyle:hover {
+    opacity: 0.9;
 }
 
 /* News end */
