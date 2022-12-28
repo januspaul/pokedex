@@ -77,7 +77,7 @@ const Contact = () => {
 
                     </Form>
                 </div>
-                <div className="col-6 px-5">
+                <div className="col-6 d-flex align-items-center justify-content-center">
                     <img className='contactCol2' src="contactlogo.png" alt="" />
                 </div>
             </div>
