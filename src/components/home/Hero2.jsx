@@ -11,13 +11,17 @@ const Hero2 = () => {
     }, []);
 
     return (
-        <div className='bg-hero2'>
+        <div className="hero2BG vw-100 vh-100" style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL + '/hero2.png'})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: '100%',
+          }}>
             {pokemons.length > 0 && (
                 <div className="row text-white">
-                    <div className="col-lg-6 bg-light bg-opacity-75 rounded-circle img mt-5 mb-5">
-                        <img className='img-fluid d-block w-90' src={pokemons[0].sprites.other['official-artwork'].front_default} alt={pokemons[0].name} />
+                    <div className="col-lg-6 bg-light bg-opacity-75 rounded-circle hero2img text-center">
+                        <img className='img-fluid d-block w-100' src={pokemons[0].sprites.other['official-artwork'].front_default} alt={pokemons[0].name} />
                     </div>
-                    <div className="col-lg-6 align-middle">
+                    <div className="col-lg-6 align-middle mt-5">
                         <h1 className='text-center fst-italic text-uppercase fw-bolder mt-5 mb-4'>{pokemons[0].name}</h1>
                         <div className='display-6 ms-5'>
                             <table className='table table-borderless text-white'>

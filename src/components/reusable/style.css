@@ -103,20 +103,15 @@ body {
 }
 
 /* Hero 2 start*/
-
-.bg-hero2 {
-    background-image: url('/public/hero2.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.img {
-    width: 400px;
-    height: 400px;
+.hero2img {
+    width: 550px;
+    height: 550px;
     margin: auto;
+    margin-top: 100px;
     display: flex;
     justify-content: center;
 }
+/* Hero 2 end*/
 
 /* Footer */
 
