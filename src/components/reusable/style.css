@@ -108,6 +108,7 @@ body {
     height: 550px;
     margin: auto;
     margin-top: 100px;
+    margin-bottom:77px;
     display: flex;
     justify-content: center;
 }
