@@ -11,7 +11,7 @@ const Hero2 = () => {
     }, []);
 
     return (
-        <div className="hero2BG vw-100 vh-100" style={{
+        <div className="vw-100" style={{
             backgroundImage: `url(${process.env.PUBLIC_URL + '/hero2.png'})`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: '100%',
