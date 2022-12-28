@@ -148,6 +148,25 @@ body {
     margin-right: 8px;
 }
 
+/*featured start*/
+.lineFeatured {
+    border-left: 4px solid yellow;
+    line-height: 45px;
+    margin-right: 8px;
+}
+
+.text-styleFeatured{
+    color: white;
+    font-weight: 500;
+    text-decoration-line: none;
+}
+
+.featuredContainer{
+    margin-top: -217px;
+}
+
+/*featured end*/
+
 .bg-footer {
     background-color: #6423B5;
     min-height: calc(12vh - 50px);

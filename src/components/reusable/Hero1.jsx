@@ -64,7 +64,7 @@ const Hero = () => {
                     <img src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name} />
                   </div>
                   <div className="bgModalBody">
-                    <div className="row">
+                    <div className="row p-3">
                       <div className="col">
                         <h3>Abilities</h3>
                         <ul>{pokemon.abilities.map((ability) => (
@@ -78,11 +78,11 @@ const Hero = () => {
                         ))}</ul>
                       </div>
                     </div>
-                    <div>
+                    <div className='p-3'>
                       <h3>Stats</h3>
-                      <ProgressBar variant='success' label={`${pokemon.stats[0].base_stat}%`} now={pokemon.stats[0].base_stat} />
-                      <ProgressBar variant='danger' label={`${pokemon.stats[1].base_stat}%`} now={pokemon.stats[1].base_stat} />
-                      <ProgressBar variant='primary' label={`${pokemon.stats[2].base_stat}%`} now={pokemon.stats[2].base_stat} />
+                      <ProgressBar className="m-1" variant='success' label={`${pokemon.stats[0].base_stat}%`} now={pokemon.stats[0].base_stat} />
+                      <ProgressBar className="m-1" variant='danger' label={`${pokemon.stats[1].base_stat}%`} now={pokemon.stats[1].base_stat} />
+                      <ProgressBar className="m-1" variant='primary' label={`${pokemon.stats[2].base_stat}%`} now={pokemon.stats[2].base_stat} />
                     </div>
                   </div>
 
