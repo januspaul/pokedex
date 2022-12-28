@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Card, Button, Container } from "react-bootstrap";
+import { Button, Container, Dropdown } from "react-bootstrap";
+import PokemonCard from './card';
+
 
 const PokemonCards = () => {
   const [pokemons, setPokemons] = useState([]);
@@ -33,22 +35,30 @@ const PokemonCards = () => {
 
   return (
     <Container>
+      
       <div className="row">
         {pokemons.map((pokemon) => (
           <div className="col-3" key={pokemon.name}>
-            <Card style={{ width: "200px" }} className="mb-3">
-            <Card.Img variant="top" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.url.split("/")[6]}.png`} alt={pokemon.name} />
-              <Card.Body>
-                <Card.Title>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</Card.Title>
-                <Card.Text>#{pokemon.url.split("/")[6]}</Card.Text>
-              </Card.Body>
-            </Card>
+           
+                <PokemonCard pokemonName={pokemon.name} />
+               
           </div>
         ))}
       </div>
       <Button onClick={handlePrevious}>Previous</Button>
       <Button onClick={handleNext}>Next</Button>
-      <Button>Type</Button>
+      <Dropdown>
+        <Dropdown.Toggle variant="success" id="dropdown-basic">
+          Type
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu>
+          <Dropdown.Item >Fire</Dropdown.Item>
+          <Dropdown.Item href="#/action-2">Water</Dropdown.Item>
+          <Dropdown.Item href="#/action-3">Grass</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
+
     </Container>
   );
 };
