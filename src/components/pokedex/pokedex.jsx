@@ -40,7 +40,7 @@ const PokemonCards = () => {
         {pokemons.map((pokemon) => (
           <div className="col-3" key={pokemon.name}>
            
-                <PokemonCard pokemonName={pokemon.name} />
+                <PokemonCard component={'span'} pokemonName={pokemon.name} />
                
           </div>
         ))}
