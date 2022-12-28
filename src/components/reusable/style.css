@@ -187,6 +187,22 @@ body {
     color: white;
 }
 
+/*about page start*/
+.aboutBG{
+    margin-top: 250px;
+}
+
+.aboutUsHeader{
+    font-family: 'Myfont-Exo';
+}
+
+.aboutUsDetails{
+    font-family: 'Myfont-Flexo';
+    font-size: 1.5rem;
+}
+/*about page end*/
+
+
 /*contact page start*/
 .contactContainer {
     background-image: url('/public/BGcontact.jpg');
@@ -195,8 +211,7 @@ body {
     margin-top: 104px;
 }
 
-.contactCol1 {
-    margin-left: 250px;
+.contactCol1{
     padding-top: 150px;
 }
 
