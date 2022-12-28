@@ -14,6 +14,7 @@
 /*body start*/
 body {
     overflow-x: hidden;
+    max-height: 100vh;
 }
 
 /*body end*/
@@ -102,16 +103,19 @@ body {
     box-shadow: 5px 5px 15px #3b3b3b;
 }
 
+/* News end */
+
 /* Hero 2 start*/
 .hero2img {
     width: 550px;
     height: 550px;
     margin: auto;
     margin-top: 100px;
-    margin-bottom:77px;
+    margin-bottom: 77px;
     display: flex;
     justify-content: center;
 }
+
 /* Hero 2 end*/
 
 /* Footer */
@@ -136,6 +140,7 @@ body {
 
 .text-style:hover {
     color: yellow;
+    font-weight: bold;
 }
 
 .line {
@@ -144,6 +149,12 @@ body {
     margin-right: 8px;
 }
 
+.bg-footer {
+    background-color: #6423B5;
+}
+
+/* Footer end */
+
 /*featured start*/
 .lineFeatured {
     border-left: 4px solid yellow;
@@ -151,50 +162,42 @@ body {
     margin-right: 8px;
 }
 
-.text-styleFeatured{
+.text-styleFeatured {
     color: white;
     font-weight: 500;
     text-decoration-line: none;
 }
 
-.featuredContainer{
+.featuredContainer {
     margin-top: -217px;
 }
 
 /*featured end*/
-
-.bg-footer {
-    background-color: #6423B5;
-    min-height: calc(12vh - 50px);
-}
-
-.input-text {
-    border: 3px solid blue;
-    border-radius: 4px;
-}
 
 .bgModalHeader {
     background-image: url('/public/bgModalHeader.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 .bgModalBody {
     background-image: url('/public/bgModalBody.png');
     background-size: cover;
     background-repeat: no-repeat;
-    color:white;
+    color: white;
 }
 
 /*contact page start*/
-.contactContainer{
+.contactContainer {
     background-image: url('/public/BGcontact.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 104px;
 }
 
-.contactCol1{
-    margin-left:250px;
+.contactCol1 {
+    margin-left: 250px;
     padding-top: 150px;
 }
+
 /*contact page end*/
