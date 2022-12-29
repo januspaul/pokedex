@@ -282,31 +282,31 @@ body {
     background-image: url('/public/nintendo.png');
     background-repeat: no-repeat;
     background-size:cover;
-    width: 233px;
-    height: 15%;
+    width: 250px;
+    height: 20%;
 }
 
 .aboutGamefreak{
     background-image: url('/public/gamefreak.png');
     background-repeat: no-repeat;
     background-size:cover;
-    width: 233px;
-    height:45%;
+    width: 250px;
+    height:20%;
 }
 
 .aboutCreatures{
     background-image: url('/public/creatures.png');
     background-repeat: no-repeat;
     background-size:cover;
-    width: 233px;
-    height:12%;
+    width: 250px;
+    height:20%;
 }
 
 .aboutNiantic{
     background-image: url('/public/niantic.png');
     background-repeat: no-repeat;
     background-size:cover;
-    width: 240px;
+    width: 250px;
     height:20%;
 }
 
