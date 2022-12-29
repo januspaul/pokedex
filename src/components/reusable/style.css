@@ -137,37 +137,33 @@ body {
 
 /* Footer */
 
-.bg-row {
-    background-color: #B52323;
-    color: white;
+.footerLogo1{
+    height: 200px;
 }
 
-.img-style {
-    width: 170px;
-    height: 170px;
-    margin: auto;
-    margin-bottom: 50px;
+.footerLogo2{
+    height: 80px;
 }
 
-.text-style {
+
+.footerText {
     color: white;
-    font-weight: 500;
     text-decoration-line: none;
 }
 
-.text-style:hover {
+.footerText:hover {
     color: yellow;
-    font-weight: bold;
+    text-decoration: underline;
 }
 
-.line {
+.footerLine {
     border-left: 4px solid yellow;
     line-height: 45px;
     margin-right: 8px;
 }
 
-.bg-footer {
-    background-color: #6423B5;
+.footerPartners{
+    height: 60px;    
 }
 
 /* Footer end */

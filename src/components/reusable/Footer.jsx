@@ -3,51 +3,57 @@ import './style.css';
 
 function Footer() {
     return (
-        <div>
-            <div className="row bg-row">
-                <div className="col-6">
-                    <div className="row ms-5 me-5 mt-4 mb-5">
-                        <div className="col-md-6 img-style">
-                            <img src="logoPokemon.png" alt="logo" className="img-fluid" />
-                            <a href='https://caru.bbbprograms.org/seal/confirmation/1596150491'><img src="privacy.png" alt="logo" className="img-fluid" /></a>
+        <div className='bg-danger'>
+            <div className="row py-5">
+                <div className="col-4">
+                    <div className='align-items-center justify-content-center d-flex'>
+                        <img src="logoPokemon.png" alt="logo" className='footerLogo1' />
+                    </div>
+                    <div className='align-items-center justify-content-center d-flex'>
+                        <img src="privacy.png" alt="logo" className='footerLogo2' />
+                    </div>
+                </div>
+                <div className="col-4">
+
+                    <div className="row">
+                        <div className="col-6">
+                            <p className='text-white fw-bold'>Menu</p>
+                            <ul className='navbar-nav'>
+                                <li className="list-group-item pb-2"><Link to="/" className="footerText"><span className="footerLine"></span>Home</Link></li>
+                                <li className="list-group-item pb-2"><Link to="/" className="footerText"><span className="footerLine"></span>Pokedex</Link></li>
+                                <li className="list-group-item pb-2"><Link to="/" className="footerText"><span className="footerLine"></span>News</Link></li>
+                                <li className="list-group-item pb-2"><Link to="/" className="footerText"><span className="footerLine"></span>About</Link></li>
+                                <li className="list-group-item pb-2"><Link to="/" className="footerText"><span className="footerLine"></span>Contact</Link></li>
+                            </ul>
                         </div>
-                        <div className="col-md-6">
-                            <div className='ms-5'>
-                                <span className="line"></span>
-                                <Link to="/" className='text-style'>Home</Link>
-                            </div>
-                            <div className='ms-5'>
-                                <span className="line"></span>
-                                <Link to="/Pokedex" className='text-style'>Pokedex</Link>
-                            </div>
-                            <div className='ms-5'>
-                                <span className="line"></span>
-                                <Link to="/News" className='text-style'>News</Link>
-                            </div>
-                            <div className='ms-5'>
-                                <span className="line"></span>
-                                <Link to="/About" className='text-style'>About</Link>
-                            </div>
-                            <div className='ms-5'>
-                                <span className="line"></span>
-                                <Link to="/Contact" className='text-style'>Contact</Link>
+
+                        <div className="col-6 justify-content-center d-flex">
+                            <div>
+                                <p className='text-white fw-bold'>Our Partners</p>
+                                <ul className='navbar-nav'>
+                                    <li className="list-group-item"><img src="/nintendo.png" alt="" className='footerPartners' /></li>
+                                    <li className="list-group-item" ><img src="/gamefreak.png" alt="" className='footerPartners' /></li>
+                                    <li className="list-group-item"><img src="/creatures.png" alt="" className='footerPartners' /></li>
+                                    <li className="list-group-item"><img src="/niantic.png" alt="" className='footerPartners' /></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
+
                 </div>
-                <div className="col-6 mt-5 mb-4 pt-3">
-                    <p className='ms-5 fw-bold'>Follow us on Social Media:</p>
-                    <div className='m-5 ps-5'>
-                        <Link><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="facebook.png" alt="social media icons" /></span></Link>
-                        <Link><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="youtube.png" alt="social media icons" /></span></Link>
-                        <Link><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="instagram.png" alt="social media icons" /></span></Link>
-                        <Link><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="pinterest.png" alt="social media icons" /></span></Link>
-                        <Link><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="twitter.png" alt="social media icons" /></span></Link>
+                <div className="col-4 justify-content-center d-flex">
+                    <div>
+                        <p className='text-white fw-bold'>Follow us on Social Media</p>
+                        <div>
+                            <Link><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="facebook.png" alt="social media icons" /></span></Link>
+                            <Link><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="youtube.png" alt="social media icons" /></span></Link>
+                            <Link><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="instagram.png" alt="social media icons" /></span></Link>
+                            <Link><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="pinterest.png" alt="social media icons" /></span></Link>
+                            <Link><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="twitter.png" alt="social media icons" /></span></Link>
+                        </div>
                     </div>
+
                 </div>
-            </div>
-            <div className='container-fluid bg-footer text-center text-muted font-monospace'>
-                <p>© 2022 Pokémon. © 1995 - 2022 Nintendo/Creatures Inc./GAMEFREAK Inc. TM, © Nintendo.</p>
             </div>
         </div>
     )
