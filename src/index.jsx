@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 import App from './App';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   

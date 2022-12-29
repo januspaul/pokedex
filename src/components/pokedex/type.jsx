@@ -1,28 +1,37 @@
-import PokemonCard from './card';
-function PokemonType() {
- const [pokemons, setPokemons] = useState([]);
- 
-    useEffect(() => {
-        async function getData() {
-            const response = await axios.get(
-                `https://pokeapi.co/api/v2/type/fire`
-            );
-            setPokemons(response.data.results);
-            
-        }
+import React, { Component } from 'react';
 
-        getData();
-    },
-    );
+class PokemonList extends Component {
+  state = {
+    pokemon: []
+  };
+
+  componentDidMount() {
+    this.fetchPokemon(this.props.type);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.type !== this.props.type) {
+      this.fetchPokemon(this.props.type);
+    }
+  }
+
+  fetchPokemon(type) {
+    fetch(`https://pokeapi.co/api/v2/type/${type}`)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ pokemon: data.pokemon });
+      });
+  }
+
+  render() {
     return (
-         <div className="row">
-        {pokemons.map((pokemon) => (
-          <div className="col-3" key={pokemon.name}>
-           
-                <PokemonCard component={'span'} pokemonName={pokemon.name} />
-               
-          </div>
+      <ul>
+        {this.state.pokemon.map(p => (
+          <li key={p.pokemon.name}>{p.pokemon.name}</li>
         ))}
-      </div>
-  )
+      </ul>
+    );
+  }
 }
+
+export default PokemonList;
