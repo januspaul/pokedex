@@ -22,7 +22,9 @@ function PokemonCard(props) {
       <Card style={{ width: "200px" }} className="mb-3">
               <Card.Img variant="top" src={sprites} alt={props.pokemonName} />
               <Card.Body>
-                <Card.Title>{props.pokemonName.charAt(0).toUpperCase() + props.pokemonName.slice(1)}</Card.Title>
+                <Card.Title>
+                  {props.pokemonName.charAt(0).toUpperCase() + props.pokemonName.slice(1)}
+                  </Card.Title>
                 <Card.Text>
                   <div className="row">
                     <div className="col">

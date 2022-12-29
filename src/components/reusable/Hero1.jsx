@@ -1,11 +1,16 @@
 import React from 'react';
 import { Form, Button, Container, Row, Col, Modal, ProgressBar } from 'react-bootstrap';
+import PokemonInfo from '../home/pokemonInfo';
 
 
 const Hero = () => {
   const [pokemon, setPokemon] = React.useState(null);
   const [search, setSearch] = React.useState('');
   const [show, setShow] = React.useState(false);
+  const [showInfo, setInfo] = React.useState(false);
+  const clickInfo = (event) =>{
+    setInfo(current => !current);
+  } 
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -88,7 +93,22 @@ const Hero = () => {
 
                 </Modal.Body>
                 <Modal.Footer>
-                  {pokemon.id}
+                  <div className="row">
+                    <div className="col">
+                      {pokemon.id}
+                    </div>
+                    <div className="col">
+                      <button onClick={clickInfo}>Show Info</button>
+                      {
+                        showInfo && (
+                          <div>
+                            <pokemonInfo component={'span'} pokemonName={pokemon.name} />
+                          </div>
+                        )
+                      }
+                    </div>
+                  </div>
+                 
                 </Modal.Footer>
 
 
@@ -102,3 +122,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
