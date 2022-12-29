@@ -5,6 +5,7 @@ function PokemonInfo(props) {
   const [type, setType] = useState();
   const [id, setID] = useState();
   const [sprites, setSprites] = useState();
+  
 
   useEffect(() => {
     async function fetchData() {
