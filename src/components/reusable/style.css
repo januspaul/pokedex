@@ -206,17 +206,114 @@ body {
 
 /*about page start*/
 .aboutBG{
-    margin-top: 250px;
+    background-image: url('/public/aboutBG.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 104px;
+}
+
+.aboutCol{
+    padding-top: 70px;
 }
 
 .aboutUsHeader{
     font-family: 'Myfont-Exo';
 }
 
+.aboutHeadings{
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
 .aboutUsDetails{
     font-family: 'Myfont-Flexo';
     font-size: 1.5rem;
 }
+
+
+.aboutCard1{
+    background-image: url('/public/card1.png');
+    height: 383px;
+    width: 311px;
+}
+
+.aboutCard2{
+    background-image: url('/public/card2.png');
+    height: 383px;
+    width: 311px;
+}
+
+.aboutCard3{
+    background-image: url('/public/card3.png');
+    height: 383px;
+    width: 311px;
+}
+
+.aboutCard4{
+    background-image: url('/public/card4.png');
+    height: 383px;
+    width: 311px;
+}
+
+.aboutCard5{
+    background-image: url('/public/card5.png');
+    height: 383px;
+    width: 311px;
+}
+
+.aboutCard6{
+    background-image: url('/public/card6.png');
+    height: 383px;
+    width: 311px;
+}
+
+.aboutCardTitle{
+    font-family: 'Myfont-Exo';
+    text-align: right;
+}
+
+.aboutCardText{
+    font-family: 'Myfont-Flexo';
+}
+
+.aboutPartnersCol{
+    height: 383px;
+    width: 311px;
+    border-radius: 35px;
+}
+
+.aboutNintendo{
+    background-image: url('/public/nintendo.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+    width: 233px;
+    height: 15%;
+}
+
+.aboutGamefreak{
+    background-image: url('/public/gamefreak.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+    width: 233px;
+    height:45%;
+}
+
+.aboutCreatures{
+    background-image: url('/public/creatures.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+    width: 233px;
+    height:12%;
+}
+
+.aboutNiantic{
+    background-image: url('/public/niantic.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+    width: 240px;
+    height:20%;
+}
+
 /*about page end*/
 
 
