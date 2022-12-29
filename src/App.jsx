@@ -3,12 +3,16 @@ import Navigation from "./components/reusable/Navigation";
 
 
 
+
 function App({ children }) {
+ 
+
   return (
     <div>
       <Navigation />
       
       {children}
+      
       
       <Footer />
     </div>
