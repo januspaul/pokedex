@@ -1,37 +1,28 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import PokemonCard from './card';
 
-class PokemonList extends Component {
-  state = {
-    pokemon: []
-  };
+const PokemonList = ({ type }) => {
+  const [pokemon, setPokemon] = useState([]);
 
-  componentDidMount() {
-    this.fetchPokemon(this.props.type);
-  }
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios.get('https://pokeapi.co/api/v2/pokemon');
+      setPokemon(result.data.results);
+    };
+    fetchData();
+  }, []);
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.type !== this.props.type) {
-      this.fetchPokemon(this.props.type);
-    }
-  }
+  // Filter the list of Pokemon by type
+  const filteredPokemon = pokemon.filter(p => p.type === type);
 
-  fetchPokemon(type) {
-    fetch(`https://pokeapi.co/api/v2/type/${type}`)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ pokemon: data.pokemon });
-      });
-  }
-
-  render() {
-    return (
-      <ul>
-        {this.state.pokemon.map(p => (
-          <li key={p.pokemon.name}>{p.pokemon.name}</li>
-        ))}
-      </ul>
-    );
-  }
-}
+  return (
+    <div>
+      {filteredPokemon.map(p => (
+        <div key={p.id}><PokemonCard  pokemonName={p.name} /></div>
+      ))}
+    </div>
+  );
+};
 
 export default PokemonList;
