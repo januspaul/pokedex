@@ -29,7 +29,7 @@ const Featured = () => {
     <div style={{ backgroundColor: "#6423B5", backgroundSize:"100%" }} className="featuredContainer p-5">
       <Container>
         <div>
-          <h3 className="text-styleFeatured"><span className="lineFeatured"></span>Featured Pokemon</h3>
+          <h3 className="text-styleFeatured aboutUsHeader"><span className="lineFeatured"></span>Featured Pokemon</h3>
         </div>
 
         <Carousel activeIndex={currentSlide} onSelect={handleSlideChange} className="pb-5 mx-5">

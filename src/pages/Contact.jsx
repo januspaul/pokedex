@@ -42,30 +42,30 @@ const Contact = () => {
                 <div className="row contactCol1 d-flex align-items-center justify-content-center">
                     <div className="col-6 text-white">
                         <div className="text-center text-warning pb-5">
-                            <h1>Drop us a line</h1>
+                            <h1 className="aboutUsHeader">Drop us a line</h1>
                         </div>
                         <Form>
                             <Form.Group className="mb-3" controlId="clickMe1">
-                                <Form.Label>Full name</Form.Label>
-                                <Form.Control type="text" placeholder="Juan Dela Cruz" className="rounded-5" onChange={(event) => {
+                                <Form.Label className="aboutUsHeader">Full name</Form.Label>
+                                <Form.Control type="text" placeholder="Juan Dela Cruz" className="hero1SearchButton rounded-5" onChange={(event) => {
                                     setName(event.target.value)
                                 }} />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="clickMe2">
-                                <Form.Label>Email</Form.Label>
-                                <Form.Control type="text" placeholder="name@example.com" className="rounded-5" onChange={(event) => {
+                                <Form.Label className="aboutUsHeader">Email</Form.Label>
+                                <Form.Control type="text" placeholder="name@example.com" className="hero1SearchButton rounded-5" onChange={(event) => {
                                     setEmail(event.target.value)
                                 }} />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="clickMe3">
-                                <Form.Label>Contact Number</Form.Label>
-                                <Form.Control type="number" placeholder="09123456789" className="rounded-5" onChange={(event) => {
+                                <Form.Label className="aboutUsHeader">Contact Number</Form.Label>
+                                <Form.Control type="number" placeholder="09123456789" className="hero1SearchButton rounded-5" onChange={(event) => {
                                     setContact(event.target.value)
                                 }} />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="clickMe4">
-                                <Form.Label>Message</Form.Label>
-                                <Form.Control as="textarea" rows={5} onChange={(event) => {
+                                <Form.Label className="aboutUsHeader">Message</Form.Label>
+                                <Form.Control className="hero1SearchButton" as="textarea" rows={5} onChange={(event) => {
                                     setFeedback(event.target.value)
                                 }} placeholder="Hi! Good Day, I would like to..." />
                             </Form.Group>
