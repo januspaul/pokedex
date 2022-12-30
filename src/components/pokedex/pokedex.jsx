@@ -50,36 +50,34 @@ const PokemonCards = () => {
     }
   });
 
- 
+
 
   return (
-    <Container>
+    <div className="pokedexMainContainer bg-dark">
+      <Container className="pokedexContainer">
 
-      <div className="row">
-        {sortedPokemon.map((pokemon) => (
-          <div className="col-3" key={pokemon.name}>
-            
+        <div className="py-5">
+          <label htmlFor="sort-select" className="text-white px-5">Sort by:</label>
+          <select id="sort-select" onChange={handleSortChange}>
+            <option value={SORT_OPTIONS.NAME_ASC}>Name (A-Z)</option>
+            <option value={SORT_OPTIONS.NAME_DESC}>Name (Z-A)</option>
+            <option value={SORT_OPTIONS.NUMBER_ASC}>Number (low to high)</option>
+            <option value={SORT_OPTIONS.NUMBER_DESC}>Number (high to low)</option>
+          </select>
+        </div>
+
+        <div className="row d-flex justify-content-center">
+          {sortedPokemon.map((pokemon) => (
+            <div className="col-3" key={pokemon.name}>
+
               <PokemonCard component={'span'} pokemonName={pokemon.name} />
-           
 
-          </div>
-        ))}
-      </div>
-      
 
-      <div>
-        <label htmlFor="sort-select">Sort by:</label>
-        <select id="sort-select" onChange={handleSortChange}>
-          <option value={SORT_OPTIONS.NAME_ASC}>Name (A-Z)</option>
-          <option value={SORT_OPTIONS.NAME_DESC}>Name (Z-A)</option>
-          <option value={SORT_OPTIONS.NUMBER_ASC}>Number (low to high)</option>
-          <option value={SORT_OPTIONS.NUMBER_DESC}>Number (high to low)</option>
-        </select>
-      </div>
-      <div>
-      </div>
-
-    </Container>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </div>
   );
 };
 

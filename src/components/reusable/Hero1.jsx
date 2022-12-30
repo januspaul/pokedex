@@ -1,6 +1,5 @@
 import React from 'react';
 import { Form, Button, Container, Row, Col, Modal, ProgressBar } from 'react-bootstrap';
-import {Box} from '@mui/material';
 import PokemonInfo from '../home/pokemonInfo';
 
 
@@ -41,7 +40,7 @@ const Hero = () => {
               <Form.Group>
                 <Form.Control className='hero1Control rounded-5 px-4 border-primary'
                   type="text"
-                  placeholder="Search by Pokemon name..."
+                  placeholder="Search by Pokemon ID or Name..."
                   value={search}
                   onChange={(event) => setSearch(event.target.value)}
                 />

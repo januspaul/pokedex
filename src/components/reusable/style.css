@@ -182,7 +182,7 @@ body {
 }
 
 .featuredContainer {
-    margin-top: -217px;
+    margin-top: -249px;
 }
 
 .footerCr{
@@ -330,3 +330,7 @@ body {
 }
 
 /*contact page end*/
+
+.pokedexContainer{
+    padding-top: 150px;
+}
