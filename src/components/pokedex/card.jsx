@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {Card,Button,Modal} from "react-bootstrap";
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import PokemonInfo from '../home/pokemonInfo';
 
 function PokemonCard(props) {
   const [type, setType] = useState();
@@ -25,11 +25,11 @@ function PokemonCard(props) {
   return (
     <div>
       <Card style={{ width: "200px" }} className="mb-3">
-        <InfoOutlinedIcon/>
+       <Button onClick={clickInfo}> <img className='hero1Pokeball' src="pokeball.png" alt="" /></Button>
               <Card.Img variant="top" src={sprites} alt={props.pokemonName} />
               <Card.Body>
                 <Card.Title>
-                
+            
                   {props.pokemonName.charAt(0).toUpperCase() + props.pokemonName.slice(1)}
                   </Card.Title>
                 <Card.Text>
@@ -44,6 +44,18 @@ function PokemonCard(props) {
                 </Card.Text>
               </Card.Body>
             </Card>
+            <Modal
+                show={showInfo}
+                onHide={() => setInfo(false)}
+                dialogClassName="modal-90w"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered>
+                
+                <Modal.Body>
+                   <PokemonInfo component={'span'} pokemonName={props.pokemonName} />
+                </Modal.Body>
+              </Modal>
+
     </div> 
   );
 }
