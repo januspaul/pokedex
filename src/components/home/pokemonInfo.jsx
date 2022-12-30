@@ -7,6 +7,8 @@ function PokemonInfo(props) {
   const [id, setID] = useState();
   const [sprites, setSprites] = useState();
   const [pokemonName, setPokemonName] = useState();
+  const [pokemonHeight,setPokemonHeight] = useState();
+  const [pokemonWeight,setPokemonWeight] = useState();
 
 
   useEffect(() => {
@@ -16,6 +18,9 @@ function PokemonInfo(props) {
       setType(data.types[0].type.name);
       setID(data.id);
       setPokemonName(data.name);
+      setPokemonHeight(data.height);
+      setPokemonWeight(data.weight);
+      
       setSprites(data.sprites.other['official-artwork'].front_default);
     }
     fetchData();
@@ -36,6 +41,15 @@ function PokemonInfo(props) {
         <div className="col">
           {props.pokemonName.charAt(0).toUpperCase() + props.pokemonName.slice(1)}
           <PokemonFlavorText textPokemon={pokemonName} />
+        </div>
+        <div className="row">
+         Type: {type}
+        </div>
+        <div className="row">
+         Height: {pokemonHeight}
+        </div>
+        <div className="row">
+         Weight: {pokemonWeight}
         </div>
       </div>   
     </div>
