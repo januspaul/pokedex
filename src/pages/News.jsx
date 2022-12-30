@@ -15,7 +15,7 @@ const News = () => {
         const fetchArticles = async () => {
 
             const res = await axios.get(
-                `https://newsapi.org/v2/everything?q=pokemon&pageSize=10&language=en&from=2022-11-28&sortBy=publishedAt&apiKey=${apiKey}`
+                `https://newsapi.org/v2/everything?q=pokemon&pageSize=10&language=en&from=2022-11-28&sortBy=popularity&apiKey=${apiKey}`
             );
             setArticles(res.data.articles);
         };

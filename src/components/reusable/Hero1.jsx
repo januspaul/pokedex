@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Button, Container, Row, Col, Modal, ProgressBar } from 'react-bootstrap';
+import {Box} from '@mui/material';
 import PokemonInfo from '../home/pokemonInfo';
 
 
@@ -8,6 +9,7 @@ const Hero = () => {
   const [search, setSearch] = React.useState('');
   const [show, setShow] = React.useState(false);
   const [showInfo, setInfo] = React.useState(false);
+  
   const clickInfo = (event) =>{
     setInfo(current => !current);
   } 
@@ -99,20 +101,20 @@ const Hero = () => {
                     </div>
                     <div className="col">
                       <button onClick={clickInfo}>Show Info</button>
-                      {
+                      
+                    </div>
+                  </div>
+                </Modal.Footer>
+              </Modal>
+              
+                          {
                         showInfo && (
                           <div>
-                            <pokemonInfo component={'span'} pokemonName={pokemon.name} />
+                            <PokemonInfo component={'span'} pokemonName={pokemon.name} />
                           </div>
                         )
                       }
-                    </div>
-                  </div>
-                 
-                </Modal.Footer>
-
-
-              </Modal>
+              
             </Col>
           </Row>
         )}

@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Container } from "react-bootstrap";
+import PokemonFlavorText from './pokemonDescription';
+
 
 function PokemonInfo(props) {
   const [type, setType] = useState();
   const [id, setID] = useState();
   const [sprites, setSprites] = useState();
+  const [pokemonName, setPokemonName] = useState();
+
 
   useEffect(() => {
     async function fetchData() {
@@ -12,31 +15,29 @@ function PokemonInfo(props) {
       const data = await response.json();
       setType(data.types[0].type.name);
       setID(data.id);
-      setSprites(data.sprites.other["official-artwork"].front_default);
+      setPokemonName(data.name);
+      setSprites(data.sprites.other['official-artwork'].front_default);
     }
     fetchData();
   }, [props.pokemonName]);
 
   return (
     <div>
-      <Container>
-        <div className="row">
-          <div className="col">
-            <img variant="top" src={sprites} alt={props.pokemonName} />
-          </div>
-          <div className="col">
-            {props.pokemonName.charAt(0).toUpperCase() + props.pokemonName.slice(1)}
-          </div>
+      <div className="row">
+        <div className="col">
+           #{id}
         </div>
-        <div className="row">
-          <div className="col">
-            #{id}
-          </div>
-          <div className="col">
-            {type}
-          </div>
+        
+      </div>
+      <div className="row">
+        <div className="col">
+            <img className='img-fluid d-block' src={sprites} alt={props.pokemonName} />
         </div>
-      </Container>
+        <div className="col">
+          {props.pokemonName.charAt(0).toUpperCase() + props.pokemonName.slice(1)}
+          <PokemonFlavorText textPokemon={pokemonName} />
+        </div>
+      </div>   
     </div>
   );
 }
