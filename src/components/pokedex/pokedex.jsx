@@ -15,7 +15,8 @@ const SORT_OPTIONS = {
 
 const PokemonCards = () => {
   const [pokemons, setPokemons] = useState([]);
-  const [sortOption, setSortOption] = useState(SORT_OPTIONS.NAME_ASC);
+  const [sortOption, setSortOption] = useState(SORT_OPTIONS.NUMBER_ASC);
+  const [limit,setLimit] = useState(12);
 
 
 
@@ -23,14 +24,18 @@ const PokemonCards = () => {
   useEffect(() => {
     async function getData() {
       const response = await axios.get(
-        `https://pokeapi.co/api/v2/pokemon?limit=100`
+        `https://pokeapi.co/api/v2/pokemon?limit=`+limit
       );
       setPokemons(response.data.results);
 
     }
 
     getData();
-  }, []);
+  }, [limit]);
+
+  const loadMore = () =>{
+    setLimit(limit+12)
+  }
 
   const handleSortChange = event => {
     setSortOption(event.target.value);
@@ -39,14 +44,14 @@ const PokemonCards = () => {
 
 
   const sortedPokemon = pokemons.sort((a, b) => {
-    if (sortOption === SORT_OPTIONS.NAME_ASC) {
-      return a.name.localeCompare(b.name);
-    } else if (sortOption === SORT_OPTIONS.NAME_DESC) {
-      return b.name.localeCompare(a.name);
-    } else if (sortOption === SORT_OPTIONS.NUMBER_ASC) {
+    if (sortOption === SORT_OPTIONS.NUMBER_ASC) {
       return a.url.match(/\/(\d+)\//)[1] - b.url.match(/\/(\d+)\//)[1];
     } else if (sortOption === SORT_OPTIONS.NUMBER_DESC) {
       return b.url.match(/\/(\d+)\//)[1] - a.url.match(/\/(\d+)\//)[1];
+    } else if (sortOption === SORT_OPTIONS.NAME_ASC) {
+      return a.name.localeCompare(b.name);
+    } else if (sortOption === SORT_OPTIONS.NAME_DESC) {
+      return b.name.localeCompare(a.name);
     }
   });
 
@@ -59,10 +64,11 @@ const PokemonCards = () => {
         <div className="py-5">
           <label htmlFor="sort-select" className="text-white px-5">Sort by:</label>
           <select id="sort-select" onChange={handleSortChange}>
-            <option value={SORT_OPTIONS.NAME_ASC}>Name (A-Z)</option>
-            <option value={SORT_OPTIONS.NAME_DESC}>Name (Z-A)</option>
             <option value={SORT_OPTIONS.NUMBER_ASC}>Number (low to high)</option>
             <option value={SORT_OPTIONS.NUMBER_DESC}>Number (high to low)</option>
+            <option value={SORT_OPTIONS.NAME_ASC}>Name (A-Z)</option>
+            <option value={SORT_OPTIONS.NAME_DESC}>Name (Z-A)</option>
+            
           </select>
         </div>
 
@@ -75,6 +81,8 @@ const PokemonCards = () => {
 
             </div>
           ))}
+
+          <button onClick={loadMore}>Load More</button>
         </div>
       </Container>
     </div>
