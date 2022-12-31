@@ -24,10 +24,12 @@ function PokemonCard(props) {
 
   return (
     <div className='mb-5'>
+      
       <Card style={{ width: "250px" }} className="mb-3">
-        <Button onClick={clickInfo}> <img className='hero1Pokeball' src="pokeball.png" alt="" /></Button>
+      <Button className='bg-white text-dark' onClick={clickInfo}>
         <Card.Img variant="top" src={sprites} alt={props.pokemonName} />
         <Card.Body>
+          <hr/>
           <Card.Title className='text-center'>
 
             {props.pokemonName.charAt(0).toUpperCase() + props.pokemonName.slice(1)}
@@ -45,7 +47,9 @@ function PokemonCard(props) {
             </div>
           </Card.Text>
         </Card.Body>
+        </Button>
       </Card>
+      
       <Modal
         show={showInfo}
         onHide={() => setInfo(false)}
