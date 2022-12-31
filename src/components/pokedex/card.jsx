@@ -44,7 +44,10 @@ function PokemonCard(props) {
                 </div>
                 <div className="row">
                   <div className="col">
-                    {type}
+                    <img
+                            src={`https://veekun.com/dex/media/types/en/${type}.png`}
+                            alt={type}
+                          />
                   </div>
                 </div>
               </Card.Text>
