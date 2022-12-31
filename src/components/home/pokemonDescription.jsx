@@ -6,7 +6,6 @@ async function getPokemonFlavorText(textPokemon) {
     const response = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${textPokemon}`);
     const pokemon = response.data;
     const flavorTextEntries = pokemon.flavor_text_entries;
-    // Find the flavor text in English
     const flavorText = flavorTextEntries.find(entry => entry.language.name === 'en').flavor_text;
     return flavorText;
   } catch (error) {
