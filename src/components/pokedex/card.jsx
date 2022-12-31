@@ -25,12 +25,13 @@ function PokemonCard(props) {
   return (
     <div className='mb-5'>
 
-      <Card style={{ width: "250px" }} className="mb-3">
+      <Card className="bgpokedexCards">
         <div className='bgCardHover'>
-          <Button className='bg-white text-dark' onClick={clickInfo}>
+          <Button className='pokedeButton text-dark p-0' onClick={clickInfo}>
+            <div className="bgpokedexCards">
             <Card.Img variant="top" src={sprites} alt={props.pokemonName} />
-            <Card.Body>
-              <hr />
+            <Card.Body className='text-white'>
+         
               <Card.Title className='text-center'>
 
                 {props.pokemonName.charAt(0).toUpperCase() + props.pokemonName.slice(1)}
@@ -48,7 +49,7 @@ function PokemonCard(props) {
                 </div>
               </Card.Text>
             </Card.Body>
-
+            </div>
           </Button>
         </div>
       </Card>

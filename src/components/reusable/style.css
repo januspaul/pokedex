@@ -339,13 +339,30 @@ body {
 
 .bgCardHover{
     transition: transform 0.8s ease-in-out;
+    
+
 }
 
 .bgCardHover:hover {
     transform: scale(1.1);
+    
+}
+
+.pokedeButton{
+    border-radius: 35px;
 }
 
 
+.bgpokedexCards{
+    background-image: url('/public/cards.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 35px;
+    width: 250px;
+    align-items: center;
+    height: auto;
+
+}
 /*pokedex page end*/
 
 
