@@ -137,11 +137,11 @@ body {
 
 /* Footer */
 
-.footerLogo1{
+.footerLogo1 {
     height: 200px;
 }
 
-.footerLogo2{
+.footerLogo2 {
     height: 80px;
 }
 
@@ -162,8 +162,8 @@ body {
     margin-right: 8px;
 }
 
-.footerPartners{
-    height: 60px;    
+.footerPartners {
+    height: 60px;
 }
 
 /* Footer end */
@@ -185,8 +185,8 @@ body {
     margin-top: -249px;
 }
 
-.footerCr{
-    background-color:#6523b6;
+.footerCr {
+    background-color: #6523b6;
 }
 
 /*featured end*/
@@ -205,113 +205,113 @@ body {
 }
 
 /*about page start*/
-.aboutBG{
+.aboutBG {
     background-image: url('/public/aboutBG.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 104px;
 }
 
-.aboutCol{
+.aboutCol {
     padding-top: 70px;
 }
 
-.aboutUsHeader{
+.aboutUsHeader {
     font-family: 'Myfont-Exo';
 }
 
-.aboutHeadings{
+.aboutHeadings {
     padding-top: 100px;
     padding-bottom: 50px;
 }
 
-.aboutUsDetails{
+.aboutUsDetails {
     font-family: 'Myfont-Flexo';
     font-size: 1.5rem;
 }
 
 
-.aboutCard1{
+.aboutCard1 {
     background-image: url('/public/card1.png');
     height: 383px;
     width: 311px;
 }
 
-.aboutCard2{
+.aboutCard2 {
     background-image: url('/public/card2.png');
     height: 383px;
     width: 311px;
 }
 
-.aboutCard3{
+.aboutCard3 {
     background-image: url('/public/card3.png');
     height: 383px;
     width: 311px;
 }
 
-.aboutCard4{
+.aboutCard4 {
     background-image: url('/public/card4.png');
     height: 383px;
     width: 311px;
 }
 
-.aboutCard5{
+.aboutCard5 {
     background-image: url('/public/card5.png');
     height: 383px;
     width: 311px;
 }
 
-.aboutCard6{
+.aboutCard6 {
     background-image: url('/public/card6.png');
     height: 383px;
     width: 311px;
 }
 
-.aboutCardTitle{
+.aboutCardTitle {
     font-family: 'Myfont-Exo';
     text-align: right;
 }
 
-.aboutCardText{
+.aboutCardText {
     font-family: 'Myfont-Flexo';
 }
 
-.aboutPartnersCol{
+.aboutPartnersCol {
     height: 383px;
     width: 311px;
     border-radius: 35px;
 }
 
-.aboutNintendo{
+.aboutNintendo {
     background-image: url('/public/nintendo.png');
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
     width: 250px;
     height: 20%;
 }
 
-.aboutGamefreak{
+.aboutGamefreak {
     background-image: url('/public/gamefreak.png');
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
     width: 250px;
-    height:20%;
+    height: 20%;
 }
 
-.aboutCreatures{
+.aboutCreatures {
     background-image: url('/public/creatures.png');
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
     width: 250px;
-    height:20%;
+    height: 20%;
 }
 
-.aboutNiantic{
+.aboutNiantic {
     background-image: url('/public/niantic.png');
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
     width: 250px;
-    height:20%;
+    height: 20%;
 }
 
 /*about page end*/
@@ -325,7 +325,7 @@ body {
     margin-top: 104px;
 }
 
-.contactCol1{
+.contactCol1 {
     padding-top: 150px;
 }
 
@@ -333,15 +333,26 @@ body {
 
 
 /*pokedex page start*/
-.pokedexContainer{
+.pokedexContainer {
     padding-top: 150px;
 }
+
+.bgCardHover{
+    transition: transform 0.8s ease-in-out;
+}
+
+.bgCardHover:hover {
+    transform: scale(1.1);
+}
+
+
 /*pokedex page end*/
 
 
 /*pagenotfound page start*/
-.pageNF{
-    padding-top:300px;
+.pageNF {
+    padding-top: 300px;
     padding-bottom: 200px;
 }
+
 /*pagenotfound page end*/

@@ -24,32 +24,35 @@ function PokemonCard(props) {
 
   return (
     <div className='mb-5'>
-      
-      <Card style={{ width: "250px" }} className="mb-3">
-      <Button className='bg-white text-dark' onClick={clickInfo}>
-        <Card.Img variant="top" src={sprites} alt={props.pokemonName} />
-        <Card.Body>
-          <hr/>
-          <Card.Title className='text-center'>
 
-            {props.pokemonName.charAt(0).toUpperCase() + props.pokemonName.slice(1)}
-          </Card.Title>
-          <Card.Text className='text-center'>
-            <div className="row">
-              <div className="col">
-                #{id}
-              </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                {type}
-              </div>
-            </div>
-          </Card.Text>
-        </Card.Body>
-        </Button>
+      <Card style={{ width: "250px" }} className="mb-3">
+        <div className='bgCardHover'>
+          <Button className='bg-white text-dark' onClick={clickInfo}>
+            <Card.Img variant="top" src={sprites} alt={props.pokemonName} />
+            <Card.Body>
+              <hr />
+              <Card.Title className='text-center'>
+
+                {props.pokemonName.charAt(0).toUpperCase() + props.pokemonName.slice(1)}
+              </Card.Title>
+              <Card.Text className='text-center'>
+                <div className="row">
+                  <div className="col">
+                    #{id}
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col">
+                    {type}
+                  </div>
+                </div>
+              </Card.Text>
+            </Card.Body>
+
+          </Button>
+        </div>
       </Card>
-      
+
       <Modal
         show={showInfo}
         onHide={() => setInfo(false)}
@@ -62,7 +65,7 @@ function PokemonCard(props) {
         </Modal.Body>
       </Modal>
 
-    </div>
+    </div >
   );
 }
 
