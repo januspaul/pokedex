@@ -6,7 +6,7 @@ import Pokedex from './pages/Pokedex';
 import News from './pages/News';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import NotFound from './pages/NotFound';
+import PageNotFound from './pages/PageNotFound';
 import App from './App';
 
 
@@ -21,7 +21,7 @@ root.render(
         <Route path='/News' element={<News />} />
         <Route path='/About' element={<About />} />
         <Route path='/Contact' element={<Contact />} />
-        <Route path='*' element={<NotFound />} />
+        <Route path='*' element={<PageNotFound />} />
       </Routes>
       </App>
     </BrowserRouter>

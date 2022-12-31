@@ -331,6 +331,17 @@ body {
 
 /*contact page end*/
 
+
+/*pokedex page start*/
 .pokedexContainer{
     padding-top: 150px;
 }
+/*pokedex page end*/
+
+
+/*pagenotfound page start*/
+.pageNF{
+    padding-top:300px;
+    padding-bottom: 200px;
+}
+/*pagenotfound page end*/
