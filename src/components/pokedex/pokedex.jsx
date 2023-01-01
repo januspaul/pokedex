@@ -17,6 +17,7 @@ const PokemonCards = () => {
   const [pokemons, setPokemons] = useState([]);
   const [sortOption, setSortOption] = useState(SORT_OPTIONS.NUMBER_ASC);
   const [limit, setLimit] = useState(12);
+  const [searchTerm, setSearchTerm] = useState('');
 
 
 
@@ -55,11 +56,21 @@ const PokemonCards = () => {
     }
   });
 
+  const filteredPokemon = sortedPokemon.filter(pokemon =>
+    pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
 
 
   return (
     <div className="pokedexMainContainer bg-dark">
       <Container className="pokedexContainer">
+        <input
+          type="text"
+          placeholder="Search Pokémon"
+          value={searchTerm}
+          onChange={event => setSearchTerm(event.target.value)}
+        />
 
         <label htmlFor="region-select" className="text-white px-5">Region:</label>
         <select id="region-select">
@@ -73,7 +84,7 @@ const PokemonCards = () => {
           <option value="galar">Galar</option>
         </select>
 
-        
+
 
 
         <div className="py-5">
@@ -88,12 +99,9 @@ const PokemonCards = () => {
         </div>
 
         <div className="row d-flex justify-content-center">
-          {sortedPokemon.map((pokemon) => (
+          {filteredPokemon.map((pokemon) => (
             <div className="col-3" key={pokemon.name}>
-
               <PokemonCard component={'span'} pokemonName={pokemon.name} />
-
-
             </div>
           ))}
 
