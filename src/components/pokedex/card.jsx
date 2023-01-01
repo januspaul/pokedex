@@ -7,6 +7,7 @@ function PokemonCard(props) {
   const [id, setID] = useState();
   const [sprites, setSprites] = useState();
   const [showInfo, setInfo] = React.useState(false);
+  
   const clickInfo = (event) => {
     setInfo(current => !current);
   }
