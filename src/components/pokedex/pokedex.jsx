@@ -78,24 +78,16 @@ return false;
   <div className="pokedexMainContainer bg-dark">
     <Container className="pokedexContainer">
 
-      <div className="py-5">
-        <label htmlFor="sort-select" className="text-white px-5">Sort by:</label>
-        <select id="sort-select" onChange={handleSortChange}>
-          <option value={SORT_OPTIONS.NUMBER_ASC}>ID ASC</option>
-          <option value={SORT_OPTIONS.NUMBER_DESC}>ID DESC</option>
-          <option value={SORT_OPTIONS.NAME_ASC}>Name ASC</option>
-          <option value={SORT_OPTIONS.NAME_DESC}>Name DESC</option>
-        </select>
-        <label htmlFor="type-select" className="text-white px-5">Type:</label>
-        <select id="type-select" onChange={handleTypeFilterChange}>
-          <option value="">All</option>
-          {types.map(type => (
-            <option key={type} value={type}>
-              {type}
-            </option>
-          ))}
-        </select>
-      </div>
+        <div className="py-5">
+          <label htmlFor="sort-select" className="text-white px-5">Sort by:</label>
+          <select id="sort-select" onChange={handleSortChange}>
+            <option value={SORT_OPTIONS.NUMBER_ASC}>Number (low to high)</option>
+            <option value={SORT_OPTIONS.NUMBER_DESC}>Number (high to low)</option>
+            <option value={SORT_OPTIONS.NAME_ASC}>Name (A-Z)</option>
+            <option value={SORT_OPTIONS.NAME_DESC}>Name (Z-A)</option>
+            
+          </select>
+        </div>
 
       <div className="row d-flex justify-content-center">
         {sortedPokemon.map((pokemon) => (
