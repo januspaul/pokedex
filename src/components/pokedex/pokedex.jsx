@@ -3,6 +3,7 @@ import axios from "axios";
 import { Container } from "react-bootstrap";
 import PokemonCard from './card';
 
+
 const SORT_OPTIONS = {
   NUMBER_DESC: 'NUMBER_DESC',
   NUMBER_ASC: 'NUMBER_ASC',
@@ -10,13 +11,15 @@ const SORT_OPTIONS = {
   NAME_DESC: 'NAME_DESC',
 };
 
+
+
 const PokemonCards = () => {
   const [pokemons, setPokemons] = useState([]);
-  const [filteredPokemons, setFilteredPokemons] = useState([]);
   const [sortOption, setSortOption] = useState(SORT_OPTIONS.NUMBER_ASC);
   const [limit,setLimit] = useState(12);
-  const [selectedType, setSelectedType] = useState('');
-  const [types, setTypes] = useState([]);
+
+
+
 
   useEffect(() => {
     async function getData() {
@@ -24,12 +27,7 @@ const PokemonCards = () => {
         `https://pokeapi.co/api/v2/pokemon?limit=`+limit
       );
       setPokemons(response.data.results);
-      setFilteredPokemons(response.data.results);
 
-      // get list of types
-      const typesResponse = await axios.get(`https://pokeapi.co/api/v2/type`);
-      console.log(typesResponse);
-      setTypes(typesResponse.data.results.map(type => type.name));
     }
 
     getData();
@@ -43,24 +41,9 @@ const PokemonCards = () => {
     setSortOption(event.target.value);
   };
 
-  const handleTypeFilterChange = event => {
-    setSelectedType(event.target.value);
-  };
 
-  useEffect(() => {
-    if (selectedType) {
-      setFilteredPokemons(pokemons.filter(pokemon => {
-        if (pokemon.types) {
-  return pokemon.types.some(type => type.type.name === selectedType);
-}
-return false;
-      }));
-    } else {
-      setFilteredPokemons(pokemons);
-    }
-  }, [selectedType, pokemons]);
 
-  const sortedPokemon = filteredPokemons.sort((a, b) => {
+  const sortedPokemon = pokemons.sort((a, b) => {
     if (sortOption === SORT_OPTIONS.NUMBER_ASC) {
       return a.url.match(/\/(\d+)\//)[1] - b.url.match(/\/(\d+)\//)[1];
     } else if (sortOption === SORT_OPTIONS.NUMBER_DESC) {
@@ -74,33 +57,36 @@ return false;
 
 
 
-    return (
-  <div className="pokedexMainContainer bg-dark">
-    <Container className="pokedexContainer">
+  return (
+    <div className="pokedexMainContainer bg-dark">
+      <Container className="pokedexContainer">
 
         <div className="py-5">
           <label htmlFor="sort-select" className="text-white px-5">Sort by:</label>
           <select id="sort-select" onChange={handleSortChange}>
-            <option value={SORT_OPTIONS.NUMBER_ASC}>Number (low to high)</option>
-            <option value={SORT_OPTIONS.NUMBER_DESC}>Number (high to low)</option>
-            <option value={SORT_OPTIONS.NAME_ASC}>Name (A-Z)</option>
-            <option value={SORT_OPTIONS.NAME_DESC}>Name (Z-A)</option>
-            
+            <option value={SORT_OPTIONS.NUMBER_ASC}>ID ASC</option>
+            <option value={SORT_OPTIONS.NUMBER_DESC}>ID DESC</option>
+            <option value={SORT_OPTIONS.NAME_ASC}>Name ASC</option>
+            <option value={SORT_OPTIONS.NAME_DESC}>Name DESC</option>
+      
           </select>
         </div>
 
-      <div className="row d-flex justify-content-center">
-        {sortedPokemon.map((pokemon) => (
-          <div className="col-3" key={pokemon.name}>
-            <PokemonCard component={'span'} pokemonName={pokemon.name} />
-          </div>
-        ))}
-        <button onClick={loadMore}>Load More</button>
-      </div>
-    </Container>
-  </div>
-);
+        <div className="row d-flex justify-content-center">
+          {sortedPokemon.map((pokemon) => (
+            <div className="col-3" key={pokemon.name}>
 
+              <PokemonCard component={'span'} pokemonName={pokemon.name} />
+
+
+            </div>
+          ))}
+
+          <button onClick={loadMore}>Load More</button>
+        </div>
+      </Container>
+    </div>
+  );
 };
 
 export default PokemonCards;
