@@ -17,18 +17,18 @@ const PokemonCards = () => {
   const [pokemons, setPokemons] = useState([]);
   const [sortOption, setSortOption] = useState(SORT_OPTIONS.NUMBER_ASC);
   const [limit, setLimit] = useState(12);
-  const [selectedRegion, setSelectedRegion] = useState('kanto');
 
 
 
 
   useEffect(() => {
     async function getData() {
-  const response = await axios.get(
-    `https://pokeapi.co/api/v2/pokemon?limit=${limit}&region=${selectedRegion}`
-  );
-  setPokemons(response.data.results);
-}
+      const response = await axios.get(
+        `https://pokeapi.co/api/v2/pokemon?limit=` + limit
+      );
+      setPokemons(response.data.results);
+
+    }
 
     getData();
   }, [limit]);
@@ -40,10 +40,6 @@ const PokemonCards = () => {
   const handleSortChange = event => {
     setSortOption(event.target.value);
   };
-
-  const handleRegionChange = (event) => {
-    setSelectedRegion(event.target.value);
-  }
 
 
 
@@ -66,7 +62,7 @@ const PokemonCards = () => {
       <Container className="pokedexContainer">
 
         <label htmlFor="region-select" className="text-white px-5">Region:</label>
-        <select id="region-select" onChange={handleRegionChange}>
+        <select id="region-select">
           <option value="kanto">Kanto</option>
           <option value="johto">Johto</option>
           <option value="hoenn">Hoenn</option>
@@ -76,6 +72,9 @@ const PokemonCards = () => {
           <option value="alola">Alola</option>
           <option value="galar">Galar</option>
         </select>
+
+        
+
 
         <div className="py-5">
           <label htmlFor="sort-select" className="text-white px-5">Sort by:</label>
