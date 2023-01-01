@@ -7,7 +7,6 @@ function PokemonCard(props) {
   const [id, setID] = useState();
   const [sprites, setSprites] = useState();
   const [showInfo, setInfo] = React.useState(false);
-  
   const clickInfo = (event) => {
     setInfo(current => !current);
   }
@@ -45,10 +44,7 @@ function PokemonCard(props) {
                 </div>
                 <div className="row">
                   <div className="col">
-                    <img
-                            src={`https://veekun.com/dex/media/types/en/${type}.png`}
-                            alt={type}
-                          />
+                    {type}
                   </div>
                 </div>
               </Card.Text>
