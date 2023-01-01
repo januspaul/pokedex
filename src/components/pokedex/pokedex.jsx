@@ -3,6 +3,7 @@ import axios from "axios";
 import { Container } from "react-bootstrap";
 import PokemonCard from './card';
 
+
 const SORT_OPTIONS = {
   NUMBER_DESC: 'NUMBER_DESC',
   NUMBER_ASC: 'NUMBER_ASC',
@@ -10,57 +11,40 @@ const SORT_OPTIONS = {
   NAME_DESC: 'NAME_DESC',
 };
 
+
+
 const PokemonCards = () => {
   const [pokemons, setPokemons] = useState([]);
-  const [filteredPokemons, setFilteredPokemons] = useState([]);
   const [sortOption, setSortOption] = useState(SORT_OPTIONS.NUMBER_ASC);
-  const [limit,setLimit] = useState(12);
-  const [selectedType, setSelectedType] = useState('');
-  const [types, setTypes] = useState([]);
+  const [limit, setLimit] = useState(12);
+  const [searchTerm, setSearchTerm] = useState('');
+
+
+
 
   useEffect(() => {
     async function getData() {
       const response = await axios.get(
-        `https://pokeapi.co/api/v2/pokemon?limit=`+limit
+        `https://pokeapi.co/api/v2/pokemon?limit=` + limit
       );
       setPokemons(response.data.results);
-      setFilteredPokemons(response.data.results);
 
-      // get list of types
-      const typesResponse = await axios.get(`https://pokeapi.co/api/v2/type`);
-      console.log(typesResponse);
-      setTypes(typesResponse.data.results.map(type => type.name));
     }
 
     getData();
   }, [limit]);
 
-  const loadMore = () =>{
-    setLimit(limit+12)
+  const loadMore = () => {
+    setLimit(limit + 12)
   }
 
   const handleSortChange = event => {
     setSortOption(event.target.value);
   };
 
-  const handleTypeFilterChange = event => {
-    setSelectedType(event.target.value);
-  };
 
-  useEffect(() => {
-    if (selectedType) {
-      setFilteredPokemons(pokemons.filter(pokemon => {
-        if (pokemon.types) {
-  return pokemon.types.some(type => type.type.name === selectedType);
-}
-return false;
-      }));
-    } else {
-      setFilteredPokemons(pokemons);
-    }
-  }, [selectedType, pokemons]);
 
-  const sortedPokemon = filteredPokemons.sort((a, b) => {
+  const sortedPokemon = pokemons.sort((a, b) => {
     if (sortOption === SORT_OPTIONS.NUMBER_ASC) {
       return a.url.match(/\/(\d+)\//)[1] - b.url.match(/\/(\d+)\//)[1];
     } else if (sortOption === SORT_OPTIONS.NUMBER_DESC) {
@@ -72,43 +56,60 @@ return false;
     }
   });
 
+  const filteredPokemon = sortedPokemon.filter(pokemon =>
+    pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
 
-    return (
-  <div className="pokedexMainContainer bg-dark">
-    <Container className="pokedexContainer">
 
-      <div className="py-5">
-        <label htmlFor="sort-select" className="text-white px-5">Sort by:</label>
-        <select id="sort-select" onChange={handleSortChange}>
-          <option value={SORT_OPTIONS.NUMBER_ASC}>ID ASC</option>
-          <option value={SORT_OPTIONS.NUMBER_DESC}>ID DESC</option>
-          <option value={SORT_OPTIONS.NAME_ASC}>Name ASC</option>
-          <option value={SORT_OPTIONS.NAME_DESC}>Name DESC</option>
+  return (
+    <div className="pokedexMainContainer bg-dark">
+      <Container className="pokedexContainer">
+        <input
+          type="text"
+          placeholder="Search Pokémon"
+          value={searchTerm}
+          onChange={event => setSearchTerm(event.target.value)}
+        />
+
+        <label htmlFor="region-select" className="text-white px-5">Region:</label>
+        <select id="region-select">
+          <option value="kanto">Kanto</option>
+          <option value="johto">Johto</option>
+          <option value="hoenn">Hoenn</option>
+          <option value="sinnoh">Sinnoh</option>
+          <option value="unova">Unova</option>
+          <option value="kalos">Kalos</option>
+          <option value="alola">Alola</option>
+          <option value="galar">Galar</option>
         </select>
-        <label htmlFor="type-select" className="text-white px-5">Type:</label>
-        <select id="type-select" onChange={handleTypeFilterChange}>
-          <option value="">All</option>
-          {types.map(type => (
-            <option key={type} value={type}>
-              {type}
-            </option>
+
+
+
+
+        <div className="py-5">
+          <label htmlFor="sort-select" className="text-white px-5">Sort by:</label>
+          <select id="sort-select" onChange={handleSortChange}>
+            <option value={SORT_OPTIONS.NUMBER_ASC}>ID ASC</option>
+            <option value={SORT_OPTIONS.NUMBER_DESC}>ID DESC</option>
+            <option value={SORT_OPTIONS.NAME_ASC}>Name ASC</option>
+            <option value={SORT_OPTIONS.NAME_DESC}>Name DESC</option>
+
+          </select>
+        </div>
+
+        <div className="row d-flex justify-content-center">
+          {filteredPokemon.map((pokemon) => (
+            <div className="col-3" key={pokemon.name}>
+              <PokemonCard component={'span'} pokemonName={pokemon.name} />
+            </div>
           ))}
-        </select>
-      </div>
 
-      <div className="row d-flex justify-content-center">
-        {sortedPokemon.map((pokemon) => (
-          <div className="col-3" key={pokemon.name}>
-            <PokemonCard component={'span'} pokemonName={pokemon.name} />
-          </div>
-        ))}
-        <button onClick={loadMore}>Load More</button>
-      </div>
-    </Container>
-  </div>
-);
-
+          <button onClick={loadMore}>Load More</button>
+        </div>
+      </Container>
+    </div>
+  );
 };
 
 export default PokemonCards;
