@@ -15,10 +15,12 @@ const Hero2 = () => {
             backgroundImage: `url(${process.env.PUBLIC_URL + '/hero2.png'})`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
+            backgroundAttachment: 'fixed',
+            backgroundPositionX: 'center'
           }}>
             {pokemons.length > 0 && (
-                <div className="row text-white d-flex justify-content-center p-2">
-                    <div className="col-md-6 bg-light bg-opacity-75 rounded-circle hero2img text-center">
+                <div className="row text-white d-flex align-items-center justify-content-center p-2">
+                    <div className="col-md-6 bg-light shadow rounded-circle hero2img text-center">
                         <img className='img-fluid d-block w-100' src={pokemons[0].sprites.other['official-artwork'].front_default} alt={pokemons[0].name} />
                     </div>
                     <div className="col-md-6 align-middle">

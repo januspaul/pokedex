@@ -8,7 +8,7 @@ const News = () => {
 
     const [articles, setArticles] = useState([]);
     const [pageNumber, setPageNumber] = useState(1);
-     const [totalPages, setTotalPages] = useState(0);
+    const [totalPages, setTotalPages] = useState(0);
     const itemsPerPage = 5;
 
     useEffect(() => {
@@ -25,7 +25,7 @@ const News = () => {
         fetchArticles();
     }, []);
 
-     const currentItems = articles.slice(0, pageNumber * itemsPerPage);
+    const currentItems = articles.slice(0, pageNumber * itemsPerPage);
 
     const today = new Date();
     const options = {
@@ -72,14 +72,16 @@ const News = () => {
                         </div>
                     </div>
                 ))}
+                <div className="d-flex justify-content-center">
+                    <Button style={{ width: "200px" }}
+                        className="bg-primary rounded-pill text-white mt-5 mb-4"
+                        onClick={handleLoadMoreClick}
+                        disabled={pageNumber >= totalPages}
+                    >
+                        Load More
+                    </Button>
+                </div>
             </div>
-            <Button
-                className="ms-5 pe-3 bg-primary rounded-pill text-white ps-3"
-                onClick={handleLoadMoreClick}
-                disabled={pageNumber >= totalPages}
-            >
-                Load More
-            </Button>
         </div>
     )
 }

@@ -96,13 +96,16 @@ body {
     padding: 60px;
     background-image: url('/public/hero1.png');
     background-size: cover;
+    background-attachment: fixed;
+    background-position-x: center;
 }
 
 .latestNews-bg {
-    background-image: url('/public/BGnews 1.png');
-    width: 100vw;
+    background-image: url('/public/BG.png');
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
 }
 
 .pokeHoliday-border {
