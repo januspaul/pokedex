@@ -37,48 +37,52 @@ const Contact = () => {
     }
 
     return (
-        <div className="contactContainer vw-100">
-            <div className="container">
-                <div className="row contactCol1 d-flex align-items-center justify-content-center">
-                    <div className="col-6 text-white">
-                        <div className="text-center text-warning">
-                            <h1 className="aboutUsHeader">Drop us a line</h1>
+        <div>
+            <div className="allBG">
+                <div className="BG d-flex align-items-center justify-content-center">
+                    <div className="container contactMargin">
+                        <div className="row contactCol1 d-flex align-items-center justify-content-center">
+                            <div className="col-6 text-white">
+                                <div className="text-center text-warning pb-5">
+                                    <h1 className="aboutUsHeader">Drop us a line</h1>
+                                </div>
+                                <Form>
+                                    <Form.Group className="mb-3" controlId="clickMe1">
+                                        <Form.Label className="aboutUsHeader">Full name</Form.Label>
+                                        <Form.Control type="text" placeholder="Juan Dela Cruz" className="hero1SearchButton rounded-5" onChange={(event) => {
+                                            setName(event.target.value)
+                                        }} />
+                                    </Form.Group>
+                                    <Form.Group className="mb-3" controlId="clickMe2">
+                                        <Form.Label className="aboutUsHeader">Email</Form.Label>
+                                        <Form.Control type="text" placeholder="name@example.com" className="hero1SearchButton rounded-5" onChange={(event) => {
+                                            setEmail(event.target.value)
+                                        }} />
+                                    </Form.Group>
+                                    <Form.Group className="mb-3" controlId="clickMe3">
+                                        <Form.Label className="aboutUsHeader">Contact Number</Form.Label>
+                                        <Form.Control type="number" placeholder="09123456789" className="hero1SearchButton rounded-5" onChange={(event) => {
+                                            setContact(event.target.value)
+                                        }} />
+                                    </Form.Group>
+                                    <Form.Group className="mb-3" controlId="clickMe4">
+                                        <Form.Label className="aboutUsHeader">Message</Form.Label>
+                                        <Form.Control className="hero1SearchButton" as="textarea" rows={5} onChange={(event) => {
+                                            setFeedback(event.target.value)
+                                        }} placeholder="Hi! Good Day, I would like to..." />
+                                    </Form.Group>
+
+                                    <Button className='rounded-5' type="submit" onClick={handleSubmit}>
+                                        <img className='hero1Pokeball' src="pokeball.png" alt="" />
+                                        Submit
+                                    </Button>
+
+                                </Form>
+                            </div>
+                            <div className="col-6">
+                                <img src="contactlogo.png" alt="" />
+                            </div>
                         </div>
-                        <Form>
-                            <Form.Group className="mb-3" controlId="clickMe1">
-                                <Form.Label className="aboutUsHeader">Full name</Form.Label>
-                                <Form.Control type="text" placeholder="Juan Dela Cruz" className="hero1SearchButton rounded-5" onChange={(event) => {
-                                    setName(event.target.value)
-                                }} />
-                            </Form.Group>
-                            <Form.Group className="mb-3" controlId="clickMe2">
-                                <Form.Label className="aboutUsHeader">Email</Form.Label>
-                                <Form.Control type="text" placeholder="name@example.com" className="hero1SearchButton rounded-5" onChange={(event) => {
-                                    setEmail(event.target.value)
-                                }} />
-                            </Form.Group>
-                            <Form.Group className="mb-3" controlId="clickMe3">
-                                <Form.Label className="aboutUsHeader">Contact Number</Form.Label>
-                                <Form.Control type="number" placeholder="09123456789" className="hero1SearchButton rounded-5" onChange={(event) => {
-                                    setContact(event.target.value)
-                                }} />
-                            </Form.Group>
-                            <Form.Group className="mb-3" controlId="clickMe4">
-                                <Form.Label className="aboutUsHeader">Message</Form.Label>
-                                <Form.Control className="hero1SearchButton" as="textarea" rows={5} onChange={(event) => {
-                                    setFeedback(event.target.value)
-                                }} placeholder="Hi! Good Day, I would like to..." />
-                            </Form.Group>
-
-                            <Button className='rounded-5' type="submit" onClick={handleSubmit}>
-                                <img className='hero1Pokeball' src="pokeball.png" alt="" />
-                                Submit
-                            </Button>
-
-                        </Form>
-                    </div>
-                    <div className="col-6">
-                        <img className="img-fluid d-block w-100" src="contactlogo.png" alt="" />
                     </div>
                 </div>
             </div>
