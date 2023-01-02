@@ -14,16 +14,18 @@ const Hero2 = () => {
         <div className="vw-100" style={{
             backgroundImage: `url(${process.env.PUBLIC_URL + '/hero2.png'})`,
             backgroundRepeat: 'no-repeat',
-            backgroundSize: '100%',
+            backgroundSize: 'cover',
+            backgroundAttachment: 'fixed',
+            backgroundPositionX: 'center'
           }}>
             {pokemons.length > 0 && (
-                <div className="row text-white">
-                    <div className="col-lg-6 bg-light bg-opacity-75 rounded-circle hero2img text-center">
+                <div className="row text-white d-flex align-items-center justify-content-center p-2">
+                    <div className="col-md-6 bg-light shadow rounded-circle hero2img text-center">
                         <img className='img-fluid d-block w-100' src={pokemons[0].sprites.other['official-artwork'].front_default} alt={pokemons[0].name} />
                     </div>
-                    <div className="col-lg-6 align-middle mt-5">
-                        <h1 className='text-center fst-italic text-uppercase fw-bolder mt-5 mb-4'>{pokemons[0].name}</h1>
-                        <div className='display-6 ms-5'>
+                    <div className="col-md-6 align-middle">
+                        <h1 className='text-center fst-italic text-uppercase fw-bolder mt-5'>{pokemons[0].name}</h1>
+                        <div className='display-6'>
                             <table className='table table-borderless text-white'>
                                 <tbody>
                                     <tr>
@@ -39,7 +41,10 @@ const Hero2 = () => {
                                     <tr>
                                         <th scope="row"></th>
                                         <td>Type: </td>
-                                        <td className='text-capitalize'>{pokemons[0].types[0].type.name}</td>
+                                        <td className='text-capitalize'><ul>{pokemons[0].types.map((type) => (
+                                            <li ke={type.type.name}>{type.type.name}</li>
+                                        ))}
+                                        </ul></td>
                                     </tr>
                                     <tr>
                                         <th scope="row"></th>

@@ -96,13 +96,16 @@ body {
     padding: 60px;
     background-image: url('/public/hero1.png');
     background-size: cover;
+    background-attachment: fixed;
+    background-position-x: center;
 }
 
 .latestNews-bg {
-    background-image: url('/public/BGnews 1.png');
-    width: 100vw;
+    background-image: url('/public/BG.png');
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
 }
 
 .pokeHoliday-border {
@@ -124,11 +127,9 @@ body {
 
 /* Hero 2 start*/
 .hero2img {
-    width: 550px;
-    height: 550px;
+    width: 450px;
+    height: 450px;
     margin: auto;
-    margin-top: 100px;
-    margin-bottom: 77px;
     display: flex;
     justify-content: center;
 }
@@ -219,10 +220,15 @@ body {
 }
 
 /*about page start*/
-.aboutBG {
-    background-image: url('/public/aboutBG.jpg');
+.allBG{
+    background-image: url('/public/BG.png');
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
+}
+
+.BG {
     margin-top: 104px;
 }
 
@@ -332,15 +338,9 @@ body {
 
 
 /*contact page start*/
-.contactContainer {
-    background-image: url('/public/BGcontact.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin-top: 104px;
-}
-
 .contactCol1 {
-    padding-top: 150px;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 /*contact page end*/
