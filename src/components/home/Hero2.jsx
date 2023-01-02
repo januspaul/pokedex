@@ -39,7 +39,10 @@ const Hero2 = () => {
                                     <tr>
                                         <th scope="row"></th>
                                         <td>Type: </td>
-                                        <td className='text-capitalize'>{pokemons[0].types[0].type.name}</td>
+                                        <td className='text-capitalize'><ul>{pokemons[0].types.map((type) => (
+                                            <li ke={type.type.name}>{type.type.name}</li>
+                                        ))}
+                                        </ul></td>
                                     </tr>
                                     <tr>
                                         <th scope="row"></th>

@@ -7,22 +7,25 @@ import { Link } from "react-router-dom";
 const News = () => {
 
     const [articles, setArticles] = useState([]);
+    const [pageNumber, setPageNumber] = useState(1);
+     const [totalPages, setTotalPages] = useState(0);
     const itemsPerPage = 5;
 
     useEffect(() => {
 
-        const apiKey = "af6c298da3be4c5baaffa9a77ad42802";
+
         const fetchArticles = async () => {
 
             const res = await axios.get(
-                `https://newsapi.org/v2/everything?q=pokemon&pageSize=10&language=en&from=2022-11-28&sortBy=popularity&apiKey=${apiKey}`
+                `https://newsapi.org/v2/everything?q=pokemon&from=2022-12-02&sortBy=publishedAt&apiKey=51b2f916aec3455cb2b3841983962f0a`
             );
             setArticles(res.data.articles);
+            setTotalPages(res.data.totalResults / itemsPerPage);
         };
         fetchArticles();
     }, []);
 
-    const currentItems = articles.slice(0, itemsPerPage);
+     const currentItems = articles.slice(0, pageNumber * itemsPerPage);
 
     const today = new Date();
     const options = {
@@ -31,6 +34,9 @@ const News = () => {
         day: 'numeric'
     };
     const formatter = new Intl.DateTimeFormat('en-US', options);
+    const handleLoadMoreClick = () => {
+        setPageNumber(pageNumber + 1);
+    };
 
     return (
         <div className="bg-primary">
@@ -59,7 +65,7 @@ const News = () => {
                             <Link><img src={article.urlToImage} alt={article.title} className="img-fluid imageStyle d-block w-100 text-center order-1 ms-5" /></Link>
                             <div className="order-2 ms-5 ps-3 me-4">
                                 <span className="badge text-bg-danger">Animation</span>
-                                <span className="ms-3">{formatter.format(today)}</span>
+                                <span className="ms-3">{formatter.format(new Date(article.publishedAt))}</span>
                                 <h3 className="text-warning text-uppercase">{article.title}</h3>
                                 <p>{article.description}</p>
                             </div>
@@ -67,6 +73,13 @@ const News = () => {
                     </div>
                 ))}
             </div>
+            <Button
+                className="ms-5 pe-3 bg-primary rounded-pill text-white ps-3"
+                onClick={handleLoadMoreClick}
+                disabled={pageNumber >= totalPages}
+            >
+                Load More
+            </Button>
         </div>
     )
 }
