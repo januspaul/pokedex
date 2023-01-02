@@ -335,13 +335,6 @@ body {
 
 
 /*contact page start*/
-.contactContainer {
-    background-image: url('/public/BGcontact.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin-top: 104px;
-}
-
 .contactCol1 {
     padding-top: 100px;
     padding-bottom: 100px;
