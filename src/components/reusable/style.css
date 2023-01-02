@@ -217,11 +217,17 @@ body {
 }
 
 /*about page start*/
-.aboutBG {
-    background-image: url('/public/aboutBG.jpg');
+.allBG{
+    background-image: url('/public/BG.png');
     background-size: cover;
     background-repeat: no-repeat;
-    margin-top: 104px;
+    background-attachment: scroll;
+    background-position-x: center;
+}
+
+.aboutBG {
+margin-top: 104px;
+   
 }
 
 .aboutCol {
