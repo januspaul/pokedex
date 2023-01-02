@@ -1,7 +1,7 @@
 const About = () => {
     return (
-        <div className="allBG">
-            <div className="aboutBG">
+        <div className="allBG ">
+            <div className="BG ">
                 <div className="container">
                     <div className="row aboutCol d-flex align-items-center justify-content-center">
                         <div className="col-6 text-white">
