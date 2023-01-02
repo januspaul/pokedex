@@ -221,13 +221,12 @@ body {
     background-image: url('/public/BG.png');
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: scroll;
+    background-attachment: fixed;
     background-position-x: center;
 }
 
-.aboutBG {
-margin-top: 104px;
-   
+.BG {
+    margin-top: 104px;
 }
 
 .aboutCol {
