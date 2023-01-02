@@ -15,7 +15,7 @@ const Hero2 = () => {
             backgroundImage: `url(${process.env.PUBLIC_URL + '/hero2.png'})`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: '100%',
-          }}>
+        }}>
             {pokemons.length > 0 && (
                 <div className="row text-white">
                     <div className="col-lg-6 bg-light bg-opacity-75 rounded-circle hero2img text-center">
@@ -39,7 +39,10 @@ const Hero2 = () => {
                                     <tr>
                                         <th scope="row"></th>
                                         <td>Type: </td>
-                                        <td className='text-capitalize'>{pokemons[0].types[0].type.name}</td>
+                                        <td className='text-capitalize'><ul>{pokemons[0].types.map((type) => (
+                                            <li ke={type.type.name}>{type.type.name}</li>
+                                        ))}
+                                        </ul></td>
                                     </tr>
                                     <tr>
                                         <th scope="row"></th>

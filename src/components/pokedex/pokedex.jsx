@@ -60,6 +60,8 @@ const PokemonCards = () => {
     pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const filteredPokemonType = sortedPokemon.filter(pokemon=>pokemon.url.includes('fire'))
+console.log(filteredPokemonType);
 
 
   return (
