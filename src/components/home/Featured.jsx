@@ -1,11 +1,9 @@
-
 import React from "react";
-import { Carousel,  CardGroup, Container,} from "react-bootstrap";
+import { Carousel, CardGroup, Container, Row, Col } from "react-bootstrap";
 import PokemonCard from "../pokedex/card";
 const Featured = () => {
   const [pokemons, setPokemons] = React.useState([]);
   const [currentSlide, setCurrentSlide] = React.useState(0);
-  
 
   const handleSlideChange = (index) => {
     setPokemons([]);
@@ -27,27 +25,33 @@ const Featured = () => {
   }, [currentSlide]);
 
   return (
-    <div style={{ backgroundColor: "#6423B5"}} className="featuredContainer p-5">
+    <div
+      style={{ backgroundColor: "#6423B5" }}
+      className="featuredContainer p-5"
+    >
       <Container fluid>
         <div>
-          <h3 className="text-styleFeatured aboutUsHeader"><span className="lineFeatured"></span>Featured Pokemon</h3>
+          <h3 className="text-styleFeatured aboutUsHeader">
+            <span className="lineFeatured"></span>Featured Pokemon
+          </h3>
         </div>
 
-        <Carousel activeIndex={currentSlide} onSelect={handleSlideChange} className="pb-5">
+        <Carousel
+          activeIndex={currentSlide}
+          onSelect={handleSlideChange}
+          className="pb-5"
+        >
           {[...Array(3)].map((_, index) => (
-            <Carousel.Item  key={index}>
-              <CardGroup>
+            <Carousel.Item key={index}>
+              <CardGroup className="vw-100">
                 {pokemons.map((pokemon) => (
-                  <div key={pokemon.id} className="row">
-                    <div className="col-12">
-                     <PokemonCard pokemonName={pokemon.name} />
-                      
-                    </div>
-                    
-                  </div>
+                  <Row key={pokemon.id}>
+                    <Col>
+                      <PokemonCard pokemonName={pokemon.name} />
+                    </Col>
+                  </Row>
                 ))}
               </CardGroup>
-              
             </Carousel.Item>
           ))}
         </Carousel>
