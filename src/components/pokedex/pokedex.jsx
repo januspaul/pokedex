@@ -65,8 +65,8 @@ console.log(filteredPokemonType);
 
 
   return (
-    <div className="pokedexMainContainer bg-dark">
-      <Container className="pokedexContainer">
+    <div className="pokedexMainContainer bg-dark ps-5 justify-content-center">
+      <Container fluid className="pokedexContainer">
         <input
           type="text"
           placeholder="Search Pokémon"
@@ -100,14 +100,14 @@ console.log(filteredPokemonType);
           </select>
         </div>
 
-        <div className="row d-flex justify-content-center">
+        <div className="row d-flex justify-content-center ps-5">
           {filteredPokemon.map((pokemon) => (
             <div className="col-3" key={pokemon.name}>
               <PokemonCard component={'span'} pokemonName={pokemon.name} />
             </div>
           ))}
 
-          <button onClick={loadMore}>Load More</button>
+          <button className="d-grid gap-2 col-4 mx-auto m-5 " onClick={loadMore}>Load More</button>
         </div>
       </Container>
     </div>
