@@ -39,7 +39,7 @@ const Contact = () => {
     return (
         <div>
             <div className="allBG">
-                <div className="BG d-flex align-items-center justify-content-center">
+                <div className="BG">
                     <div className="container contactMargin">
                         <div className="row contactCol1 d-flex align-items-center justify-content-center">
                             <div className="col-6 text-white">
