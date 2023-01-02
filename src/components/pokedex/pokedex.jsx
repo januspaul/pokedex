@@ -44,17 +44,20 @@ const PokemonCards = () => {
 
 
 
-  const sortedPokemon = pokemons.sort((a, b) => {
-    if (sortOption === SORT_OPTIONS.NUMBER_ASC) {
+ const sortedPokemon = pokemons.sort((a, b) => {
+  switch (sortOption) {
+    case SORT_OPTIONS.NUMBER_ASC:
       return a.url.match(/\/(\d+)\//)[1] - b.url.match(/\/(\d+)\//)[1];
-    } else if (sortOption === SORT_OPTIONS.NUMBER_DESC) {
+    case SORT_OPTIONS.NUMBER_DESC:
       return b.url.match(/\/(\d+)\//)[1] - a.url.match(/\/(\d+)\//)[1];
-    } else if (sortOption === SORT_OPTIONS.NAME_ASC) {
+    case SORT_OPTIONS.NAME_ASC:
       return a.name.localeCompare(b.name);
-    } else if (sortOption === SORT_OPTIONS.NAME_DESC) {
+    case SORT_OPTIONS.NAME_DESC:
       return b.name.localeCompare(a.name);
-    }
-  });
+    default:
+      return 0; 
+  }
+});
 
   const filteredPokemon = sortedPokemon.filter(pokemon =>
     pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
