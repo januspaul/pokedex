@@ -37,11 +37,11 @@ const Contact = () => {
     }
 
     return (
-        <div className="contactContainer vw-100 vh-100">
+        <div className="contactContainer vw-100">
             <div className="container">
                 <div className="row contactCol1 d-flex align-items-center justify-content-center">
                     <div className="col-6 text-white">
-                        <div className="text-center text-warning pb-5">
+                        <div className="text-center text-warning">
                             <h1 className="aboutUsHeader">Drop us a line</h1>
                         </div>
                         <Form>
@@ -78,7 +78,7 @@ const Contact = () => {
                         </Form>
                     </div>
                     <div className="col-6">
-                        <img src="contactlogo.png" alt="" />
+                        <img className="img-fluid d-block w-100" src="contactlogo.png" alt="" />
                     </div>
                 </div>
             </div>

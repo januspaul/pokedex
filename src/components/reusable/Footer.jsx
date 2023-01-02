@@ -5,8 +5,8 @@ function Footer() {
     return (
         <div>
             <div className='bg-danger'>
-                <div className="row py-5">
-                    <div className="col-4">
+                <div className="row p-3">
+                    <div className="col-lg-4">
                         <div className='align-items-center justify-content-center d-flex'>
                             <img src="logoPokemon.png" alt="logo" className='footerLogo1' />
                         </div>
@@ -14,8 +14,7 @@ function Footer() {
                             <img src="privacy.png" alt="logo" className='footerLogo2' />
                         </div>
                     </div>
-                    <div className="col-4">
-
+                    <div className="col-md-4 mt-4">
                         <div className="row">
                             <div className="col-6">
                                 <p className='aboutUsHeader text-white fw-bold'>Menu</p>
@@ -40,9 +39,8 @@ function Footer() {
                                 </div>
                             </div>
                         </div>
-
                     </div>
-                    <div className="col-4 justify-content-center d-flex">
+                    <div className="col-lg-4 justify-content-center d-flex mt-4">
                         <div>
                             <p className='aboutUsHeader text-white fw-bold'>Follow us on Social Media</p>
                             <div>
@@ -56,15 +54,11 @@ function Footer() {
 
                     </div>
                 </div>
-
             </div>
             <div className='footerCr text-center text-muted'>
                 <p>© 2022 Pokémon. © 1995 - 2022 Nintendo/Creatures Inc./GAMEFREAK Inc. TM, © Nintendo.</p>
             </div>
         </div>
-
-
-
     )
 }
 
