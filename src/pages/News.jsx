@@ -60,10 +60,12 @@ const News = () => {
             </div>
             <div className="latestNews-bg">
                 {currentItems.map((article) => (
-                    <div key={article.url} className="text-white pt-5">
-                        <div className="d-flex align-items-center p-3">
-                            <Link><img src={article.urlToImage} alt={article.title} className="img-fluid imageStyle d-block w-100 text-center order-1 ms-5" /></Link>
-                            <div className="order-2 ms-5 ps-3 me-4">
+                    <div key={article.url} className="text-white newsMargin ms-5">
+                        <div className="row d-flex align-items-center p-3">
+                            <div className="col-6">
+                                <Link><img src={article.urlToImage} alt={article.title} className="img-fluid imageStyle d-block w-100" /></Link>
+                            </div>
+                            <div className="col-6">
                                 <span className="badge text-bg-danger">Animation</span>
                                 <span className="ms-3">{formatter.format(new Date(article.publishedAt))}</span>
                                 <h3 className="text-warning text-uppercase">{article.title}</h3>
