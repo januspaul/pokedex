@@ -1,6 +1,7 @@
 import React, { useState, } from 'react';
-import Button from 'react-bootstrap';
+import {Button,Modal} from 'react-bootstrap';
 import PokemonCard from './card';
+
 
 function PokemonType() {
   const [smShow, setSmShow] = useState(false);
