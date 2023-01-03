@@ -104,7 +104,8 @@ function PokemonInfo(props) {
                   <p className='hero1SearchButton'>
                     {Object.keys(stats).map(stat => (
                       <div key={stat}>{stat}:
-                        <ProgressBar animated now={stats[stat]} label={stats[stat]} variant={stats[stat] < 30 ? 'danger' : (stats[stat] < 70 ? 'warning' : 'success')}/>
+                        
+                        <ProgressBar animated now={stats[stat]} label={stats[stat]} variant={stats[stat] < 35 ? 'danger' : (stats[stat] < 65 ? 'warning' : 'success')}/>
                       </div>
                     ))}</p>
                 </div>
