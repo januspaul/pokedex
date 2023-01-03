@@ -1,46 +1,36 @@
-import React, { useState, } from 'react';
-import {Button,Modal} from 'react-bootstrap';
-import PokemonCard from './card';
+import React,{useState} from 'react';
+import {Button, Modal} from 'react-bootstrap';
 
-
-function PokemonType() {
-  const [smShow, setSmShow] = useState(false);
-  const [lgShow, setLgShow] = useState(false);
+const PokemonTypes = () => {
+  const types = ['normal', 'fire', 'water', 'electric', 'grass', 'ice', 'fighting', 'poison', 'ground', 'flying', 'psychic', 'bug', 'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy'];
+  const [show, setShow] = useState({});
+  const handleClose = (type) => setShow((prevShow) => ({...prevShow, [type]: false}));
+  const handleShow = (type) => setShow((prevShow) => ({...prevShow, [type]: true}));
 
   return (
-    <>
-      <Button onClick={() => setSmShow(true)} className="me-2">
-        Electric
-      </Button>
-      <Button onClick={() => setLgShow(true)}>Water</Button>
-      <Modal
-        size="sm"
-        show={smShow}
-        onHide={() => setSmShow(false)}
-        aria-labelledby="example-modal-sizes-title-sm"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-sm">
-           Electric
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body><PokemonCard pokemonName="pikachu"/><PokemonCard pokemonName="electrike"/></Modal.Body>
-      </Modal>
-      <Modal
-        size="lg"
-        show={lgShow}
-        onHide={() => setLgShow(false)}
-        aria-labelledby="example-modal-sizes-title-lg"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-lg">
-            Large Modal
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>...</Modal.Body>
-      </Modal>
-    </>
+    <div>
+      {types.map((type) => (
+        <div>
+          <Button key={type} onClick={() => handleShow(type)}>{type}</Button>
+          <Modal show={show[type]} key={type} onHide={() => handleClose(type)}>
+            <Modal.Header closeButton>
+              <Modal.Title >{type}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>You clicked {type} </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={() => handleClose(type)}>
+                Close
+              </Button>
+              <Button variant="primary" onClick={() => handleClose(type)}>
+                Save Changes
+              </Button>
+            </Modal.Footer>
+          </Modal>
+        </div>
+      ))}
+    </div>
   );
-}
+};
 
-export default PokemonType;
+export default PokemonTypes
+
