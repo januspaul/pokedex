@@ -34,7 +34,7 @@ const Hero = () => {
         <Row>
           <Col>
 
-            <img src="hero1gcta.png" alt="Pokemon Logo" />
+            <img src="hero1gcta.png" data-aos="zoom-in-down" data-aos-duration="2000" alt="Pokemon Logo" />
 
           </Col>
         </Row>
@@ -47,10 +47,16 @@ const Hero = () => {
                   placeholder="Search by Pokemon ID or Name..."
                   value={search}
                   onChange={(event) => setSearch(String(event.target.value).toLowerCase())}
-                />
+                  data-aos="fade-right"
+                  data-aos-duration="2000"
+                  />
               </Form.Group>
-              <Button className='hero1SearchButton rounded-5' type="submit" onClick={() => setShow(true)} >
-                <img className='hero1Pokeball' src="pokeball.png" alt="" />
+              <Button className='hero1SearchButton rounded-5' type="submit" onClick={() => setShow(true)} 
+              data-aos="fade-left"
+              data-aos-duration="2000"
+              >
+                <img className='hero1Pokeball' src="pokeball.png" alt="" 
+                />
                 Search
               </Button>
             </Form>
