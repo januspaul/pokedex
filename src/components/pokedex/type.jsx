@@ -7,9 +7,10 @@ const PokemonTypes = () => {
   const [show, setShow] = useState({});
   const handleClose = (type) => setShow((prevShow) => ({...prevShow, [type]: false}));
   const handleShow = (type) => setShow((prevShow) => ({...prevShow, [type]: true}));
+  
 
   return (
-    <div>
+    <div style={{display: 'flex', justifyContent: 'space-around'}}>
       {types.map((type) => (
         <div>
           <Button key={type} onClick={() => handleShow(type)}>{type}</Button>
@@ -27,5 +28,5 @@ const PokemonTypes = () => {
   );
 };
 
-export default PokemonTypes
+export default PokemonTypes;
 

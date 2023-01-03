@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PokemonFlavorText from './pokemonDescription';
+import { ProgressBar } from 'react-bootstrap';
 
 
 function PokemonInfo(props) {
@@ -32,6 +33,8 @@ function PokemonInfo(props) {
     }
     fetchData();
   }, [props.pokemonName]);
+
+  
 
   return (
     <div className=''>
@@ -99,9 +102,11 @@ function PokemonInfo(props) {
                 </div>
                 <div>
                   <p className='hero1SearchButton'>
-                  {Object.keys(stats).map(stat => (
-            <div key={stat}>{stat}: {stats[stat]}</div>
-          ))}</p>
+                    {Object.keys(stats).map(stat => (
+                      <div key={stat}>{stat}:
+                        <ProgressBar animated now={stats[stat]} label={stats[stat]} variant={stats[stat] < 30 ? 'danger' : (stats[stat] < 70 ? 'warning' : 'success')}/>
+                      </div>
+                    ))}</p>
                 </div>
               </div>
             </div>
@@ -109,45 +114,7 @@ function PokemonInfo(props) {
         </div>
         <hr />
       </div>
-      {/* <div className="row">
-        <div className="col"> 
-          #{id}
-        </div>
 
-      </div>
-      <div className="row">
-        <div className="col">
-          <img className='img-fluid d-block' src={sprites} alt={props.pokemonName} />
-        </div>
-        <div className="col">
-          {props.pokemonName.charAt(0).toUpperCase() + props.pokemonName.slice(1)}
-          <PokemonFlavorText textPokemon={pokemonName} />
-        </div>
-        <div className="row">
-          Type: {types.map(type => (
-          <div key={type.type.name}>{type.type.name}</div>
-        ))}
-        </div>
-        <div className="row">
-          Height: {pokemonHeight}
-        </div>
-        <div className="row">
-          Weight: {pokemonWeight}
-        </div>
-        <div>
-          <h4>Stats:</h4>
-          {Object.keys(stats).map(stat => (
-            <div key={stat}>{stat}: {stats[stat]}</div>
-          ))}
-        </div>
-        <div>
-        <h4>Abilities:</h4>
-        {abilities.map(ability => (
-          <div key={ability.ability.name}>{ability.ability.name}</div>
-        ))}
-      </div>
-      </div> */}
-      
     </div>
   );
 }
