@@ -13,7 +13,7 @@ const PokemonTypes = () => {
       {types.map((type) => (
         <div>
           <Button key={type} onClick={() => handleShow(type)}>{type}</Button>
-          <Modal show={show[type]} key={type} onHide={() => handleClose(type)}>
+          <Modal show={show[type]} size="fullscreen" key={type} onHide={() => handleClose(type)}>
             <Modal.Header closeButton>
               <Modal.Title >{type}</Modal.Title>
             </Modal.Header>

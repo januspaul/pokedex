@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import PokemonCard from './card';
 
 const PokemonList = (props) => {
   const [pokemon, setPokemon] = useState([]);
@@ -18,11 +19,11 @@ const PokemonList = (props) => {
   }, [props.type]);
 
   return (
-    <ul>
+    <div className="row">
       {pokemon.map((pokemon) => (
-        <li key={pokemon.pokemon.name}>{pokemon.pokemon.name}</li>
+        <div className="col-3" key={pokemon.pokemon.name}><PokemonCard component={'span'} pokemonName={pokemon.pokemon.name} /></div>
       ))}
-    </ul>
+    </div>
   );
 };
 
