@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Container } from "react-bootstrap";
 import PokemonCard from './card';
+import PokemonType from "./type";
 
 
 const SORT_OPTIONS = {
@@ -63,13 +64,13 @@ const PokemonCards = () => {
     pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const filteredPokemonType = sortedPokemon.filter(pokemon=>pokemon.url.includes('fire'))
-console.log(filteredPokemonType);
+  
 
 
   return (
     <div className="pokedexMainContainer bg-dark ps-5 justify-content-center">
       <Container fluid className="pokedexContainer">
+        
         <input
           type="text"
           placeholder="Search Pokémon"
@@ -89,6 +90,8 @@ console.log(filteredPokemonType);
           <option value="galar">Galar</option>
         </select>
 
+        <PokemonType/>
+
 
 
 
@@ -99,7 +102,6 @@ console.log(filteredPokemonType);
             <option value={SORT_OPTIONS.NUMBER_DESC}>ID DESC</option>
             <option value={SORT_OPTIONS.NAME_ASC}>Name ASC</option>
             <option value={SORT_OPTIONS.NAME_DESC}>Name DESC</option>
-
           </select>
         </div>
 

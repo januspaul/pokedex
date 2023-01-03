@@ -1,28 +1,45 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, } from 'react';
+import Button from 'react-bootstrap';
 import PokemonCard from './card';
 
-const PokemonList = ({ type }) => {
-  const [pokemon, setPokemon] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios.get('https://pokeapi.co/api/v2/pokemon');
-      setPokemon(result.data.results);
-    };
-    fetchData();
-  }, []);
-
-  // Filter the list of Pokemon by type
-  const filteredPokemon = pokemon.filter(p => p.type === type);
+function PokemonType() {
+  const [smShow, setSmShow] = useState(false);
+  const [lgShow, setLgShow] = useState(false);
 
   return (
-    <div>
-      {filteredPokemon.map(p => (
-        <div key={p.id}><PokemonCard  pokemonName={p.name} /></div>
-      ))}
-    </div>
+    <>
+      <Button onClick={() => setSmShow(true)} className="me-2">
+        Electric
+      </Button>
+      <Button onClick={() => setLgShow(true)}>Water</Button>
+      <Modal
+        size="sm"
+        show={smShow}
+        onHide={() => setSmShow(false)}
+        aria-labelledby="example-modal-sizes-title-sm"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="example-modal-sizes-title-sm">
+           Electric
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body><PokemonCard pokemonName="pikachu"/><PokemonCard pokemonName="electrike"/></Modal.Body>
+      </Modal>
+      <Modal
+        size="lg"
+        show={lgShow}
+        onHide={() => setLgShow(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="example-modal-sizes-title-lg">
+            Large Modal
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>...</Modal.Body>
+      </Modal>
+    </>
   );
-};
+}
 
-export default PokemonList;
+export default PokemonType;
