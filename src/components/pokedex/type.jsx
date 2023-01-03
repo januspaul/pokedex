@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import {Button, Modal} from 'react-bootstrap';
+import PokemonList from './typelist';
 
 const PokemonTypes = () => {
   const types = ['normal', 'fire', 'water', 'electric', 'grass', 'ice', 'fighting', 'poison', 'ground', 'flying', 'psychic', 'bug', 'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy'];
@@ -16,15 +17,9 @@ const PokemonTypes = () => {
             <Modal.Header closeButton>
               <Modal.Title >{type}</Modal.Title>
             </Modal.Header>
-            <Modal.Body>You clicked {type} </Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={() => handleClose(type)}>
-                Close
-              </Button>
-              <Button variant="primary" onClick={() => handleClose(type)}>
-                Save Changes
-              </Button>
-            </Modal.Footer>
+            <Modal.Body>
+              <PokemonList type= {type}></PokemonList>
+            </Modal.Body>
           </Modal>
         </div>
       ))}
