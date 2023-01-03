@@ -7,12 +7,12 @@ const Hero = () => {
   const [pokemon, setPokemon] = React.useState(null);
   const [search, setSearch] = React.useState('');
   const [fullscreen, setFullscreen] =React.useState(true);
-  const [showInfo, setInfo] = React.useState(false);
+  
   const [show, setShow] = React.useState(false);
 
   const clickInfo = (event) => {
     setFullscreen(event);
-    setInfo(current => !current);
+    
   }
 
   const handleSubmit = (event) => {
@@ -51,7 +51,7 @@ const Hero = () => {
                   data-aos-duration="2000"
                   />
               </Form.Group>
-              <Button className='hero1SearchButton rounded-5' type="submit" onClick={() => setShow(true)} 
+              <Button className='hero1SearchButton rounded-5' type="submit" onClick={() => {clickInfo(true); setShow(true);}}
               data-aos="fade-left"
               data-aos-duration="2000"
               >
@@ -85,26 +85,10 @@ const Hero = () => {
     <h3>Pokemon not found</h3>
   )}
 </Modal.Body>
-                <Modal.Footer>
-                  <div className="row">
-                    <div className="col">
-                      {pokemon.id}
-                    </div>
-                    <div className="col">
-                      <button onClick={clickInfo}>Show Info</button>
-
-                    </div>
-                  </div>
-                </Modal.Footer>
+                
               </Modal>
               
-              {
-                showInfo && (
-                  <div>
-                    <PokemonInfo component={'span'} pokemonName={pokemon.name} />
-                  </div>
-                )
-              }
+              
 
             </Col>
           </Row>
