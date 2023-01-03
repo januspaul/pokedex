@@ -25,8 +25,8 @@ function PokemonFlavorText(props) {
   }, [props.textPokemon]);
 
   return (
-    <div>
-      <p>{flavorText}</p>
+    <div className="">
+      <h3 className=''>{flavorText}</h3>
     </div>
   );
 }

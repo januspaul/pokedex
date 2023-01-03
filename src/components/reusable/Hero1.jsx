@@ -1,18 +1,18 @@
 import React from 'react';
-import { Form, Button, Container, Row, Col, Modal} from 'react-bootstrap';
+import { Form, Button, Container, Row, Col, Modal } from 'react-bootstrap';
 import PokemonInfo from '../home/pokemonInfo';
 
 
 const Hero = () => {
   const [pokemon, setPokemon] = React.useState(null);
   const [search, setSearch] = React.useState('');
-  const [fullscreen, setFullscreen] =React.useState(true);
-  
+  const [fullscreen, setFullscreen] = React.useState(true);
+
   const [show, setShow] = React.useState(false);
 
   const clickInfo = (event) => {
     setFullscreen(event);
-    
+
   }
 
   const handleSubmit = (event) => {
@@ -22,7 +22,7 @@ const Hero = () => {
       .then((data) => setPokemon(data));
   };
 
- 
+
 
   return (
     <div className="hero1BG d-flex justify-content-center align-items-center text-center wh-100 vh-100" style={{
@@ -49,13 +49,13 @@ const Hero = () => {
                   onChange={(event) => setSearch(String(event.target.value).toLowerCase())}
                   data-aos="fade-right"
                   data-aos-duration="2000"
-                  />
+                />
               </Form.Group>
-              <Button className='hero1SearchButton rounded-5' type="submit" onClick={() => {clickInfo(true); setShow(true);}}
-              data-aos="fade-left"
-              data-aos-duration="2000"
+              <Button className='hero1SearchButton rounded-5' type="submit" onClick={() => { clickInfo(true); setShow(true); }}
+                data-aos="fade-left"
+                data-aos-duration="2000"
               >
-                <img className='hero1Pokeball' src="pokeball.png" alt="" 
+                <img className='hero1Pokeball' src="pokeball.png" alt=""
                 />
                 Search
               </Button>
@@ -66,29 +66,34 @@ const Hero = () => {
           <Row>
             <Col>
               <Modal
-               show={show}
-               fullscreen={fullscreen}
+                show={show}
+                fullscreen={fullscreen}
                 onHide={() => setShow(false)}
-                dialogClassName="modal-90w"
                 aria-labelledby="contained-modal-title-vcenter"
-                centered>
-                <Modal.Header closeButton>
-                  <Modal.Title>{pokemon.name.charAt(0).toUpperCase() +
-                    pokemon.name.slice(1)}</Modal.Title>
+                centered
+                className='text-white'>
+                <Modal.Header closeButton className='bg-primary border-0'>
+                  <Modal.Title>
+                    <h1 className='aboutUsHeader'>
+                      {pokemon.name.charAt(0).toUpperCase() +
+                        pokemon.name.slice(1)}
+                    </h1>
+                  </Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
-  {pokemon ? (
-    <>
-      <PokemonInfo component={'span'} pokemonName={pokemon.name} />
-    </>
-  ) : (
-    <h3>Pokemon not found</h3>
-  )}
-</Modal.Body>
-                
+                <Modal.Body className='allBG p-5'>
+                  {pokemon ? (
+                    <>
+                      <PokemonInfo component={'span'} pokemonName={pokemon.name} />
+
+                    </>
+                  ) : (
+                    <h3>Pokemon not found</h3>
+                  )}
+                </Modal.Body>
+
               </Modal>
-              
-              
+
+
 
             </Col>
           </Row>
