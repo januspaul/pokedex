@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Button } from "@mui/material";
 import { Container } from "react-bootstrap";
 import PokemonCard from './card';
 import PokemonType from "./type";
@@ -111,8 +112,9 @@ const PokemonCards = () => {
               <PokemonCard component={'span'} pokemonName={pokemon.name} />
             </div>
           ))}
-
-          <button className="d-grid gap-2 col-4 mx-auto m-5 " onClick={loadMore}>Load More</button>
+          <div className="d-flex justify-content-center">
+          <Button className="bg-primary rounded-pill text-white mt-5 mb-4" style={{ width: "200px" }} onClick={loadMore}>Load More</Button>
+          </div>
         </div>
       </Container>
     </div>
