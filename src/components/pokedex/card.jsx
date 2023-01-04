@@ -30,7 +30,7 @@ function PokemonCard(props) {
           <Button className='pokedeButton text-dark p-0 bg-transparent border-0 bgCardHover bgpokedexCards' onClick={clickInfo}>
           <Card className="bg-transparent border-0 align-items-center m-0 p-0">
             <div className="">
-              <Card.Img variant="top" src={sprites} alt={props.pokemonName} />
+              <Card.Img variant="top" src={sprites} alt={props.pokemonName}/>
               <Card.Body className='text-white'>
 
                 <Card.Title className='text-center pt-3'>

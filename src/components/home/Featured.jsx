@@ -47,19 +47,13 @@ const Featured = () => {
                       <div className="row">
                         {pokemons.map((pokemon) => (
                           <div className="col-3">
-                            key={pokemon.id}
-                            <div><PokemonCard pokemonName={pokemon.name} /></div>
+                            <div>
+                            <PokemonCard pokemonName={pokemon.name} />
+                            </div>
                           </div>
                         ))}
                       </div>
                     </div>
-                    {/* {pokemons.map((pokemon) => (
-                      <Row key={pokemon.id} className=''>
-                        <Col>
-                          <PokemonCard pokemonName={pokemon.name} />
-                        </Col>
-                      </Row>
-                    ))} */}
                   </CardGroup>
                 </Carousel.Item>
               ))}
