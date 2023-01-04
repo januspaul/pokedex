@@ -179,7 +179,6 @@ body {
     background-color: #6523b6;
 }
 
-
 .carousel-control-prev,
 .carousel-control-next {
   display: none;
@@ -316,7 +315,7 @@ body {
 
 /*pokedex page start*/
 .pokedexContainer {
-    padding-top: 150px;
+    padding-top: 200px;
 }
 
 .bgCardHover{
@@ -340,10 +339,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 35px;
-    width: 75%;
-    align-items: center;
-    height: auto;
-
+    width: 100%;
 }
 /*pokedex page end*/
 

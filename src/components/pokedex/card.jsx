@@ -27,11 +27,9 @@ function PokemonCard(props) {
 
   return (
     <div className='mb-5'>
-
-      <Card className="bg-transparent border-0 align-items-center ">
-        <div className='bgCardHover'>
-          <Button className='pokedeButton text-dark p-0 bg-transparent border-0' onClick={clickInfo}>
-            <div className="bgpokedexCards">
+          <Button className='pokedeButton text-dark p-0 bg-transparent border-0 bgCardHover bgpokedexCards' onClick={clickInfo}>
+          <Card className="bg-transparent border-0 align-items-center m-0 p-0">
+            <div className="">
               <Card.Img variant="top" src={sprites} alt={props.pokemonName} />
               <Card.Body className='text-white'>
 
@@ -55,15 +53,14 @@ function PokemonCard(props) {
                 </Card.Text>
               </Card.Body>
             </div>
+            </Card>
           </Button>
-        </div>
-      </Card>
-
+          
       <Modal
         show={showInfo}
         onHide={() => setInfo(false)}
         fullscreen={fullscreen}
-        dialogClassName="modal-90w"
+        dialogClassName="modal-100w"
         aria-labelledby="contained-modal-title-vcenter"
         centered>
 

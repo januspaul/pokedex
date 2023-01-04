@@ -1,5 +1,5 @@
 import React from "react";
-import { Carousel, CardGroup, Row, Col} from "react-bootstrap";
+import { Carousel, CardGroup, Row, Col } from "react-bootstrap";
 import PokemonCard from "../pokedex/card";
 const Featured = () => {
   const [pokemons, setPokemons] = React.useState([]);
@@ -29,35 +29,35 @@ const Featured = () => {
       <div className="container">
         <div className="row">
           <div className="col-12">
-          <h3 className="text-styleFeatured aboutUsHeader">
-            <span className="lineFeatured"></span>Featured Pokemon
-          </h3>
+            <h3 className="text-styleFeatured aboutUsHeader">
+              <span className="lineFeatured"></span>Featured Pokemon
+            </h3>
           </div>
         </div>
         <div className="row">
           <div className="col-12">
-          <Carousel
-          activeIndex={currentSlide}
-          onSelect={handleSlideChange}
-          className="pb-5">
-          {[...Array(3)].map((_, index) => (
-            <Carousel.Item key={index}>
-              <CardGroup className="vw-100 py-5">
-                {pokemons.map((pokemon) => (
-                  <Row key={pokemon.id} className=''>
-                    <Col className="">
-                      <PokemonCard pokemonName={pokemon.name} />
-                    </Col>
-                  </Row>
-                ))}
-              </CardGroup>
-            </Carousel.Item>
-          ))}
-        </Carousel>
+            <Carousel
+              activeIndex={currentSlide}
+              onSelect={handleSlideChange}
+              className="pb-5">
+              {[...Array(3)].map((_, index) => (
+                <Carousel.Item key={index}>
+                  <CardGroup className="vw-100 py-5">
+                    {pokemons.map((pokemon) => (
+                      <Row key={pokemon.id} className=''>
+                        <Col className="">
+                          <PokemonCard pokemonName={pokemon.name}/>
+                        </Col>
+                      </Row>
+                    ))}
+                  </CardGroup>
+                </Carousel.Item>
+              ))}
+            </Carousel>
           </div>
         </div>
       </div>
-      
+
     </div>
   );
 };

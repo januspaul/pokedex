@@ -68,8 +68,8 @@ const PokemonCards = () => {
 
 
   return (
-    <div className="pokedexMainContainer ps-5 justify-content-center">
-      <Container fluid className="pokedexContainer">
+    <div className="ps-5">
+      <Container className="pokedexContainer">
         
         <input
           type="text"
