@@ -1,5 +1,5 @@
 import React from "react";
-import { Carousel, CardGroup, Container, Row, Col } from "react-bootstrap";
+import { Carousel, CardGroup, Row, Col} from "react-bootstrap";
 import PokemonCard from "../pokedex/card";
 const Featured = () => {
   const [pokemons, setPokemons] = React.useState([]);
