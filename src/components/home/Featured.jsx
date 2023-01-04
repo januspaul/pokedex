@@ -25,7 +25,7 @@ const Featured = () => {
   }, [currentSlide]);
 
   return (
-    <div className="">
+    <div className="featMargin">
       <div className="container">
         <div className="row">
           <div className="col-12">
@@ -42,14 +42,24 @@ const Featured = () => {
               className="pb-5">
               {[...Array(3)].map((_, index) => (
                 <Carousel.Item key={index}>
-                  <CardGroup className="vw-100 py-5">
-                    {pokemons.map((pokemon) => (
+                  <CardGroup>
+                    <div className="container">
+                      <div className="row">
+                        {pokemons.map((pokemon) => (
+                          <div className="col-3">
+                            key={pokemon.id}
+                            <div><PokemonCard pokemonName={pokemon.name} /></div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    {/* {pokemons.map((pokemon) => (
                       <Row key={pokemon.id} className=''>
-                        <Col className="">
-                          <PokemonCard pokemonName={pokemon.name}/>
+                        <Col>
+                          <PokemonCard pokemonName={pokemon.name} />
                         </Col>
                       </Row>
-                    ))}
+                    ))} */}
                   </CardGroup>
                 </Carousel.Item>
               ))}

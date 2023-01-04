@@ -30,7 +30,7 @@ const Hero = () => {
         <Row>
           <Col>
 
-            <img src="hero1gcta.png" data-aos="zoom-in-down" data-aos-duration="2000" alt="Pokemon Logo" />
+            <img src="hero1gcta.png" data-aos="zoom-in-down" data-aos-duration="2000" alt="Pokemon Logo"/>
 
           </Col>
         </Row>

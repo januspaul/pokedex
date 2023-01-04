@@ -50,8 +50,6 @@ body {
 /* Navigation bar end*/
 
 /*hero1 start*/
-
-
 .hero1SearchButton {
     font-family: 'Myfont-Flexo';
 }
@@ -173,6 +171,10 @@ body {
 
 .footerCr {
     background-color: #6523b6;
+}
+
+.featMargin{
+    margin-top: 100px;
 }
 
 .carousel-control-prev,
