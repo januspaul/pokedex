@@ -34,7 +34,7 @@ function PokemonInfo(props) {
     fetchData();
   }, [props.pokemonName]);
 
-  
+
 
   return (
     <div className=''>
@@ -96,23 +96,27 @@ function PokemonInfo(props) {
               </div>
             </div>
             <div className="row">
-              <div className="col-4">
+              <div className="col-6">
                 <div>
                   <h5 className='text-warning aboutUsHeader'> Stats: </h5>
                 </div>
-                <div>
-                  <p className='hero1SearchButton'>
-                    {Object.keys(stats).map(stat => (
-                      <div key={stat}>{stat}:
-                        
-                        <ProgressBar animated now={stats[stat]} label={stats[stat]} variant={stats[stat] < 35 ? 'danger' : (stats[stat] < 65 ? 'warning' : 'success')}/>
-                      </div>
-                    ))}</p>
-                </div>
               </div>
             </div>
+
+            {Object.keys(stats).map(stat => (
+              <div className="row">
+                <div className="col-3" key={stat}>
+                  {stat}:
+                </div>
+                <div className="col-8">
+                  <ProgressBar now={stats[stat]} label={stats[stat]} variant={stats[stat] < 35 ? 'danger' : (stats[stat] < 65 ? 'warning text-dark' : 'success')} />
+                </div>
+              </div>
+            ))}
           </div>
+
         </div>
+
         <hr />
       </div>
 
