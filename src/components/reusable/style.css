@@ -50,9 +50,7 @@ body {
 /* Navigation bar end*/
 
 /*hero1 start*/
-.hero1BG {
-    margin-top: 104px;
-}
+
 
 .hero1SearchButton {
     font-family: 'Myfont-Flexo';
@@ -177,22 +175,10 @@ body {
     text-decoration-line: none;
 }
 
-.featuredContainer {
-    margin-top: -249px;
-}
-
 .footerCr {
     background-color: #6523b6;
 }
 
-.featuredBGCards{
-    background-image: url('/public/cards.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 35px;
-    width: 250px;
-    height: auto;
-}
 
 .carousel-control-prev,
 .carousel-control-next {

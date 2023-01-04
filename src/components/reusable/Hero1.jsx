@@ -25,7 +25,7 @@ const Hero = () => {
 
 
   return (
-    <div className="hero1BG d-flex justify-content-center align-items-center text-center wh-100 vh-100">
+    <div className="d-flex justify-content-center align-items-center text-center vh-100">
       <Container className='containerHero'>
         <Row>
           <Col>
