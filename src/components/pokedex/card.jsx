@@ -35,7 +35,7 @@ function PokemonCard(props) {
               <Card.Img variant="top" src={sprites} alt={props.pokemonName} />
               <Card.Body className='text-white'>
 
-                <Card.Title className='text-center'>
+                <Card.Title className='text-center pt-3'>
 
                   {props.pokemonName.charAt(0).toUpperCase() + props.pokemonName.slice(1)}
                 </Card.Title>
@@ -48,7 +48,7 @@ function PokemonCard(props) {
                   
                   <div className='row'>
                     {types.map(type => (
-                       <div className="col" >{type}</div> 
+                       <div className="col pt-1" >{type}</div> 
                     ))}
                   </div>
 

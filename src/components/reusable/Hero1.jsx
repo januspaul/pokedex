@@ -25,11 +25,7 @@ const Hero = () => {
 
 
   return (
-    <div className="hero1BG d-flex justify-content-center align-items-center text-center wh-100 vh-100" style={{
-      backgroundImage: `url(${process.env.PUBLIC_URL + '/hero1.png'})`,
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: '100%',
-    }}>
+    <div className="hero1BG d-flex justify-content-center align-items-center text-center wh-100 vh-100">
       <Container className='containerHero'>
         <Row>
           <Col>
@@ -44,7 +40,7 @@ const Hero = () => {
               <Form.Group>
                 <Form.Control className='hero1Control rounded-5 px-4 border-primary'
                   type="text"
-                  placeholder="Search by Pokemon ID or Name..."
+                  placeholder="Search by Pokemon ID from 1 to 950 or by Name..."
                   value={search}
                   onChange={(event) => setSearch(String(event.target.value).toLowerCase())}
                   data-aos="fade-right"

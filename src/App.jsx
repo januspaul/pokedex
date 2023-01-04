@@ -8,7 +8,7 @@ function App({ children }) {
  
 
   return (
-    <div>
+    <div className="allBG">
       <Navigation />
       
       {children}

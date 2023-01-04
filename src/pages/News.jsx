@@ -39,7 +39,7 @@ const News = () => {
     };
 
     return (
-        <div className="bg-primary">
+        <div className="">
             <div className="row newsHeader-bg mb-3 text-white">
                 <div className="col-lg-6 mt-5 mb-5">
                     <span className="ms-5 badge text-bg-warning">Media</span>
@@ -56,7 +56,7 @@ const News = () => {
                 </div>
             </div>
             <div className="d-flex justify-content-center text-white">
-                <p className="bg-primary ps-5 pe-5 pb-2 pt-2 fw-bold radius-bottom" style={{ position: "absolute", }}>LATEST NEWS</p>
+                <h2 className="ps-5 pe-5 pb-2 pt-2 fw-bold">LATEST NEWS</h2>
             </div>
             <div className="latestNews-bg">
                 {currentItems.map((article) => (

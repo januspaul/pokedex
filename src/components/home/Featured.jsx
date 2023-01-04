@@ -25,11 +25,10 @@ const Featured = () => {
   }, [currentSlide]);
 
   return (
-    <div
-      style={{ backgroundColor: "#6423B5" }}
-      className="featuredContainer p-5"
-    >
+    <div className="featuredContainer p-5">
+      
       <Container fluid>
+      <hr className="text-light"/>
         <div>
           <h3 className="text-styleFeatured aboutUsHeader">
             <span className="lineFeatured"></span>Featured Pokemon
@@ -45,8 +44,8 @@ const Featured = () => {
             <Carousel.Item key={index}>
               <CardGroup className="vw-100">
                 {pokemons.map((pokemon) => (
-                  <Row key={pokemon.id}>
-                    <Col>
+                  <Row key={pokemon.id} className='align-items-center'>
+                    <Col className="py-5 px-2">
                       <PokemonCard pokemonName={pokemon.name} />
                     </Col>
                   </Row>
@@ -55,7 +54,9 @@ const Featured = () => {
             </Carousel.Item>
           ))}
         </Carousel>
+        <hr className="text-light"/>
       </Container>
+      
     </div>
   );
 };

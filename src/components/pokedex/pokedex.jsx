@@ -68,7 +68,7 @@ const PokemonCards = () => {
 
 
   return (
-    <div className="pokedexMainContainer bg-dark ps-5 justify-content-center">
+    <div className="pokedexMainContainer ps-5 justify-content-center">
       <Container fluid className="pokedexContainer">
         
         <input

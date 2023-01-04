@@ -11,13 +11,7 @@ const Hero2 = () => {
     }, []);
 
     return (
-        <div className="vw-100" style={{
-            backgroundImage: `url(${process.env.PUBLIC_URL + '/hero2.png'})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            backgroundAttachment: 'fixed',
-            backgroundPositionX: 'center'
-          }}>
+        <div className="">
             {pokemons.length > 0 && (
                 <div className="row text-white d-flex align-items-center justify-content-center p-2">
                     <div className="col-md-6 bg-light shadow rounded-circle hero2img text-center">
