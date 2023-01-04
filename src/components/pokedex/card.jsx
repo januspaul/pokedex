@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Button, Modal, Container } from "react-bootstrap";
+import { Card, Button, Modal} from "react-bootstrap";
 import PokemonInfo from '../home/pokemonInfo';
 
 function PokemonCard(props) {
@@ -60,20 +60,23 @@ function PokemonCard(props) {
         show={showInfo}
         onHide={() => setInfo(false)}
         fullscreen={fullscreen}
-        dialogClassName="modal-100w"
         aria-labelledby="contained-modal-title-vcenter"
-        centered>
+        centered className='text-white'>
 
-        <Modal.Header closeButton>
-          <Modal.Title>{props.pokemonName.charAt(0).toUpperCase() + props.pokemonName.slice(1)}</Modal.Title>
+        <Modal.Header closeButton className='bg-primary border-0'>
+          <Modal.Title>
+            <h1 className='aboutUsHeader'>
+            {props.pokemonName.charAt(0).toUpperCase() + props.pokemonName.slice(1)}
+            </h1>
+            </Modal.Title>
         </Modal.Header>
 
 
-        <Modal.Body>
+        <Modal.Body className='allBG p-5'>
 
-          <Container>
+         
             <PokemonInfo component={'span'} pokemonName={props.pokemonName} />
-          </Container>
+         
 
         </Modal.Body>
       </Modal>
