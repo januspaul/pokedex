@@ -43,7 +43,7 @@ const Featured = () => {
               {[...Array(3)].map((_, index) => (
                 <Carousel.Item key={index}>
                   <CardGroup>
-                    <div className="container">
+                    <div className="container pt-5 px-5">
                       <div className="row">
                         {pokemons.map((pokemon) => (
                           <div className="col-3">
