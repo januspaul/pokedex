@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Button } from "@mui/material";
 import { Container } from "react-bootstrap";
 import PokemonCard from './card';
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const SORT_OPTIONS = {
   NUMBER_DESC: 'NUMBER_DESC',
@@ -16,8 +16,6 @@ const PokemonCards = () => {
   const [sortOption, setSortOption] = useState(SORT_OPTIONS.NUMBER_ASC);
   const [limit, setLimit] = useState(12);
   const [searchTerm, setSearchTerm] = useState('');
-  const [type, setType] = useState('');
-  const [types, setTypes] = useState([]);
 
   useEffect(() => {
     async function getData() {
@@ -30,15 +28,6 @@ const PokemonCards = () => {
     getData();
   }, [limit]);
 
-  useEffect(() => {
-    async function getTypes() {
-      const response = await axios.get(
-        'https://pokeapi.co/api/v2/type'
-      );
-      setTypes(response.data.results);
-    }
-    getTypes();
-  }, []);
 
   const loadMore = () => {
     setLimit(limit + 12)
@@ -65,8 +54,8 @@ const PokemonCards = () => {
 
   const filteredPokemon = sortedPokemon
     .filter(pokemon => pokemon.name.toLowerCase().includes(searchTerm.toLowerCase()))
-   
 
+    
 
   return (
     <div className="ps-5">
@@ -92,16 +81,7 @@ const PokemonCards = () => {
 
 
 
-        <label htmlFor="type-select" className="text-white px-5">Type:</label>
-        <select id="type-select" value={type} onChange={event => setType(event.target.value)}>
-          <option hidden>Choose type</option>
-          <option value="Showall">Show all</option>
-          {types.map(t => (
-            <option key={t.name} value={t.name}>
-              {t.name}
-            </option>
-          ))}
-        </select>
+       
 
 
         <div className="py-5">
@@ -113,17 +93,21 @@ const PokemonCards = () => {
             <option value={SORT_OPTIONS.NAME_DESC}>Name DESC</option>
           </select>
         </div>
-
-        <div className="row d-flex justify-content-center ps-5">
-          {filteredPokemon.map((pokemon) => (
-            <div className="col-3" key={pokemon.id}>
-              <PokemonCard component={'span'} pokemonName={pokemon.name} />
-            </div>
-          ))}
-          <div className="d-flex justify-content-center">
-            <Button className="bg-primary rounded-pill text-white mt-5 mb-4" style={{ width: "200px" }} onClick={loadMore}>Load More</Button>
+        <InfiniteScroll
+          dataLength={pokemons.length}
+          next={loadMore}
+          hasMore={true}
+          loader={<h1 className="text-white">Loading....</h1>}
+        >
+          <div className="row d-flex justify-content-center ps-5">
+            {filteredPokemon.map((pokemon) => (
+              <div className="col-3" key={pokemon.id}>
+                <PokemonCard component={'span'} pokemonName={pokemon.name} />
+              </div>
+            ))}
           </div>
-        </div>
+        </InfiniteScroll>
+
       </Container>
     </div>
   );
