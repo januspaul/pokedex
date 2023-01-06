@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import PokemonFlavorText from './pokemonDescription';
 import { ProgressBar } from 'react-bootstrap';
 
@@ -14,7 +14,7 @@ function PokemonInfo(props) {
   const [abilities, setAbilities] = useState([]);
 
 
-  useEffect(() => {
+ 
     async function fetchData() {
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${props.pokemonName}`);
       const data = await response.json();
@@ -32,7 +32,7 @@ function PokemonInfo(props) {
       setAbilities(data.abilities);
     }
     fetchData();
-  }, [props.pokemonName]);
+   
 
 
 

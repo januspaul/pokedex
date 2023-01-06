@@ -65,7 +65,8 @@ const PokemonCards = () => {
 
   const filteredPokemon = sortedPokemon
     .filter(pokemon => pokemon.name.toLowerCase().includes(searchTerm.toLowerCase()))
-    .filter(pokemon => type === 'Showall' || (pokemon.types?.some(t => t.type.name === type)));
+   
+
 
   return (
     <div className="ps-5">
@@ -95,11 +96,12 @@ const PokemonCards = () => {
         <select id="type-select" value={type} onChange={event => setType(event.target.value)}>
           <option hidden>Choose type</option>
           <option value="Showall">Show all</option>
-          {types.map(val => <option key={val.name} className="capitalize" value={val.name}>{val.name}</option>)}
+          {types.map(t => (
+            <option key={t.name} value={t.name}>
+              {t.name}
+            </option>
+          ))}
         </select>
-
-
-
 
 
         <div className="py-5">
@@ -114,7 +116,7 @@ const PokemonCards = () => {
 
         <div className="row d-flex justify-content-center ps-5">
           {filteredPokemon.map((pokemon) => (
-            <div className="col-3" key={pokemon.name}>
+            <div className="col-3" key={pokemon.id}>
               <PokemonCard component={'span'} pokemonName={pokemon.name} />
             </div>
           ))}
