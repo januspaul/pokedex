@@ -3,6 +3,7 @@ import axios from "axios";
 import { Container } from "react-bootstrap";
 import PokemonCard from './card';
 import InfiniteScroll from "react-infinite-scroll-component";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 const SORT_OPTIONS = {
   NUMBER_DESC: 'NUMBER_DESC',
@@ -30,7 +31,7 @@ const PokemonCards = () => {
 
 
   const loadMore = () => {
-    setLimit(limit + 12)
+    setLimit(limit + 4)
   }
 
   const handleSortChange = event => {
@@ -55,7 +56,7 @@ const PokemonCards = () => {
   const filteredPokemon = sortedPokemon
     .filter(pokemon => pokemon.name.toLowerCase().includes(searchTerm.toLowerCase()))
 
-    
+
 
   return (
     <div className="ps-5">
@@ -67,25 +68,8 @@ const PokemonCards = () => {
           onChange={event => setSearchTerm(event.target.value)}
         />
 
-        <label htmlFor="region-select" className="text-white px-5">Region:</label>
-        <select id="region-select">
-          <option value="kanto">Kanto</option>
-          <option value="johto">Johto</option>
-          <option value="hoenn">Hoenn</option>
-          <option value="sinnoh">Sinnoh</option>
-          <option value="unova">Unova</option>
-          <option value="kalos">Kalos</option>
-          <option value="alola">Alola</option>
-          <option value="galar">Galar</option>
-        </select>
-
-
-
-       
-
-
         <div className="py-5">
-          <label htmlFor="sort-select" className="text-white px-5">Sort by:</label>
+          <label htmlFor="sort-select" className="text-white">Sort by:</label>
           <select id="sort-select" onChange={handleSortChange}>
             <option value={SORT_OPTIONS.NUMBER_ASC}>ID ASC</option>
             <option value={SORT_OPTIONS.NUMBER_DESC}>ID DESC</option>
@@ -97,20 +81,24 @@ const PokemonCards = () => {
           dataLength={pokemons.length}
           next={loadMore}
           hasMore={true}
-          loader={<h1 className="text-white">Loading....</h1>}
+          loader={
+            <h1 className="mx-auto text-center text-white">Loading...</h1>
+          }
         >
-          <div className="row d-flex justify-content-center ps-5">
-            {filteredPokemon.map((pokemon) => (
-              <div className="col-3" key={pokemon.id}>
-                <PokemonCard component={'span'} pokemonName={pokemon.name} />
-              </div>
-            ))}
-          </div>
+          <TransitionGroup>
+            <div className="row d-flex justify-content-center ps-5" style={{ display: 'flex', flexDirection: 'row' }}>
+              {filteredPokemon.map((pokemon) => (
+                <CSSTransition key={pokemon.id} timeout={200} classNames="fade">
+                  <div className="col-3">
+                    <PokemonCard  component={'span'} pokemonName={pokemon.name} />
+                  </div>
+                </CSSTransition>
+              ))}
+            </div>
+          </TransitionGroup>
         </InfiniteScroll>
-
       </Container>
     </div>
   );
 };
-
 export default PokemonCards;
