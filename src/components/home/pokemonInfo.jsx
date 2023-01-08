@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import PokemonFlavorText from './pokemonDescription';
+
 import { ProgressBar } from 'react-bootstrap';
 
 
@@ -51,7 +51,7 @@ function PokemonInfo(props) {
           </div>
           <div className="col-6">
             <div className="row hero1SearchButton">
-              <PokemonFlavorText textPokemon={pokemonName} />
+              
             </div>
             <div className="row pt-3">
               <div className="col-4">

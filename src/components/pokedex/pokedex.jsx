@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container } from "react-bootstrap";
 import PokemonCard from './card';
 
+
 function PokemonCards() {
   const [results, setResults] = useState([]);
   const [pokemon, setPokemon] = useState([]);
@@ -36,10 +37,16 @@ function PokemonCards() {
     }
     fetchUrls();
     if (!typeFilter) {
-      setTypeFilter('normal');
+      setTypeFilter('');
     }
-    
+
   }, [results, typeFilter]);
+
+  const filteredPokemon = pokemon.filter(p => {
+    if (!typeFilter) return true;
+    const hasType = p.types.some(t => t.type.name === typeFilter);
+    return hasType;
+  });
 
 
 
@@ -70,8 +77,7 @@ function PokemonCards() {
           <option value="water">Water</option>
         </select>
         <div className="row">
-          {pokemon
-            .filter(p => !typeFilter || p.types[0].type.name === typeFilter)
+          {filteredPokemon
             .sort((a, b) => a.id - b.id)
             .map(p => (
               <div className="col-3">
