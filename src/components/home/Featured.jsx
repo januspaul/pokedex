@@ -26,7 +26,9 @@ const Featured = () => {
 
   return (
     <div className="featMargin">
+      
       <div className="container">
+      <hr className="text-white"/>
         <div className="row">
           <div className="col-12">
             <h3 className="text-styleFeatured aboutUsHeader">
@@ -60,6 +62,7 @@ const Featured = () => {
             </Carousel>
           </div>
         </div>
+        <hr className="text-white"/>
       </div>
 
     </div>

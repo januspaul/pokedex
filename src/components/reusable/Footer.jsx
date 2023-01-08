@@ -4,7 +4,7 @@ import './style.css';
 function Footer() {
     return (
         <div>
-            <div className='bg-danger'>
+            <div className='bg-danger py-5'>
                 <div className="row p-3">
                     <div className="col-lg-4">
                         <div className='align-items-center justify-content-center d-flex'>

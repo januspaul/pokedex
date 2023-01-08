@@ -11,39 +11,43 @@ const Hero2 = () => {
     }, []);
 
     return (
-        <div className="">
+        
+        <div className="py-5">
+            <div className="container">
+               <div className="row">
+                <div className="col-12">
             {pokemons.length > 0 && (
                 <div className="row text-white d-flex align-items-center justify-content-center p-2">
-                    <div className="col-md-6 bg-light shadow rounded-circle hero2img text-center">
+                    <div className="col-md-6 bg-primary rounded-circle hero2img text-center">
                         <img className='img-fluid d-block w-100' src={pokemons[0].sprites.other['official-artwork'].front_default} alt={pokemons[0].name} />
                     </div>
                     <div className="col-md-6 align-middle">
-                        <h1 className='text-center fst-italic text-uppercase fw-bolder mt-5'>{pokemons[0].name}</h1>
+                        <h1 className='text-center text-warning fst-italic text-uppercase fw-bolder mt-5'>{pokemons[0].name}</h1>
                         <div className='display-6'>
                             <table className='table table-borderless text-white'>
                                 <tbody>
                                     <tr>
                                         <th scope="row"></th>
-                                        <td>Height: </td>
-                                        <td>{pokemons[0].height} m</td>
+                                        <td className='text-warning fs-2'>Height: </td>
+                                        <td className='fs-2'>{pokemons[0].height} m</td>
                                     </tr>
                                     <tr>
                                         <th scope="row"></th>
-                                        <td>Weight: </td>
-                                        <td>{pokemons[0].weight} kg</td>
+                                        <td className='text-warning fs-2'>Weight: </td>
+                                        <td className='fs-2'>{pokemons[0].weight} kg</td>
                                     </tr>
                                     <tr>
                                         <th scope="row"></th>
-                                        <td>Type: </td>
-                                        <td className='text-capitalize'><ul>{pokemons[0].types.map((type) => (
+                                        <td className='text-warning fs-2'>Type: </td>
+                                        <td className='text-capitalize fs-2'><ul>{pokemons[0].types.map((type) => (
                                             <li ke={type.type.name}>{type.type.name}</li>
                                         ))}
                                         </ul></td>
                                     </tr>
                                     <tr>
                                         <th scope="row"></th>
-                                        <td>Abilities: </td>
-                                        <td className='text-capitalize'><ul>{pokemons[0].abilities.map((ability) => (
+                                        <td className='text-warning fs-2'>Abilities: </td>
+                                        <td className='text-capitalize fs-2'><ul>{pokemons[0].abilities.map((ability) => (
                                             <li key={ability.ability.name}>{ability.ability.name}</li>
                                         ))}</ul></td>
                                     </tr>
@@ -53,6 +57,9 @@ const Hero2 = () => {
                     </div>
                 </div>
             )}
+            </div>
+            </div>
+        </div>
         </div>
     )
 }
