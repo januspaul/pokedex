@@ -13,7 +13,7 @@ const Featured = () => {
   React.useEffect(() => {
     const loadPokemons = () => {
       for (let i = 0; i <= 3; i++) {
-        const randomId = Math.floor(Math.random() * 807) + 1;
+        const randomId = Math.floor(Math.random() * 950) + 1;
         fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`)
           .then((response) => response.json())
           .then((data) =>

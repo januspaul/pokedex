@@ -4,7 +4,7 @@ const Hero2 = () => {
     const [pokemons, setPokemons] = React.useState([]);
 
     React.useEffect(() => {
-        const randomId = Math.floor(Math.random() * 807) + 1;
+        const randomId = Math.floor(Math.random() * 950) + 1;
         fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`)
             .then((response) => response.json())
             .then((data) => setPokemons((prevPokemons) => [...prevPokemons, data]));

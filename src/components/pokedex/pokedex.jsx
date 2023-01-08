@@ -9,7 +9,7 @@ function PokemonCards() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=400&offset=0');
+      const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=950&offset=0');
       const data = await response.json();
       setResults(data.results);
     }
@@ -49,7 +49,8 @@ function PokemonCards() {
           <option value="fire">Fire</option>
           <option value="water">Water</option>
           <option value="electric">Electric</option>
-          <option value="dark">Dark</option>
+          <option value="ground">Ground</option>
+          <option value="rock">Rock</option>
         </select>
         <div className="row">
           {pokemon
