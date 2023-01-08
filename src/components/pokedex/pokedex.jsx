@@ -17,25 +17,25 @@ function PokemonCards() {
   }, []);
 
   useEffect(() => {
-  async function fetchUrls() {
-    const filteredResults = results.filter(async result => {
-      if (!typeFilter) return true;
-      const response = await fetch(result.url);
-      const data = await response.json();
-      return data.types[0].type.name === typeFilter;
-    });
+    async function fetchUrls() {
+      const filteredResults = results.filter(async result => {
+        if (!typeFilter) return true;
+        const response = await fetch(result.url);
+        const data = await response.json();
+        return data.types[0].type.name === typeFilter;
+      });
 
-    const filteredPokemon = [];
-    for (const result of filteredResults) {
-      const response = await fetch(result.url);
-      const data = await response.json();
-      filteredPokemon.push(data);
+      const filteredPokemon = [];
+      for (const result of filteredResults) {
+        const response = await fetch(result.url);
+        const data = await response.json();
+        filteredPokemon.push(data);
+      }
+
+      setPokemon(filteredPokemon);
     }
-
-    setPokemon(filteredPokemon);
-  }
-  fetchUrls();
-}, [results, typeFilter]);
+    fetchUrls();
+  }, [results, typeFilter]);
 
 
 
@@ -51,16 +51,18 @@ function PokemonCards() {
           <option value="electric">Electric</option>
           <option value="dark">Dark</option>
         </select>
-        {pokemon
-          .filter(p => !typeFilter || p.types[0].type.name === typeFilter)
-          .sort((a, b) => a.id - b.id)
-          .map(p => (
-            <div key={p.id}>
-              <p className='text-white'>ID: {p.id}</p>
-              <PokemonCard component={'span'} pokemonName={p.name} />
-              <p className='text-white'>Type: {p.types[0].type.name}</p>
-            </div>
-          ))}
+        <div className="row">
+          {pokemon
+            .filter(p => !typeFilter || p.types[0].type.name === typeFilter)
+            .sort((a, b) => a.id - b.id)
+            .map(p => (
+              <div className="col-3">
+                <div key={p.id}>
+                  <PokemonCard component={'span'} pokemonName={p.name} />
+                </div>
+              </div>
+            ))}
+        </div>
       </Container>
     </div>
   );
