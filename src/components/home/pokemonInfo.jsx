@@ -1,5 +1,5 @@
-import React, { useState} from 'react';
-
+import React, { useState } from 'react';
+import { fetch } from 'whatwg-fetch';
 import { ProgressBar } from 'react-bootstrap';
 
 
@@ -7,32 +7,40 @@ function PokemonInfo(props) {
   const [types, setTypes] = useState([]);
   const [id, setID] = useState();
   const [sprites, setSprites] = useState();
-  const [pokemonName, setPokemonName] = useState();
   const [pokemonHeight, setPokemonHeight] = useState();
   const [pokemonWeight, setPokemonWeight] = useState();
   const [stats, setStats] = useState({});
   const [abilities, setAbilities] = useState([]);
+  const [flavorText, setFlavorText] = useState('');
 
 
- 
-    async function fetchData() {
-      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${props.pokemonName}`);
-      const data = await response.json();
-      const statsData = data.stats.reduce((obj, stat) => {
-        obj[stat.stat.name] = stat.base_stat;
-        return obj;
-      }, {});
-      setStats(statsData);
-      setTypes(data.types);
-      setID(data.id);
-      setPokemonName(data.name);
-      setPokemonHeight(data.height);
-      setPokemonWeight(data.weight);
-      setSprites(data.sprites.other['official-artwork'].front_default);
-      setAbilities(data.abilities);
-    }
-    fetchData();
-   
+
+  async function fetchData() {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${props.pokemonName}`);
+    const data = await response.json();
+    const statsData = data.stats.reduce((obj, stat) => {
+      obj[stat.stat.name] = stat.base_stat;
+      return obj;
+    }, {});
+    setStats(statsData);
+    setTypes(data.types);
+    setID(data.id);
+    setPokemonHeight(data.height);
+    setPokemonWeight(data.weight);
+    setSprites(data.sprites.other['official-artwork'].front_default);
+    setAbilities(data.abilities);
+    await fetchFlavorText();
+  }
+  fetchData();
+
+  async function fetchFlavorText() {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${props.pokemonName}`);
+    const data = await response.json();
+    const flavorTextEntries = data.flavor_text_entries;
+    const englishFlavorText = flavorTextEntries.find(entry => entry.language.name === 'en');
+    const flavorText = englishFlavorText.flavor_text;
+    setFlavorText(flavorText);
+  }
 
 
 
@@ -51,7 +59,12 @@ function PokemonInfo(props) {
           </div>
           <div className="col-6">
             <div className="row hero1SearchButton">
-              
+
+            </div>
+            <div className="row">
+              <div className="col-12">
+                <p className="text-center">{flavorText}</p>
+              </div>
             </div>
             <div className="row pt-3">
               <div className="col-4">
@@ -102,6 +115,7 @@ function PokemonInfo(props) {
                 </div>
               </div>
             </div>
+            
 
             {Object.keys(stats).map(stat => (
               <div className="row">

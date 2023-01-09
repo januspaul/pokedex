@@ -24,7 +24,8 @@
     "react-spinner-material": "^1.4.0",
     "react-spinners": "^0.13.7",
     "react-transition-group": "^4.4.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "whatwg-fetch": "^3.6.2"
   },
   "scripts": {
     "start": "react-scripts start",
