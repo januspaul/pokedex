@@ -3,14 +3,19 @@ import { Container } from "react-bootstrap";
 import PokemonCard from './card';
 
 
+
+
 function PokemonCards() {
   const [results, setResults] = useState([]);
   const [pokemon, setPokemon] = useState([]);
   const [typeFilter, setTypeFilter] = useState('');
+  const [sortBy, setSortBy] = useState('id'); 
+  const [sortOrder, setSortOrder] = useState('asc'); 
+  const [searchQuery,setSearchQuery] = useState('');
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=950&offset=0');
+      const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=12&offset=0');
       const data = await response.json();
       setResults(data.results);
     }
@@ -43,16 +48,17 @@ function PokemonCards() {
   }, [results, typeFilter]);
 
   const filteredPokemon = pokemon.filter(p => {
-    if (!typeFilter) return true;
-    const hasType = p.types.some(t => t.type.name === typeFilter);
-    return hasType;
+    if (typeFilter && !p.types.some(t => t.type.name === typeFilter)) return false;
+    if (searchQuery && !p.name.toLowerCase().includes(searchQuery.toLowerCase())) return false;
+    return true;
   });
-
+  
 
 
   return (
     <div>
       <Container className="pokedexContainer">
+        <input type="text" value={searchQuery} onChange={e=>setSearchQuery(e.target.value)} />
         <label htmlFor="type-filter">Filter by type:</label>
         <select id="type-filter" value={typeFilter} onChange={e => setTypeFilter(e.target.value)}>
           <option value="">All</option>
@@ -76,9 +82,27 @@ function PokemonCards() {
           <option value="steel">Steel</option>
           <option value="water">Water</option>
         </select>
+        <label htmlFor="sort-by">Sort by:</label>
+        <select id="sort-by" value={sortBy} onChange={e => setSortBy(e.target.value)}>
+          <option value="id">ID</option>
+          <option value="name">Name</option>
+        </select>
+        <label htmlFor="sort-order">Sort order:</label>
+        <select id="sort-order" value={sortOrder} onChange={e => setSortOrder(e.target.value)}>
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+        </select>
         <div className="row">
           {filteredPokemon
-            .sort((a, b) => a.id - b.id)
+            .sort((a, b) => {
+              if (sortBy === 'id') {
+                return sortOrder === 'asc' ? a.id - b.id : b.id - a.id;
+              } else {
+                return sortOrder === 'asc' 
+                  ? a.name.localeCompare(b.name) 
+                  : b.name.localeCompare(a.name);
+              }
+            })
             .map(p => (
               <div className="col-3">
                 <div key={p.id}>
