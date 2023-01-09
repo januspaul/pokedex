@@ -46,10 +46,6 @@ const News = () => {
                     <span className="ms-3">{formatter.format(today)}</span>
                     <h2 className="ms-5 mt-2 fw-bold">It’s Time for a Gift Exchange on Pokémon TV</h2>
                     <p className="ms-5 mt-4">Get into the holiday spirit as you watch Ash and friends share presents in a special collection of Pokémon the Series episodes.</p>
-                    <Button className="ms-5 pe-3 bg-primary rounded-pill text-white ps-3">
-                        <img className='hero1Pokeball' src="pokeball.png" alt="" />
-                        Read More
-                    </Button>
                 </div>
                 <div className="col-lg-6">
                     <img className="img-fluid d-block w-100 pokeHoliday-border" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/watch-pokemon-tv/_tiles/stunts/winter/2022/winter-169-en.png" alt="pokemon holiday" />
