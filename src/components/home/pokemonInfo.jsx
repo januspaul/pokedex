@@ -11,7 +11,8 @@ function PokemonInfo(props) {
   const [pokemonWeight, setPokemonWeight] = useState();
   const [stats, setStats] = useState({});
   const [abilities, setAbilities] = useState([]);
-  const [flavorText, setFlavorText] = useState('');
+  const [flavorText, setFlavorText] = useState();
+  const [moves, setMoves] = useState([]);
 
 
 
@@ -27,8 +28,9 @@ function PokemonInfo(props) {
     setID(data.id);
     setPokemonHeight(data.height);
     setPokemonWeight(data.weight);
-    setSprites(data.sprites.other['official-artwork'].front_default);
+    setSprites(data.sprites.other['home'].front_default);
     setAbilities(data.abilities);
+    setMoves(data.moves);
     await fetchFlavorText();
   }
   fetchData();
@@ -108,6 +110,12 @@ function PokemonInfo(props) {
                 </div>
               </div>
             </div>
+            <div>
+              <h5 className='text-warning aboutUsHeader'> Moves: </h5>
+              {moves.slice(0,5).map(move => (
+                <div key={move.move.name}>{move.move.name}</div>
+              ))}
+            </div>
             <div className="row">
               <div className="col-6">
                 <div>
@@ -115,7 +123,7 @@ function PokemonInfo(props) {
                 </div>
               </div>
             </div>
-            
+
 
             {Object.keys(stats).map(stat => (
               <div className="row">

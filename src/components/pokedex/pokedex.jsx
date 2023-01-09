@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container } from "react-bootstrap";
 import PokemonCard from './card';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 
 
@@ -12,15 +13,20 @@ function PokemonCards() {
   const [sortBy, setSortBy] = useState('id'); 
   const [sortOrder, setSortOrder] = useState('asc'); 
   const [searchQuery,setSearchQuery] = useState('');
+  const [limit, setLimit] = useState(12);
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=12&offset=0');
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=`+limit);
       const data = await response.json();
       setResults(data.results);
     }
     fetchData();
-  }, []);
+  }, [limit]);
+
+  const loadMore = () => {
+    setLimit(limit + 12)
+  }
 
   useEffect(() => {
     async function fetchUrls() {
@@ -92,7 +98,16 @@ function PokemonCards() {
           <option value="asc">Ascending</option>
           <option value="desc">Descending</option>
         </select>
-        <div className="row">
+        <InfiniteScroll
+          style={{ overflowX: "hidden" }}
+          dataLength={pokemon.length}
+          next={loadMore}
+          hasMore={limit<950}
+          loader={
+            <h1 className="mx-auto text-center text-white">Loading...</h1>
+          }
+        >
+          <div className="row">
           {filteredPokemon
             .sort((a, b) => {
               if (sortBy === 'id') {
@@ -111,6 +126,8 @@ function PokemonCards() {
               </div>
             ))}
         </div>
+        </InfiniteScroll>
+        
       </Container>
     </div>
   );
