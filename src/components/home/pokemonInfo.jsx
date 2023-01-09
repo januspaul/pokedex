@@ -57,13 +57,13 @@ function PokemonInfo(props) {
           <div className="col-6 text-center">
             <img src={sprites} alt={props.pokemonName} />
           </div>
-          <div className="col-6">
+          <div className="col-6 pb-3">
             <div className="row hero1SearchButton">
 
             </div>
             <div className="row">
               <div className="col-12">
-                <p className="text-center">{flavorText}</p>
+                <h2 className="aboutUsHeader">{flavorText}</h2>
               </div>
             </div>
             <div className="row pt-3">
