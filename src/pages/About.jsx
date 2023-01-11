@@ -85,36 +85,44 @@ const About = () => {
                 <div className="container d-flex align-items-center justify-content-center pb-5">
                     <div className="row">
                         <div className="col-3">
-                            <div className="">
-                                <div className="aboutPartnersCol bg-warning d-flex align-items-center justify-content-center">
-                                    <div className="aboutNintendo mx-auto">
+                            <a href="https://www.nintendo.com/" target="_blank" rel="noreferrer">
+                                <div className="bgCardHoverAbout">
+                                    <div className="aboutPartnersCol bg-warning d-flex align-items-center justify-content-center">
+                                        <div className="aboutNintendo mx-auto">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div className="col-3">
-                            <div className="">
-                                <div className="aboutPartnersCol bg-warning d-flex align-items-center justify-content-center">
-                                    <div className="aboutGamefreak mx-auto">
+                            <a href="https://www.gamefreak.co.jp/" target="_blank" rel="noreferrer">
+                                <div className="bgCardHoverAbout">
+                                    <div className="aboutPartnersCol bg-warning d-flex align-items-center justify-content-center">
+                                        <div className="aboutGamefreak mx-auto">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div className="col-3">
-                            <div className="">
-                                <div className="aboutPartnersCol bg-warning d-flex align-items-center justify-content-center">
-                                    <div className="aboutCreatures mx-auto">
+                            <a href="https://www.creatures.co.jp/" target="_blank" rel="noreferrer">
+                                <div className="bgCardHoverAbout">
+                                    <div className="aboutPartnersCol bg-warning d-flex align-items-center justify-content-center">
+                                        <div className="aboutCreatures mx-auto">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div className="col-3">
-                            <div className="">
-                                <div className="aboutPartnersCol bg-warning d-flex align-items-center justify-content-center">
-                                    <div className="aboutNiantic mx-auto">
+                            <a href="https://nianticlabs.com/" target="_blank" rel="noreferrer">
+                                <div className="bgCardHoverAbout">
+                                    <div className="aboutPartnersCol bg-warning d-flex align-items-center justify-content-center">
+                                        <div className="aboutNiantic mx-auto">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>

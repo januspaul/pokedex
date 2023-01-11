@@ -303,6 +303,14 @@ body {
     height: 20%;
 }
 
+.bgCardHoverAbout:hover{
+    transform: scale(0.95);
+}
+
+.bgCardHoverAbout{
+    transition: transform 0.8s ease-in-out;
+}
+
 /*about page end*/
 
 

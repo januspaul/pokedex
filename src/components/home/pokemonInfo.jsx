@@ -65,7 +65,7 @@ function PokemonInfo(props) {
             </div>
             <div className="row">
               <div className="col-12">
-                <h2 className="aboutUsHeader">{flavorText}</h2>
+                <h3 className="aboutUsHeader">{flavorText}</h3>
               </div>
             </div>
             <div className="row pt-3">
