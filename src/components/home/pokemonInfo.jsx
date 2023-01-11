@@ -85,7 +85,7 @@ function PokemonInfo(props) {
                   <h5 className='text-warning aboutUsHeader'> Height: </h5>
                 </div>
                 <div>
-                  <p className='hero1SearchButton'>{pokemonHeight}</p>
+                  <p className='hero1SearchButton'>{pokemonHeight} m</p>
                 </div>
               </div>
               <div className="col-4">
@@ -93,7 +93,7 @@ function PokemonInfo(props) {
                   <h5 className='text-warning aboutUsHeader'> Weight: </h5>
                 </div>
                 <div>
-                  <p className='hero1SearchButton'>{pokemonWeight}</p>
+                  <p className='hero1SearchButton'>{pokemonWeight} kg</p>
                 </div>
               </div>
             </div>
