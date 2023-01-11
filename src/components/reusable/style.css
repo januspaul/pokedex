@@ -90,6 +90,10 @@ body {
     background-size: cover;
 }
 
+.shadowtext {
+    text-shadow: 1px 1px #1f1e1e;
+}
+
 
 .newsMargin {
     padding-top: 100px;
