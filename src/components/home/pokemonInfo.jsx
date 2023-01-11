@@ -100,6 +100,17 @@ function PokemonInfo(props) {
             <div className="row">
               <div className="col-4">
                 <div>
+                  <h5 className='text-warning aboutUsHeader'> Moves: </h5>
+                </div>
+                <div>
+                  <p className='hero1SearchButton'>
+                    {moves.slice(0, 5).map(move => (
+                      <div key={move.move.name}>{move.move.name}</div>
+                    ))}</p>
+                </div>
+              </div>
+              <div className="col-4">
+                <div>
                   <h5 className='text-warning aboutUsHeader'> Abilities: </h5>
                 </div>
                 <div>
@@ -110,12 +121,6 @@ function PokemonInfo(props) {
                 </div>
               </div>
             </div>
-            <div>
-              <h5 className='text-warning aboutUsHeader'> Moves: </h5>
-              {moves.slice(0,5).map(move => (
-                <div key={move.move.name}>{move.move.name}</div>
-              ))}
-            </div>
             <div className="row">
               <div className="col-6">
                 <div>
@@ -123,8 +128,6 @@ function PokemonInfo(props) {
                 </div>
               </div>
             </div>
-
-
             {Object.keys(stats).map(stat => (
               <div className="row">
                 <div className="col-3" key={stat}>

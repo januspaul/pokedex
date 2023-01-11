@@ -40,7 +40,7 @@ const Hero = () => {
               <Form.Group>
                 <Form.Control className='hero1Control rounded-5 px-4 border-primary'
                   type="text"
-                  placeholder="Search by Pokemon ID from 1 to 950 or by Name..."
+                  placeholder="Search by Pokemon ID from 1 to 905 or by Name..."
                   value={search}
                   onChange={(event) => setSearch(String(event.target.value).toLowerCase())}
                   data-aos="fade-right"
