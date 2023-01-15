@@ -123,6 +123,16 @@ body {
     margin: auto;
     display: flex;
     justify-content: center;
+    background-image: url('/public/pokeball.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
+}
+
+.hero2extend{
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 /* Hero 2 end*/
@@ -178,7 +188,7 @@ body {
 }
 
 .featMargin{
-    margin-top: 100px;
+    margin-top: 250px;
 }
 
 .carousel-control-prev,
