@@ -109,6 +109,7 @@ const About = () => {
                                 <div className="bgCardHoverAbout">
                                     <div className="aboutPartnersCol bg-warning d-flex align-items-center justify-content-center">
                                         <div className="aboutCreatures mx-auto">
+                                            
                                         </div>
                                     </div>
                                 </div>

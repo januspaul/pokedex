@@ -48,7 +48,7 @@ const Featured = () => {
                     <div className="container pt-5 px-5">
                       <div className="row">
                         {pokemons.map((pokemon) => (
-                          <div className="col-3">
+                          <div className="col-3" data-aos="flip-left">
                             <div>
                             <PokemonCard pokemonName={pokemon.name} />
                             </div>
