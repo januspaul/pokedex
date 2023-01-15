@@ -10,14 +10,14 @@ function PokemonCards() {
   const [results, setResults] = useState([]);
   const [pokemon, setPokemon] = useState([]);
   const [typeFilter, setTypeFilter] = useState('');
-  const [sortBy, setSortBy] = useState('id'); 
-  const [sortOrder, setSortOrder] = useState('asc'); 
-  const [searchQuery,setSearchQuery] = useState('');
+  const [sortBy, setSortBy] = useState('id');
+  const [sortOrder, setSortOrder] = useState('asc');
+  const [searchQuery, setSearchQuery] = useState('');
   const [limit, setLimit] = useState(12);
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=`+limit);
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=` + limit);
       const data = await response.json();
       setResults(data.results);
     }
@@ -58,76 +58,116 @@ function PokemonCards() {
     if (searchQuery && !p.name.toLowerCase().includes(searchQuery.toLowerCase())) return false;
     return true;
   });
-  
+
 
 
   return (
     <div>
       <Container className="pokedexContainer">
-        <input type="text" value={searchQuery} onChange={e=>setSearchQuery(e.target.value)} />
-        <label htmlFor="type-filter">Filter by type:</label>
-        <select id="type-filter" value={typeFilter} onChange={e => setTypeFilter(e.target.value)}>
-          <option value="">All</option>
-          <option value="bug">Bug</option>
-          <option value="dark">Dark</option>
-          <option value="dragon">Dragon</option>
-          <option value="electric">Electric</option>
-          <option value="fairy">Fairy</option>
-          <option value="fighting">Fighting</option>
-          <option value="fire">Fire</option>
-          <option value="flying">Flying</option>
-          <option value="ghost">Ghost</option>
-          <option value="grass">Grass</option>
-          <option value="ground">Ground</option>
-          <option value="ice">Ice</option>
-          <option value="normal">Normal</option>
-          <option value="poison">Poison</option>
-          <option value="psychic">Psychic</option>
-          <option value="rock">Rock</option>
-          <option value="shadow">Shadow</option>
-          <option value="steel">Steel</option>
-          <option value="water">Water</option>
-        </select>
-        <label htmlFor="sort-by">Sort by:</label>
-        <select id="sort-by" value={sortBy} onChange={e => setSortBy(e.target.value)}>
-          <option value="id">ID</option>
-          <option value="name">Name</option>
-        </select>
-        <label htmlFor="sort-order">Sort order:</label>
-        <select id="sort-order" value={sortOrder} onChange={e => setSortOrder(e.target.value)}>
-          <option value="asc">Ascending</option>
-          <option value="desc">Descending</option>
-        </select>
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-3">
+              <div className="row align-items-center d-flex justify-content-center text-center">
+                <div className="col-12">
+                  <label htmlFor="type-filter" className='text-center text-white px-2'>Search:</label>
+                  <input type="text" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="rounded border-primary ps-2 pe-3 py-1" />
+                </div>
+                
+              </div>
+
+
+            </div>
+            <div className="col-3">
+              <div className="row align-items-center d-flex justify-content-center text-center">
+                <div className="col-12">
+                  <label htmlFor="type-filter" className='text-center text-white px-2'>Type:</label>
+                  <select id="type-filter" value={typeFilter} onChange={e => setTypeFilter(e.target.value)} className="rounded border-primary ps-2 pe-3 py-1">
+                    <option value="">All</option>
+                    <option value="bug">Bug</option>
+                    <option value="dark">Dark</option>
+                    <option value="dragon">Dragon</option>
+                    <option value="electric">Electric</option>
+                    <option value="fairy">Fairy</option>
+                    <option value="fighting">Fighting</option>
+                    <option value="fire">Fire</option>
+                    <option value="flying">Flying</option>
+                    <option value="ghost">Ghost</option>
+                    <option value="grass">Grass</option>
+                    <option value="ground">Ground</option>
+                    <option value="ice">Ice</option>
+                    <option value="normal">Normal</option>
+                    <option value="poison">Poison</option>
+                    <option value="psychic">Psychic</option>
+                    <option value="rock">Rock</option>
+                    <option value="shadow">Shadow</option>
+                    <option value="steel">Steel</option>
+                    <option value="water">Water</option>
+                  </select>
+                </div>
+                
+              </div>
+
+            </div>
+            <div className="col-3">
+              <div className="row align-items-center d-flex justify-content-center text-center">
+                <div className="col-12">
+                  <label htmlFor="sort-by" className='text-center text-white px-2'>Sort by:</label>
+                  <select id="sort-by" value={sortBy} onChange={e => setSortBy(e.target.value)} className="rounded border-primary ps-2 pe-3 py-1">
+                    <option value="id">ID</option>
+                    <option value="name">Name</option>
+                  </select>
+                </div>
+                
+              </div>
+            </div>
+
+            <div className="col-3">
+              <div className="row align-items-center d-flex justify-content-center text-center">
+                <div className="col-12">
+                  <label htmlFor="sort-order" className='text-center text-white px-2'>Sort order:</label>
+                  <select id="sort-order" value={sortOrder} onChange={e => setSortOrder(e.target.value)} className="rounded border-primary ps-2 pe-3 py-1">
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                  </select>
+                </div>
+              </div>
+
+
+            </div>
+
+          </div>
+        </div>
+
         <InfiniteScroll
           style={{ overflowX: "hidden" }}
           dataLength={pokemon.length}
           next={loadMore}
-          hasMore={limit<950}
+          hasMore={limit < 950}
           loader={
             <h1 className="mx-auto text-center text-white">Loading...</h1>
           }
         >
           <div className="row">
-          {filteredPokemon
-            .sort((a, b) => {
-              if (sortBy === 'id') {
-                return sortOrder === 'asc' ? a.id - b.id : b.id - a.id;
-              } else {
-                return sortOrder === 'asc' 
-                  ? a.name.localeCompare(b.name) 
-                  : b.name.localeCompare(a.name);
-              }
-            })
-            .map(p => (
-              <div className="col-3">
-                <div key={p.id}>
-                  <PokemonCard component={'span'} pokemonName={p.name} />
+            {filteredPokemon
+              .sort((a, b) => {
+                if (sortBy === 'id') {
+                  return sortOrder === 'asc' ? a.id - b.id : b.id - a.id;
+                } else {
+                  return sortOrder === 'asc'
+                    ? a.name.localeCompare(b.name)
+                    : b.name.localeCompare(a.name);
+                }
+              })
+              .map(p => (
+                <div className="col-3">
+                  <div key={p.id}>
+                    <PokemonCard component={'span'} pokemonName={p.name} />
+                  </div>
                 </div>
-              </div>
-            ))}
-        </div>
+              ))}
+          </div>
         </InfiniteScroll>
-        
+
       </Container>
     </div>
   );
