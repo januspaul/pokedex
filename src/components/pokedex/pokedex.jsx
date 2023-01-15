@@ -26,7 +26,7 @@ function PokemonCards() {
   }, [limit]);
 
   const loadMore = () => {
-    setLimit(limit * 2 )
+    setLimit(limit * 2)
   }
 
   useEffect(() => {
@@ -65,89 +65,88 @@ function PokemonCards() {
   return (
     <div>
       <Container className="pokedexContainer">
+        <Accordion className='pb-3' >
+          <Accordion.Item eventKey="0">
+            <Accordion.Header >Show Advanced Option</Accordion.Header>
+            <Accordion.Body className='bg-dark'>
+              <div className="container">
+                <div className="row">
+                  <div className="col-3">
+                    <div className="row align-items-center d-flex justify-content-center text-center">
+                      <div className="col-12">
+                        <label htmlFor="type-filter" className='text-center text-white px-2'>Search:</label>
+                        <input type="text" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="rounded border-primary ps-2 pe-3 py-1" />
+                      </div>
 
-      <Accordion className='pb-5' >
-      <Accordion.Item eventKey="0">
-        <Accordion.Header >Show Advanced Option</Accordion.Header>
-        <Accordion.Body className='bg-dark'>
-        <div className="container">
-          <div className="row">
-            <div className="col-3">
-              <div className="row align-items-center d-flex justify-content-center text-center">
-                <div className="col-12">
-                  <label htmlFor="type-filter" className='text-center text-white px-2'>Search:</label>
-                  <input type="text" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="rounded border-primary ps-2 pe-3 py-1" />
+                    </div>
+
+
+                  </div>
+                  <div className="col-3">
+                    <div className="row align-items-center d-flex justify-content-center text-center">
+                      <div className="col-12">
+                        <label htmlFor="type-filter" className='text-center text-white px-2'>Type:</label>
+                        <select id="type-filter" value={typeFilter} onChange={e => setTypeFilter(e.target.value)} className="rounded border-primary ps-2 pe-3 py-1">
+                          <option value="">All</option>
+                          <option value="bug">Bug</option>
+                          <option value="dark">Dark</option>
+                          <option value="dragon">Dragon</option>
+                          <option value="electric">Electric</option>
+                          <option value="fairy">Fairy</option>
+                          <option value="fighting">Fighting</option>
+                          <option value="fire">Fire</option>
+                          <option value="flying">Flying</option>
+                          <option value="ghost">Ghost</option>
+                          <option value="grass">Grass</option>
+                          <option value="ground">Ground</option>
+                          <option value="ice">Ice</option>
+                          <option value="normal">Normal</option>
+                          <option value="poison">Poison</option>
+                          <option value="psychic">Psychic</option>
+                          <option value="rock">Rock</option>
+                          <option value="shadow">Shadow</option>
+                          <option value="steel">Steel</option>
+                          <option value="water">Water</option>
+                        </select>
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <div className="col-3">
+                    <div className="row align-items-center d-flex justify-content-center text-center">
+                      <div className="col-12">
+                        <label htmlFor="sort-by" className='text-center text-white px-2'>Sort by:</label>
+                        <select id="sort-by" value={sortBy} onChange={e => setSortBy(e.target.value)} className="rounded border-primary ps-2 pe-3 py-1">
+                          <option value="id">ID</option>
+                          <option value="name">Name</option>
+                        </select>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div className="col-3">
+                    <div className="row align-items-center d-flex justify-content-center text-center">
+                      <div className="col-12">
+                        <label htmlFor="sort-order" className='text-center text-white px-2'>Sort order:</label>
+                        <select id="sort-order" value={sortOrder} onChange={e => setSortOrder(e.target.value)} className="rounded border-primary ps-2 pe-3 py-1">
+                          <option value="asc">Ascending</option>
+                          <option value="desc">Descending</option>
+                        </select>
+                      </div>
+                    </div>
+
+
+                  </div>
+
                 </div>
-                
               </div>
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
 
 
-            </div>
-            <div className="col-3">
-              <div className="row align-items-center d-flex justify-content-center text-center">
-                <div className="col-12">
-                  <label htmlFor="type-filter" className='text-center text-white px-2'>Type:</label>
-                  <select id="type-filter" value={typeFilter} onChange={e => setTypeFilter(e.target.value)} className="rounded border-primary ps-2 pe-3 py-1">
-                    <option value="">All</option>
-                    <option value="bug">Bug</option>
-                    <option value="dark">Dark</option>
-                    <option value="dragon">Dragon</option>
-                    <option value="electric">Electric</option>
-                    <option value="fairy">Fairy</option>
-                    <option value="fighting">Fighting</option>
-                    <option value="fire">Fire</option>
-                    <option value="flying">Flying</option>
-                    <option value="ghost">Ghost</option>
-                    <option value="grass">Grass</option>
-                    <option value="ground">Ground</option>
-                    <option value="ice">Ice</option>
-                    <option value="normal">Normal</option>
-                    <option value="poison">Poison</option>
-                    <option value="psychic">Psychic</option>
-                    <option value="rock">Rock</option>
-                    <option value="shadow">Shadow</option>
-                    <option value="steel">Steel</option>
-                    <option value="water">Water</option>
-                  </select>
-                </div>
-                
-              </div>
-
-            </div>
-            <div className="col-3">
-              <div className="row align-items-center d-flex justify-content-center text-center">
-                <div className="col-12">
-                  <label htmlFor="sort-by" className='text-center text-white px-2'>Sort by:</label>
-                  <select id="sort-by" value={sortBy} onChange={e => setSortBy(e.target.value)} className="rounded border-primary ps-2 pe-3 py-1">
-                    <option value="id">ID</option>
-                    <option value="name">Name</option>
-                  </select>
-                </div>
-                
-              </div>
-            </div>
-
-            <div className="col-3">
-              <div className="row align-items-center d-flex justify-content-center text-center">
-                <div className="col-12">
-                  <label htmlFor="sort-order" className='text-center text-white px-2'>Sort order:</label>
-                  <select id="sort-order" value={sortOrder} onChange={e => setSortOrder(e.target.value)} className="rounded border-primary ps-2 pe-3 py-1">
-                    <option value="asc">Ascending</option>
-                    <option value="desc">Descending</option>
-                  </select>
-                </div>
-              </div>
-
-
-            </div>
-
-          </div>
-        </div>
-        </Accordion.Body>
-      </Accordion.Item>
-    </Accordion>
-
-        
 
         <InfiniteScroll
           style={{ overflowX: "hidden" }}
@@ -172,7 +171,7 @@ function PokemonCards() {
               .map(p => (
                 <div className="col-3">
                   <div key={p.id}>
-                    <PokemonCard component={'span'} pokemonName={p.name} />
+                    <PokemonCard component={'span'} pokemonName={p.name}/>
                   </div>
                 </div>
               ))}

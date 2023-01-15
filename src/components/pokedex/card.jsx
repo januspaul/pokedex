@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Button, Modal} from "react-bootstrap";
+import { Card, Button, Modal } from "react-bootstrap";
 import PokemonInfo from '../home/pokemonInfo';
 
 function PokemonCard(props) {
@@ -26,36 +26,41 @@ function PokemonCard(props) {
 
 
   return (
-    <div className='mb-5'>
-          <Button className='pokedeButton text-dark p-0 bg-transparent border-0 bgCardHover bgpokedexCards' onClick={clickInfo}>
-          <Card className="bg-transparent border-0 align-items-center m-0 p-0">
-            <div className="">
-              <Card.Img variant="top" src={sprites} alt={props.pokemonName}/>
-              <Card.Body className='text-white'>
+    
+      <div className="container my-4 px-4">
+        <div className="row">
+          <div className="col-12">
+            <Button className='pokedeButton text-dark p-0 bg-transparent border-0 bgCardHover bgpokedexCards' onClick={clickInfo}>
+              <Card className="bg-transparent border-0 align-items-center m-0 p-0">
+                <div className="">
+                  <Card.Img variant="top" src={sprites} alt={props.pokemonName} />
+                  <Card.Body className='text-white'>
 
-                <Card.Title className='text-center pt-3'>
+                    <Card.Title className='text-center pt-3'>
 
-                  {props.pokemonName.charAt(0).toUpperCase() + props.pokemonName.slice(1)}
-                </Card.Title>
-                <Card.Text className='text-center'>
-                  <div className="row">
-                    <div className="col">
-                      #{id}
-                    </div>
-                  </div>
-                  
-                  <div className='row'>
-                    {types.map(type => (
-                       <div className="col pt-1" >{type}</div> 
-                    ))}
-                  </div>
+                      {props.pokemonName.charAt(0).toUpperCase() + props.pokemonName.slice(1)}
+                    </Card.Title>
+                    <Card.Text className='text-center'>
+                      <div className="row">
+                        <div className="col">
+                          #{id}
+                        </div>
+                      </div>
 
-                </Card.Text>
-              </Card.Body>
-            </div>
-            </Card>
-          </Button>
-          
+                      <div className='row'>
+                        {types.map(type => (
+                          <div className="col pt-1" >{type}</div>
+                        ))}
+                      </div>
+
+                    </Card.Text>
+                  </Card.Body>
+                </div>
+              </Card>
+            </Button>
+          </div>
+        </div>
+      
       <Modal
         show={showInfo}
         onHide={() => setInfo(false)}
@@ -66,17 +71,17 @@ function PokemonCard(props) {
         <Modal.Header closeButton className='bg-primary border-0'>
           <Modal.Title>
             <h1 className='aboutUsHeader'>
-            {props.pokemonName.charAt(0).toUpperCase() + props.pokemonName.slice(1)}
+              {props.pokemonName.charAt(0).toUpperCase() + props.pokemonName.slice(1)}
             </h1>
-            </Modal.Title>
+          </Modal.Title>
         </Modal.Header>
 
 
         <Modal.Body className='allBG p-5'>
 
-         
-            <PokemonInfo component={'span'} pokemonName={props.pokemonName} />
-         
+
+          <PokemonInfo component={'span'} pokemonName={props.pokemonName} />
+
 
         </Modal.Body>
       </Modal>
