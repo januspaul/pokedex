@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container } from "react-bootstrap";
 import PokemonCard from './card';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import Accordion from 'react-bootstrap/Accordion';
 
 
 
@@ -64,7 +65,12 @@ function PokemonCards() {
   return (
     <div>
       <Container className="pokedexContainer">
-        <div className="container mb-5">
+
+      <Accordion className='pb-5' >
+      <Accordion.Item eventKey="0">
+        <Accordion.Header >Show Advanced Option</Accordion.Header>
+        <Accordion.Body className='bg-dark'>
+        <div className="container">
           <div className="row">
             <div className="col-3">
               <div className="row align-items-center d-flex justify-content-center text-center">
@@ -137,6 +143,11 @@ function PokemonCards() {
 
           </div>
         </div>
+        </Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
+
+        
 
         <InfiniteScroll
           style={{ overflowX: "hidden" }}
