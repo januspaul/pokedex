@@ -3,10 +3,11 @@ import { fetch } from 'whatwg-fetch';
 import { ProgressBar } from 'react-bootstrap';
 
 
+
 function PokemonInfo(props) {
   const [types, setTypes] = useState([]);
   const [id, setID] = useState();
-  const [sprites, setSprites] = useState();
+  
   const [pokemonHeight, setPokemonHeight] = useState();
   const [pokemonWeight, setPokemonWeight] = useState();
   const [stats, setStats] = useState({});
@@ -28,7 +29,7 @@ function PokemonInfo(props) {
     setID(data.id);
     setPokemonHeight(data.height);
     setPokemonWeight(data.weight);
-    setSprites(data.sprites.other['home'].front_default);
+    
     setAbilities(data.abilities);
     setMoves(data.moves);
     await fetchFlavorText();
@@ -57,7 +58,7 @@ function PokemonInfo(props) {
         <hr />
         <div className="row pt-3">
           <div className="col-6 text-center">
-            <img src={sprites} alt={props.pokemonName} />
+           <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`} alt={props.pokemonName} style={{ width: '250px', height: '300px'}} />
           </div>
           <div className="col-6 pb-3">
             <div className="row hero1SearchButton">

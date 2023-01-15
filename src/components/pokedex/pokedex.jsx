@@ -25,7 +25,7 @@ function PokemonCards() {
   }, [limit]);
 
   const loadMore = () => {
-    setLimit(limit + 12)
+    setLimit(limit * 2 )
   }
 
   useEffect(() => {
