@@ -18,12 +18,14 @@ const Hero = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if(search === "") {
+        setPokemon(null);
         alert("Please enter a Pokemon ID or name before searching.");
     } else {
         fetch(`https://pokeapi.co/api/v2/pokemon/${search}`)
           .then((response) => response.json())
           .then((data) => setPokemon(data));
     }
+    
 };
 
 
