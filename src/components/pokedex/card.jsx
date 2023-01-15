@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Button, Modal } from "react-bootstrap";
 import PokemonInfo from '../home/pokemonInfo';
+import classNames from 'classnames';
+
 
 function PokemonCard(props) {
   const [types, setTypes] = useState([]);
@@ -26,41 +28,63 @@ function PokemonCard(props) {
 
 
   return (
-    
-      <div className="container my-4 px-4">
-        <div className="row">
-          <div className="col-12">
-            <Button className='pokedeButton text-dark p-0 bg-transparent border-0 bgCardHover bgpokedexCards' onClick={clickInfo}>
-              <Card className="bg-transparent border-0 align-items-center m-0 p-0">
-                <div className="">
-                  <Card.Img variant="top" src={sprites} alt={props.pokemonName} />
-                  <Card.Body className='text-white'>
 
-                    <Card.Title className='text-center pt-3'>
+    <div className="container my-4 px-4">
+      <div className="row">
+        <div className="col-12">
+          <Button className='pokedeButton text-dark p-0 bg-transparent border-0 bgCardHover bgpokedexCards' onClick={clickInfo}>
+            <Card className="bg-transparent border-0 m-0 p-0">
+              <div className="">
+                <Card.Img variant="top" src={sprites} alt={props.pokemonName} />
+                <Card.Body>
 
-                      {props.pokemonName.charAt(0).toUpperCase() + props.pokemonName.slice(1)}
-                    </Card.Title>
-                    <Card.Text className='text-center'>
-                      <div className="row">
-                        <div className="col">
-                          #{id}
+                  <Card.Title className='text-center pt-3 hero1SearchButton text-warning'>
+
+                    {props.pokemonName.charAt(0).toUpperCase() + props.pokemonName.slice(1)}
+                  </Card.Title>
+                  <Card.Text className='aboutUsHeader'>
+                    <div className="row">
+                      <div className="col text-center text-white">
+                        #{id}
+                      </div>
+                    </div>
+
+                    <div className='row pt-1 align-items-center d-flex justify-content-center'>
+                      {types.map(type => (
+                        <div className={classNames('col-5 text-center pb-1 rounded-pill mx-1', {
+                          'typebg-normal': type === 'normal',
+                          'typebg-dragon': type === 'dragon',
+                          'typebg-ice': type === 'ice',
+                          'typebg-grass': type === 'grass',
+                          'typebg-bug': type === 'bug',
+                          'typebg-rock': type === 'rock',
+                          'typebg-water': type === 'water',
+                          'typebg-fighting': type === 'fighting',
+                          'typebg-ground': type === 'ground',
+                          'typebg-fire': type === 'fire',
+                          'typebg-steel': type === 'steel',
+                          'typebg-flying': type === 'flying',
+                          'typebg-psychic': type === 'psychic',
+                          'typebg-electric': type === 'electric',
+                          'typebg-dark': type === 'dark',
+                          'typebg-ghost': type === 'ghost',
+                          'typebg-fairy': type === 'fairy',
+                          'typebg-poison': type === 'poison',
+                          'typebg-shadow': type === 'shadow',
+                        })}>
+                          {type}
                         </div>
-                      </div>
+                      ))}
+                    </div>
 
-                      <div className='row'>
-                        {types.map(type => (
-                          <div className="col pt-1" >{type}</div>
-                        ))}
-                      </div>
-
-                    </Card.Text>
-                  </Card.Body>
-                </div>
-              </Card>
-            </Button>
-          </div>
+                  </Card.Text>
+                </Card.Body>
+              </div>
+            </Card>
+          </Button>
         </div>
-      
+      </div>
+
       <Modal
         show={showInfo}
         onHide={() => setInfo(false)}

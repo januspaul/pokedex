@@ -86,8 +86,6 @@ body {
 .newsHeader-bg {
     margin-top: 100px;
     padding: 60px;
-    background-image: url('/public/hero1.png');
-    background-size: cover;
 }
 
 .shadowtext {
@@ -360,6 +358,67 @@ body {
     background-repeat: no-repeat;
     border-radius: 35px;
     width: 100%;
+}
+
+.typebg-normal{
+    background-color:#bcbcbc;
+}
+.typebg-dragon{
+    background-color:#5d35b0;
+    color: white;
+}
+.typebg-ice{
+    background-color: #64fed9;
+}
+.typebg-grass{
+    background-color:#65bb69;
+}
+.typebg-bug{
+    background-color: #b2fe59;
+}
+.typebg-rock{
+    background-color:#b85000;
+}
+.typebg-water{
+    background-color: #1d88e4;
+    color: white;
+}
+.typebg-fighting{
+    background-color: #9e381a;
+}
+.typebg-ground{
+    background-color:#e5cd71;
+}
+.typebg-fire{
+    background-color: #fe9100;
+}
+.typebg-steel{
+    background-color: #9e9e9e;
+}
+.typebg-flying{
+    background-color:#b2dfdb;
+}
+.typebg-psychic{
+    background-color: #c1175a;
+    color: white;
+}
+.typebg-electric{
+    background-color:#feea3b;
+}
+.typebg-dark{
+    background-color: #424141;
+    color: white;
+}
+.typebg-ghost{
+    background-color:#4527a0;
+    color: white;
+}
+.typebg-fairy{
+    background-color:#fe7faa;
+}
+.typebg-poison{
+    background-color:#8e24aa;
+    color: white;
 }
 /*pokedex page end*/
 
