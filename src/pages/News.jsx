@@ -47,7 +47,7 @@ const News = () => {
                     <p className="text-white hero1SearchButton">There is now a pretty long tradition of Honest Game Trailers doing videos 
                         about the latest Pokemon title, with a review of the game and then a listing 
                         out of all of the Pokemon available in the title with alternate names.  So here we are again. This video is …</p>
-                    <Button variant="contained" color="primary" href="https://tagn.wordpress.com/2023/01/15/honest-game-trailers-does-pokemon-violet-and-scarlet/" target="_blank" className="readMoreButton">Read More</Button>}
+                    <Button variant="contained" color="primary" href="https://tagn.wordpress.com/2023/01/15/honest-game-trailers-does-pokemon-violet-and-scarlet/" target="_blank" className="readMoreButton">Read More</Button>
                 </div>
                 <div className="col-6">
                     <img className="img-fluid d-block w-100 imageStyle" src="https://tagn.files.wordpress.com/2022/03/pokemonscarletandviolet.jpg" alt="" />
