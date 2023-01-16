@@ -3,6 +3,8 @@ import { useState } from "react";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Typist from 'react-typist';
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyA8wNjaBEvU9IE6igfsM8c7wbWd3TKBY6A",
@@ -50,7 +52,9 @@ const Contact = () => {
                                     </div>
                                 ) : (
                                     <div className="text-center text-warning pb-5">
-                                        <h1 className="aboutUsHeader">Drop us a line</h1>
+                                        <Typist cursor={{ show: false, blink: true }}>
+                                            <h1 className="aboutUsHeader">Drop us a line</h1>
+                                        </Typist>
                                     </div>
                                 )}
                                 <Form>
