@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Button, Container, Row, Col, Modal } from 'react-bootstrap';
 import PokemonInfo from '../home/pokemonInfo';
-
+import "../reusable/style.css";
 
 const Hero = () => {
   const [pokemon, setPokemon] = React.useState(null);
@@ -53,11 +53,10 @@ const Hero = () => {
                 />
               </Form.Group>
               <Button className='hero1SearchButton rounded-5' type="submit" onClick={() => { clickInfo(true); setShow(true); }}
-                data-aos="fade-left"
-                data-aos-duration="2000"
-              >
-                <img className='hero1Pokeball' src="pokeball.png" alt=""
-                />
+        data-aos="fade-left"
+        data-aos-duration="2000"
+      >
+                <img className='hero1Pokeball' src="pokeball.png" alt=""/>
                 Search
               </Button>
             </Form>

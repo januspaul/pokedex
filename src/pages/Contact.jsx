@@ -66,7 +66,7 @@ const Contact = () => {
                                         </Typist>
                                     </div>
                                 )}
-<Form>
+                                <Form>
                                     <Form.Group className="mb-3" controlId="clickMe1">
                                         <Form.Label className="aboutUsHeader">Full name</Form.Label>
                                         <Form.Control
@@ -114,8 +114,8 @@ const Contact = () => {
                                     </Form.Group>
                                     <div>
                                         <Button className="rounded-pill" onMouseOver={handleSubmitButtonHover} onMouseOut={handleSubmitButtonHoverOut} onClick={handleSubmit}>
-                                        <img ref={submitButtonRef}  className='hero1Pokeball' src="pokeball.png" alt=""
-                />
+                                            <img ref={submitButtonRef} className='hero1Pokeball' src="pokeball.png" alt=""
+                                            />
                                             Submit
                                         </Button>
                                     </div>
