@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { fetch } from 'whatwg-fetch';
 import { ProgressBar } from 'react-bootstrap';
-
+import '../reusable/style.css';
 
 
 function PokemonInfo(props) {
@@ -15,7 +15,7 @@ function PokemonInfo(props) {
   const [flavorText, setFlavorText] = useState();
   const [moves, setMoves] = useState([]);
   const [sprites, setSprites] = useState();
-  
+
   async function fetchData() {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${props.pokemonName}`);
     const data = await response.json();
@@ -56,8 +56,8 @@ function PokemonInfo(props) {
         </div>
         <hr />
         <div className="row pt-3">
-          <div className="col-6 text-center">
-          <img src={sprites} alt={props.pokemonName} />
+          <div className="col-6 align-items-center text-center">
+            <img src={sprites} alt={props.pokemonName} />
           </div>
           <div className="col-6 pb-3">
             <div className="row hero1SearchButton">
@@ -134,7 +134,7 @@ function PokemonInfo(props) {
                   {stat}:
                 </div>
                 <div className="col-8">
-                  <ProgressBar now={stats[stat]} label={stats[stat]} variant={stats[stat] < 35 ? 'danger' : (stats[stat] < 65 ? 'warning text-dark' : 'success')} />
+                  <ProgressBar now={stats[stat]} label={stats[stat]} variant={stats[stat] < 45 ? 'danger' : (stats[stat] < 85 ? 'warning text-dark' : 'success')} />
                 </div>
               </div>
             ))}
