@@ -70,7 +70,7 @@ function PokemonCard(props) {
                           'typebg-ghost': type === 'ghost',
                           'typebg-fairy': type === 'fairy',
                           'typebg-poison': type === 'poison',
-                          'typebg-shadow': type === 'shadow',
+                          
                         })}>
                           {type}
                         </div>
