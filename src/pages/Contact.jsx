@@ -1,8 +1,11 @@
+import React, { useRef } from "react";
+import "../components/reusable/style.css";
 import { initializeApp } from "firebase/app";
 import { useState } from "react";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Typist from 'react-typist';
 
 const firebaseConfig = {
     apiKey: "AIzaSyA8wNjaBEvU9IE6igfsM8c7wbWd3TKBY6A",
@@ -21,7 +24,7 @@ const Contact = () => {
     const [email, setEmail] = useState();
     const [contactnum, setContact] = useState();
     const [feedback, setFeedback] = useState();
-    const [formSubmitted, setFormSubmitted] = useState(false); // added state variable to track if form has been submitted
+    const [formSubmitted, setFormSubmitted] = useState(false);
 
     const userCollection = collection(db, "contactform-pokemon");
 
@@ -35,7 +38,15 @@ const Contact = () => {
         });
         setFormSubmitted(true);
     }
+    const submitButtonRef = useRef(null);
 
+    const handleSubmitButtonHover = () => {
+        submitButtonRef.current.style.transform = "rotate(90deg)";
+    }
+
+    const handleSubmitButtonHoverOut = () => {
+        submitButtonRef.current.style.transform = "rotate(0deg)";
+    }
 
     return (
         <div>
@@ -50,10 +61,12 @@ const Contact = () => {
                                     </div>
                                 ) : (
                                     <div className="text-center text-warning pb-5">
-                                        <h1 className="aboutUsHeader">Drop us a line</h1>
+                                        <Typist cursor={{ show: false, blink: true }}>
+                                            <h1 className="aboutUsHeader">Drop us a line</h1>
+                                        </Typist>
                                     </div>
                                 )}
-                                <Form>
+<Form>
                                     <Form.Group className="mb-3" controlId="clickMe1">
                                         <Form.Label className="aboutUsHeader">Full name</Form.Label>
                                         <Form.Control
@@ -79,8 +92,8 @@ const Contact = () => {
                                     <Form.Group className="mb-3" controlId="clickMe3">
                                         <Form.Label className="aboutUsHeader">Contact Number</Form.Label>
                                         <Form.Control
-                                            type="number"
-                                            placeholder="09123456789"
+                                            type="text"
+                                            placeholder="+639XXXXXXXXXX"
                                             className="hero1SearchButton rounded-5"
                                             onChange={(event) => {
                                                 setContact(event.target.value)
@@ -88,22 +101,24 @@ const Contact = () => {
                                         />
                                     </Form.Group>
                                     <Form.Group className="mb-3" controlId="clickMe4">
-                                        <Form.Label className="aboutUsHeader">Message</Form.Label>
+                                        <Form.Label className="aboutUsHeader">Your Feedback</Form.Label>
                                         <Form.Control
-                                            className="hero1SearchButton"
                                             as="textarea"
-                                            rows={5}
+                                            rows="5"
+                                            placeholder="Your Feedback"
+                                            className="hero1SearchButton rounded"
                                             onChange={(event) => {
                                                 setFeedback(event.target.value)
                                             }}
-                                            placeholder="Hi! Good Day, I would like to..."
                                         />
                                     </Form.Group>
-
-                                    <Button className='rounded-5' type="submit" onClick={handleSubmit}>
-                                        <img className='hero1Pokeball' src="pokeball.png" alt="" />
-                                        Send
-                                    </Button>
+                                    <div>
+                                        <Button className="rounded-pill" onMouseOver={handleSubmitButtonHover} onMouseOut={handleSubmitButtonHoverOut} onClick={handleSubmit}>
+                                        <img ref={submitButtonRef}  className='hero1Pokeball' src="pokeball.png" alt=""
+                />
+                                            Submit
+                                        </Button>
+                                    </div>
                                 </Form>
                             </div>
                         </div>
@@ -112,7 +127,6 @@ const Contact = () => {
             </div>
         </div>
     );
-};
+}
 
 export default Contact;
-
