@@ -1,5 +1,5 @@
 import React from "react";
-import { Carousel, CardGroup} from "react-bootstrap";
+import { Carousel, CardGroup } from "react-bootstrap";
 import PokemonCard from "../pokedex/card";
 const Featured = () => {
   const [pokemons, setPokemons] = React.useState([]);
@@ -26,9 +26,9 @@ const Featured = () => {
 
   return (
     <div className="featMargin">
-      
+
       <div className="container">
-      <hr className="text-white"/>
+        <hr className="text-white" />
         <div className="row">
           <div className="col-12">
             <h3 className="text-styleFeatured aboutUsHeader">
@@ -50,7 +50,7 @@ const Featured = () => {
                         {pokemons.map((pokemon) => (
                           <div className="col-3" data-aos="flip-left">
                             <div>
-                            <PokemonCard pokemonName={pokemon.name} />
+                              <PokemonCard pokemonName={pokemon.name} />
                             </div>
                           </div>
                         ))}
@@ -62,7 +62,7 @@ const Featured = () => {
             </Carousel>
           </div>
         </div>
-        <hr className="text-white"/>
+        <hr className="text-white" />
       </div>
 
     </div>

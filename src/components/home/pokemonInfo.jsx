@@ -7,7 +7,7 @@ import { ProgressBar } from 'react-bootstrap';
 function PokemonInfo(props) {
   const [types, setTypes] = useState([]);
   const [id, setID] = useState();
-  
+
   const [pokemonHeight, setPokemonHeight] = useState();
   const [pokemonWeight, setPokemonWeight] = useState();
   const [stats, setStats] = useState({});
@@ -57,7 +57,7 @@ function PokemonInfo(props) {
         <hr />
         <div className="row pt-3">
           <div className="col-6 text-center">
-           <img src={sprites} alt={props.pokemonName} />
+            <img src={sprites} alt={props.pokemonName} />
           </div>
           <div className="col-6 pb-3">
             <div className="row hero1SearchButton">

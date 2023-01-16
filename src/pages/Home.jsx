@@ -5,8 +5,8 @@ import Hero1 from "../components/reusable/Hero1";
 const Home = () => {
     return (
 
-       <>
-            <Hero1/>
+        <>
+            <Hero1 />
             <Featured />
             <Hero2 />
         </>

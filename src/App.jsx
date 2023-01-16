@@ -5,15 +5,15 @@ import Navigation from "./components/reusable/Navigation";
 
 
 function App({ children }) {
- 
+
 
   return (
     <div className="allBG">
       <Navigation />
-      
+
       {children}
-      
-      
+
+
       <Footer />
     </div>
 

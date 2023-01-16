@@ -171,7 +171,7 @@ function PokemonCards() {
               .map(p => (
                 <div className="col-3">
                   <div key={p.id}>
-                    <PokemonCard component={'span'} pokemonName={p.name}/>
+                    <PokemonCard component={'span'} pokemonName={p.name} />
                   </div>
                 </div>
               ))}

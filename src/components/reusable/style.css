@@ -77,11 +77,11 @@ body {
 
 .hero1Pokeball {
     transition: transform 0.5s ease;
-  }
-  
-  .hero1SearchButton:hover .hero1Pokeball {
+}
+
+.hero1SearchButton:hover .hero1Pokeball {
     transform: rotate(360deg);
-  }
+}
 
 .containerHero {
     margin-top: 250px;
@@ -91,13 +91,13 @@ body {
 
 /* News start */
 
-.readMoreButton:hover{
+.readMoreButton:hover {
     color: white;
 }
 
 .newsHeader-bg {
     padding-top: 135px;
-    
+
 }
 
 .shadowtext {
@@ -131,10 +131,10 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position-x: center;
-    
+
 }
 
-.hero2extend{
+.hero2extend {
     padding-top: 100px;
     padding-bottom: 100px;
 }
@@ -191,19 +191,19 @@ body {
     background-color: #6523b6;
 }
 
-.featMargin{
+.featMargin {
     margin-top: 250px;
 }
 
 .carousel-control-prev,
 .carousel-control-next {
-  display: none;
+    display: none;
 }
 
 /*featured end*/
 
 /*about page start*/
-.allBG{
+.allBG {
     background-image: url('/public/BG.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -317,11 +317,11 @@ body {
     height: 20%;
 }
 
-.bgCardHoverAbout:hover{
+.bgCardHoverAbout:hover {
     transform: scale(0.95);
 }
 
-.bgCardHoverAbout{
+.bgCardHoverAbout {
     transition: transform 0.8s ease-in-out;
 }
 
@@ -343,23 +343,23 @@ body {
     padding-top: 180px;
 }
 
-.bgCardHover{
+.bgCardHover {
     transition: transform 0.8s ease-in-out;
-    
+
 
 }
 
 .bgCardHover:hover {
     transform: scale(1.1);
-    
+
 }
 
-.pokedeButton{
+.pokedeButton {
     border-radius: 35px;
 }
 
 
-.bgpokedexCards{
+.bgpokedexCards {
     background-image: url('/public/cards.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -367,66 +367,84 @@ body {
     width: 100%;
 }
 
-.typebg-normal{
-    background-color:#bcbcbc;
+.typebg-normal {
+    background-color: #bcbcbc;
 }
-.typebg-dragon{
-    background-color:#5d35b0;
+
+.typebg-dragon {
+    background-color: #5d35b0;
     color: white;
 }
-.typebg-ice{
+
+.typebg-ice {
     background-color: #64fed9;
 }
-.typebg-grass{
-    background-color:#65bb69;
+
+.typebg-grass {
+    background-color: #65bb69;
 }
-.typebg-bug{
+
+.typebg-bug {
     background-color: #b2fe59;
 }
-.typebg-rock{
-    background-color:#b85000;
+
+.typebg-rock {
+    background-color: #b85000;
 }
-.typebg-water{
+
+.typebg-water {
     background-color: #1d88e4;
     color: white;
 }
-.typebg-fighting{
+
+.typebg-fighting {
     background-color: #9e381a;
 }
-.typebg-ground{
-    background-color:#e5cd71;
+
+.typebg-ground {
+    background-color: #e5cd71;
 }
-.typebg-fire{
+
+.typebg-fire {
     background-color: #fe9100;
 }
-.typebg-steel{
+
+.typebg-steel {
     background-color: #9e9e9e;
 }
-.typebg-flying{
-    background-color:#b2dfdb;
+
+.typebg-flying {
+    background-color: #b2dfdb;
 }
-.typebg-psychic{
+
+.typebg-psychic {
     background-color: #c1175a;
     color: white;
 }
-.typebg-electric{
-    background-color:#feea3b;
+
+.typebg-electric {
+    background-color: #feea3b;
 }
-.typebg-dark{
+
+.typebg-dark {
     background-color: #424141;
     color: white;
 }
-.typebg-ghost{
-    background-color:#4527a0;
+
+.typebg-ghost {
+    background-color: #4527a0;
     color: white;
 }
-.typebg-fairy{
-    background-color:#fe7faa;
+
+.typebg-fairy {
+    background-color: #fe7faa;
 }
-.typebg-poison{
-    background-color:#8e24aa;
+
+.typebg-poison {
+    background-color: #8e24aa;
     color: white;
 }
+
 /*pokedex page end*/
 
 

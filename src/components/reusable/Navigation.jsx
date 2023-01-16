@@ -7,7 +7,7 @@ import './style.css';
 
 
 function Navigation() {
-    
+
     const activeLink = "bg-activelink shadow rounded-5";
     const normalLink = "";
 
@@ -30,7 +30,7 @@ function Navigation() {
                     </Nav>
                 </Navbar.Collapse>
             </Container>
-        </Navbar>   
+        </Navbar>
     )
 }
 

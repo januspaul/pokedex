@@ -22,7 +22,7 @@ const About = () => {
 
             <div className="container d-flex align-items-center justify-content-center pb-4">
                 <div className="row">
-                    <div className="col-4 " data-aos="flip-left"  data-aos-duration="1000">
+                    <div className="col-4 " data-aos="flip-left" data-aos-duration="1000">
                         <div className="aboutCard1">
                             <div>
                                 <h2 className="aboutCardTitle px-3 py-2">Passion for Pokémon</h2>

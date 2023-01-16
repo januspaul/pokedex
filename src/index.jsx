@@ -12,9 +12,9 @@ import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  
-    <BrowserRouter>
-      <App>
+
+  <BrowserRouter>
+    <App>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/Pokedex' element={<Pokedex />} />
@@ -23,8 +23,8 @@ root.render(
         <Route path='/Contact' element={<Contact />} />
         <Route path='*' element={<PageNotFound />} />
       </Routes>
-      </App>
-    </BrowserRouter>
-  
+    </App>
+  </BrowserRouter>
+
 );
 

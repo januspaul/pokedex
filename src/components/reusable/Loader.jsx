@@ -1,14 +1,14 @@
 import "./Loader.css"
 
 const Loader = () => {
-    return(
+    return (
         <>
-        <div className="loader">
-            <div className="lds-circle">
-                <div>
+            <div className="loader">
+                <div className="lds-circle">
+                    <div>
+                    </div>
                 </div>
             </div>
-        </div>
         </>
     )
 }

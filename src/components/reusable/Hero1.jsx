@@ -17,16 +17,16 @@ const Hero = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if(search === "") {
-        setPokemon(null);
-        alert("Please enter a Pokemon ID or name before searching.");
+    if (search === "") {
+      setPokemon(null);
+      alert("Please enter a Pokemon ID or name before searching.");
     } else {
-        fetch(`https://pokeapi.co/api/v2/pokemon/${search}`)
-          .then((response) => response.json())
-          .then((data) => setPokemon(data));
+      fetch(`https://pokeapi.co/api/v2/pokemon/${search}`)
+        .then((response) => response.json())
+        .then((data) => setPokemon(data));
     }
-    
-};
+
+  };
 
 
   return (
@@ -35,7 +35,7 @@ const Hero = () => {
         <Row>
           <Col>
 
-            <img src="hero1gcta.png" data-aos="zoom-in-down" data-aos-duration="2000" alt="Pokemon Logo"/>
+            <img src="hero1gcta.png" data-aos="zoom-in-down" data-aos-duration="2000" alt="Pokemon Logo" />
 
           </Col>
         </Row>
@@ -53,10 +53,10 @@ const Hero = () => {
                 />
               </Form.Group>
               <Button className='hero1SearchButton rounded-5' type="submit" onClick={() => { clickInfo(true); setShow(true); }}
-        data-aos="fade-left"
-        data-aos-duration="2000"
-      >
-                <img className='hero1Pokeball' src="pokeball.png" alt=""/>
+                data-aos="fade-left"
+                data-aos-duration="2000"
+              >
+                <img className='hero1Pokeball' src="pokeball.png" alt="" />
                 Search
               </Button>
             </Form>

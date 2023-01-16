@@ -1,16 +1,16 @@
-import React,{useState} from 'react';
-import {Button, Modal} from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Button, Modal } from 'react-bootstrap';
 import PokemonList from './typelist';
 
 const PokemonTypes = () => {
   const types = ['normal', 'fire', 'water', 'electric', 'grass', 'ice', 'fighting', 'poison', 'ground', 'flying', 'psychic', 'bug', 'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy'];
   const [show, setShow] = useState({});
-  const handleClose = (type) => setShow((prevShow) => ({...prevShow, [type]: false}));
-  const handleShow = (type) => setShow((prevShow) => ({...prevShow, [type]: true}));
-  
+  const handleClose = (type) => setShow((prevShow) => ({ ...prevShow, [type]: false }));
+  const handleShow = (type) => setShow((prevShow) => ({ ...prevShow, [type]: true }));
+
 
   return (
-    <div style={{display: 'flex', justifyContent: 'space-around'}}>
+    <div style={{ display: 'flex', justifyContent: 'space-around' }}>
       {types.map((type) => (
         <div>
           <Button key={type} onClick={() => handleShow(type)}>{type}</Button>
@@ -19,7 +19,7 @@ const PokemonTypes = () => {
               <Modal.Title >{type}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <PokemonList type= {type}></PokemonList>
+              <PokemonList type={type}></PokemonList>
             </Modal.Body>
           </Modal>
         </div>
