@@ -1,7 +1,6 @@
 import { Button } from "@mui/material";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from "react-router-dom";
 
 
 const News = () => {
@@ -17,7 +16,7 @@ const News = () => {
         const fetchArticles = async () => {
 
             const res = await axios.get(
-                `https://newsapi.org/v2/everything?q=pokemon&from=2023-01-14&to=2023-01-14&sortBy=publishedAt&apiKey=c8c98833a9574e528d5e7b56486ee3ae`
+                `https://newsapi.org/v2/everything?q=pokemon&from=2023-01-01&to=2023-01-31&sortBy=publishedAt&apiKey=c8c98833a9574e528d5e7b56486ee3ae`
             );
             setArticles(res.data.articles);
             setTotalPages(res.data.totalResults / itemsPerPage);
@@ -39,49 +38,69 @@ const News = () => {
     };
 
     return (
-        <div>
-            <div className="row newsHeader-bg mb-3 text-white">
-                <div className="col-lg-6 mt-5 mb-5">
-                    <span className="ms-5 badge text-bg-warning">Media</span>
-                    <span className="ms-3">{formatter.format(today)}</span>
-                    <h2 className="ms-5 mt-2 fw-bold shadowtext">It's Time for a Gift Exchange on Pokémon TV</h2>
-                    <p className="ms-5 mt-4 shadowtext">Get into the holiday spirit as you watch Ash and friends share presents in a special collection of Pokémon the Series episodes.</p>
+        <div className="BG">
+            <div className="row align-items-center aboutCol px-5 mx-5 mb-5">
+                
+                <div className="col-6">
+                    <span className="badge text-bg-danger">{formatter.format(today)}</span>
+                    <h1 className="text-warning aboutUsHeader">HONEST GAME TRAILERS DOES POKEMON VIOLET AND SCARLET</h1>
+                    <p className="text-white hero1SearchButton">There is now a pretty long tradition of Honest Game Trailers doing videos 
+                        about the latest Pokemon title, with a review of the game and then a listing 
+                        out of all of the Pokemon available in the title with alternate names.  So here we are again. This video is …</p>
+                    <Button variant="contained" color="primary" href="https://tagn.wordpress.com/2023/01/15/honest-game-trailers-does-pokemon-violet-and-scarlet/" target="_blank" className="readMoreButton">Read More</Button>}
                 </div>
-                <div className="col-lg-6">
-                    <img className="img-fluid d-block w-100 pokeHoliday-border" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/watch-pokemon-tv/_tiles/stunts/winter/2022/winter-169-en.png" alt="pokemon holiday" />
+                <div className="col-6">
+                    <img className="img-fluid d-block w-100 imageStyle" src="https://tagn.files.wordpress.com/2022/03/pokemonscarletandviolet.jpg" alt="" />
                 </div>
             </div>
-            <div className="d-flex justify-content-center text-white">
-                <h2 className="ps-5 pe-5 pb-2 pt-2 fw-bold">LATEST NEWS</h2>
-            </div>
-            <div className="latestNews-bg">
-                {currentItems.map((article) => (
-                    <div key={article.url} className="text-white newsMargin ms-5">
-                        <div className="row d-flex align-items-center p-3">
-                            <div className="col-6">
-                                <Link><img src={article.urlToImage} alt={article.title} className="img-fluid imageStyle d-block w-100" /></Link>
-                            </div>
-                            <div className="col-6">
-                                <span className="badge text-bg-danger">Animation</span>
-                                <span className="ms-3">{formatter.format(new Date(article.publishedAt))}</span>
-                                <h3 className="text-warning text-uppercase">{article.title}</h3>
-                                <p>{article.description}</p>
-                            </div>
-                        </div>
-                    </div>
-                ))}
-                <div className="d-flex justify-content-center">
-                    <Button style={{ width: "200px" }}
-                        className="bg-primary rounded-pill text-white mt-5 mb-4"
-                        onClick={handleLoadMoreClick}
-                        disabled={pageNumber >= totalPages}
-                    >
-                        Load More
-                    </Button>
+    
+        <div className="container">
+            <div className="row">
+                <div className="col-12">
+                    <hr className="text-white"/>
                 </div>
             </div>
         </div>
-    )
+    
+        <div className="container">
+            <div className="row">
+                <div className="col-12">
+                    <h2 className="text-white text-center pt-5 aboutUsHeader "> Latest News </h2>
+                </div>
+            </div>
+        </div>
+    
+            <div className="container p-5 d-flex justify-content-center align-items-center">
+                <div className="row">
+                    {currentItems.map((article) => (
+                        <div key={article.url} className="text-white">
+                            <div className="row align-items-center p-3">
+                                <div className="col-6">
+                                    <img src={article.urlToImage} alt={article.title} className="img-fluid imageStyle d-block w-100" />
+                                </div>
+                                <div className="col-6">
+                                    <span className="badge text-bg-danger">{formatter.format(new Date(article.publishedAt))}</span>
+                                    <h3 className="text-warning aboutUsHeader">{article.title}</h3>
+                                    <p className="text-white hero1SearchButton">{article.description}</p>
+                                    {article.url && <Button variant="contained" color="primary" href={article.url} target="_blank" className="readMoreButton">Read More</Button>}
+                                </div>
+                            </div>
+                            
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <div className="d-flex justify-content-center">
+                        <Button style={{ width: "200px" }}
+                            className="bg-primary rounded-pill text-white mt-5 mb-4"
+                            onClick={handleLoadMoreClick}
+                            disabled={pageNumber >= totalPages}
+                        >
+                            Load More
+                        </Button>
+                    </div>
+        </div>
+    );
 }
 
 export default News;

@@ -82,20 +82,19 @@ body {
 
 /* News start */
 
+.readMoreButton:hover{
+    color: white;
+}
 
 .newsHeader-bg {
-    margin-top: 100px;
-    padding: 60px;
+    padding-top: 135px;
+    
 }
 
 .shadowtext {
     text-shadow: 1px 1px #1f1e1e;
 }
 
-
-.newsMargin {
-    padding-top: 100px;
-}
 
 .pokeHoliday-border {
     border-radius: 50px;
@@ -108,9 +107,6 @@ body {
     border-color: white;
 }
 
-.imageStyle:hover {
-    opacity: 0.9;
-}
 
 /* News end */
 
