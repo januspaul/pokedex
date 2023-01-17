@@ -27,7 +27,8 @@ const News = () => {
                         out of all of the Pokemon available in the title with alternate names.  So here we are again. This video is …</p>
                     <Button variant="contained" color="primary" href="https://tagn.wordpress.com/2023/01/15/honest-game-trailers-does-pokemon-violet-and-scarlet/" target="_blank" className="readMoreButton">Read More</Button>
                 </div>
-                <div className="col-6" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                <div className="col-md-6" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                    <a href="https://tagn.wordpress.com/2023/01/15/honest-game-trailers-does-pokemon-violet-and-scarlet/" target="_blank" rel="noreferrer">
                     <img className="img-fluid d-block w-100 imageStyle" src="https://tagn.files.wordpress.com/2022/03/pokemonscarletandviolet.jpg" alt="" />
                     </a>
                 </div>
@@ -43,25 +44,29 @@ const News = () => {
 
             <div className="container">
                 <div className="row">
-                    <div className="col-12">
-                        <h2 className="text-white text-center pt-5 aboutUsHeader "> Latest News </h2>
+                    <div className="col-md-12">
+                        <h2 className="text-warning text-center pt-5 aboutUsHeader "> Latest News </h2>
                     </div>
                 </div>
             </div>
 
             <div className="container p-5 d-flex justify-content-center align-items-center">
                 <div className="row">
-                    {currentItems.map((article) => (
-                        <div key={article.url} className="text-white">
-                            <div className="row align-items-center p-3">
-                                <div className="col-6" data-aos="fade-up">
-                                    <img src={article.urlToImage} alt={article.title} className="img-fluid imageStyle d-block w-100" />
+                    {Pokenews.map(pokemonnews => {
+                        return (
+                            <div className="row pb-5 " data-aos="fade-up">
+                                <div className="col-md-6">
+                                    <a href={pokemonnews.redirectURL} target="_blank" rel="noreferrer">
+                                    <img src={pokemonnews.url} alt={pokemonnews.title} className="rounded-5 border border-5"/>
+                                    </a>
                                 </div>
-                                <div className="col-6" data-aos="fade-up">
-                                    <span className="badge text-bg-danger">{formatter.format(new Date(article.publishedAt))}</span>
-                                    <h3 className="text-warning aboutUsHeader">{article.title}</h3>
-                                    <p className="text-white hero1SearchButton">{article.description}</p>
-                                    {article.url && <Button variant="contained" color="primary" href={article.url} target="_blank" className="readMoreButton">Read More</Button>}
+                                <div className="col-md-6">
+                                    <div className="pb-3">
+                                    <Badge className="bg-danger px-2 aboutUsHeader">{pokemonnews.type}</Badge> <span className="text-warning ps-2 aboutUsHeader">{pokemonnews.date}</span>
+                                    </div>
+                                    <h2 className="pb-3 aboutUsHeader text-warning">{pokemonnews.title}</h2>
+                                    <p className="hero1SearchButton text-white">{pokemonnews.description}</p>
+                                    <Button variant="contained" color="primary" href={pokemonnews.redirectURL} target="_blank" className="readMoreButton">Read More</Button>
                                 </div>
                             </div>
                         )
