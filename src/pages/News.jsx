@@ -14,13 +14,17 @@ const News = () => {
 
 
         const fetchArticles = async () => {
+    try {
+        const res = await axios.get(
+            `https://newsapi.org/v2/everything?q=pokemon&from=2023-01-01&to=2023-01-31&sortBy=publishedAt&language=en&apiKey=c8c98833a9574e528d5e7b56486ee3ae`
+        );
+        setArticles(res.data.articles);
+        setTotalPages(res.data.totalResults / itemsPerPage);
+    } catch (error) {
+        console.error(error);
+    }
+};
 
-            const res = await axios.get(
-                `https://newsapi.org/v2/everything?q=pokemon&from=2023-01-01&to=2023-01-31&sortBy=publishedAt&apiKey=c8c98833a9574e528d5e7b56486ee3ae`
-            );
-            setArticles(res.data.articles);
-            setTotalPages(res.data.totalResults / itemsPerPage);
-        };
         fetchArticles();
     }, []);
 
