@@ -44,11 +44,11 @@ function Footer() {
                         <div>
                             <p className='aboutUsHeader text-white fw-bold'>Follow us on Social Media</p>
                             <div>
-                                <Link><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="facebook.png" alt="social media icons" /></span></Link>
-                                <Link><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="youtube.png" alt="social media icons" /></span></Link>
-                                <Link><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="instagram.png" alt="social media icons" /></span></Link>
-                                <Link><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="pinterest.png" alt="social media icons" /></span></Link>
-                                <Link><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="twitter.png" alt="social media icons" /></span></Link>
+                                <a href="https://www.facebook.com/profile.php?id=100089807640521"><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="facebook.png" alt="social media icons" /></span></a>
+                                <a href="https://www.youtube.com/channel/UCK-g2Qn524biJnCqNTuVYaw"><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="youtube.png" alt="social media icons" /></span></a>
+                                <a href="https://www.instagram.com/pokemonproject69/"><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="instagram.png" alt="social media icons" /></span></a>
+                                <a href="https://www.pinterest.ph/pokemonproject/"><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="pinterest.png" alt="social media icons" /></span></a>
+                                <a href="https://twitter.com/pokemonproject5"><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="twitter.png" alt="social media icons" /></span></a>
                             </div>
                         </div>
 
