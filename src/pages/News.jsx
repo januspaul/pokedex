@@ -16,7 +16,7 @@ const News = () => {
         const fetchArticles = async () => {
     try {
         const res = await axios.get(
-            `https://newsapi.org/v2/everything?q=pokemon&from=2023-01-01&to=2023-01-31&sortBy=publishedAt&language=en&apiKey=c8c98833a9574e528d5e7b56486ee3ae`
+            `https://newsapi.org/v2/everything?q=apple&from=2023-01-16&to=2023-01-16&sortBy=popularity&apiKey=2312917b47804a9ab80278f861fa7e0f`
         );
         setArticles(res.data.articles);
         setTotalPages(res.data.totalResults / itemsPerPage);
