@@ -1,34 +1,11 @@
 import { Button } from "@mui/material";
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+
+
+import Pokenews from '../components/reusable/news.json';
 
 
 const News = () => {
 
-    const [articles, setArticles] = useState([]);
-    const [pageNumber, setPageNumber] = useState(1);
-    const [totalPages, setTotalPages] = useState(0);
-    const itemsPerPage = 5;
-
-    useEffect(() => {
-
-
-        const fetchArticles = async () => {
-    try {
-        const res = await axios.get(
-            `https://newsapi.org/v2/everything?q=apple&from=2023-01-16&to=2023-01-16&sortBy=popularity&apiKey=2312917b47804a9ab80278f861fa7e0f`
-        );
-        setArticles(res.data.articles);
-        setTotalPages(res.data.totalResults / itemsPerPage);
-    } catch (error) {
-        console.error(error);
-    }
-};
-
-        fetchArticles();
-    }, []);
-
-    const currentItems = articles.slice(0, pageNumber * itemsPerPage);
 
     const today = new Date();
     const options = {
@@ -37,9 +14,7 @@ const News = () => {
         day: 'numeric'
     };
     const formatter = new Intl.DateTimeFormat('en-US', options);
-    const handleLoadMoreClick = () => {
-        setPageNumber(pageNumber + 1);
-    };
+    
 
     return (
         <div className="BG">
@@ -76,33 +51,22 @@ const News = () => {
 
             <div className="container p-5 d-flex justify-content-center align-items-center">
                 <div className="row">
-                    {currentItems.map((article) => (
-                        <div key={article.url} className="text-white">
-                            <div className="row align-items-center p-3">
-                                <div className="col-6" data-aos="fade-up">
-                                    <img src={article.urlToImage} alt={article.title} className="img-fluid imageStyle d-block w-100" />
-                                </div>
-                                <div className="col-6" data-aos="fade-up">
-                                    <span className="badge text-bg-danger">{formatter.format(new Date(article.publishedAt))}</span>
-                                    <h3 className="text-warning aboutUsHeader">{article.title}</h3>
-                                    <p className="text-white hero1SearchButton">{article.description}</p>
-                                    {article.url && <Button variant="contained" color="primary" href={article.url} target="_blank" className="readMoreButton">Read More</Button>}
-                                </div>
+                    {Pokenews.map(pokemonnews => {
+                        return(
+                            <div>
+                                <p>{pokemonnews.date }</p>
+                                <img src={pokemonnews.url} alt={pokemonnews.title } />
+                               <h1>{pokemonnews.title}</h1>
+                               <p>{pokemonnews.description}</p> 
                             </div>
+                            
+                        )
+                    })
 
-                        </div>
-                    ))}
+                    }
                 </div>
             </div>
-            <div className="d-flex justify-content-center">
-                <Button style={{ width: "200px" }}
-                    className="bg-primary rounded-pill text-white mt-5 mb-4"
-                    onClick={handleLoadMoreClick}
-                    disabled={pageNumber >= totalPages}
-                >
-                    Load More
-                </Button>
-            </div>
+            
         </div>
     );
 }
