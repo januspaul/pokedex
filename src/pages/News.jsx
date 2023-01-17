@@ -57,7 +57,7 @@ const News = () => {
                             <div className="row pb-5 " data-aos="fade-up">
                                 <div className="col-md-6">
                                     <a href={pokemonnews.redirectURL} target="_blank" rel="noreferrer">
-                                    <img src={pokemonnews.url} alt={pokemonnews.title} className="rounded-5 border border-5"/>
+                                    <img src={pokemonnews.url} alt={pokemonnews.title} className="img-fluid rounded-5 border border-5 mb-2"/>
                                     </a>
                                 </div>
                                 <div className="col-md-6">
