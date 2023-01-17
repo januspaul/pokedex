@@ -21,7 +21,7 @@ const PokemonList = (props) => {
   return (
     <div className="row">
       {pokemon.map((pokemon) => (
-        <div className="col-3" key={pokemon.pokemon.name}><PokemonCard component={'span'} pokemonName={pokemon.pokemon.name} /></div>
+        <div className="col-md-3" key={pokemon.pokemon.name}><PokemonCard component={'span'} pokemonName={pokemon.pokemon.name} /></div>
       ))}
     </div>
   );

@@ -15,9 +15,9 @@ function Footer() {
                         <a href="https://caru.bbbprograms.org/seal/Confirmation/1596150491" target="_blank" rel="noreferrer"><img src="privacy.png" alt="logo" className='footerLogo2' /></a>
                         </div>
                     </div>
-                    <div className="col-md-4 mt-4">
+                    <div className="col-md-md-4 mt-4">
                         <div className="row">
-                            <div className="col-6">
+                            <div className="col-md-6">
                                 <p className='aboutUsHeader text-white fw-bold'>Menu</p>
                                 <ul className='navbar-nav hero1SearchButton'>
                                     <li className="list-group-item pb-2"><Link to="/" className="footerText"><span className="footerLine"></span>Home</Link></li>
@@ -28,7 +28,7 @@ function Footer() {
                                 </ul>
                             </div>
 
-                            <div className="col-6 justify-content-center d-flex">
+                            <div className="col-md-6 justify-content-center d-flex">
                                 <div>
                                     <p className='text-white fw-bold'>Our Partners</p>
                                     <ul className='navbar-nav'>

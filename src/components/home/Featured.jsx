@@ -30,14 +30,14 @@ const Featured = () => {
       <div className="container">
         <hr className="text-white" />
         <div className="row">
-          <div className="col-12">
+          <div className="col-md-12">
             <h3 className="text-styleFeatured aboutUsHeader">
               <span className="lineFeatured"></span>Featured Pokemon
             </h3>
           </div>
         </div>
         <div className="row">
-          <div className="col-12">
+          <div className="col-md-12">
             <Carousel
               activeIndex={currentSlide}
               onSelect={handleSlideChange}
@@ -48,7 +48,7 @@ const Featured = () => {
                     <div className="container">
                       <div className="row">
                         {pokemons.map((pokemon) => (
-                          <div className="col-3">
+                          <div className="col-md-3">
                             <div>
                               <PokemonCard pokemonName={pokemon.name} />
                             </div>

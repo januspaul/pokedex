@@ -31,7 +31,7 @@ function PokemonCard(props) {
 
     <div className="container my-4 px-4">
       <div className="row">
-        <div className="col-12">
+        <div className="col-md-12">
           <Button className='pokedeButton text-dark p-0 bg-transparent border-0 bgCardHover bgpokedexCards' onClick={clickInfo}>
             <Card className="bg-transparent border-0 m-0 p-0">
               <div className="">
@@ -44,14 +44,14 @@ function PokemonCard(props) {
                   </Card.Title>
                   <Card.Text className='aboutUsHeader'>
                     <div className="row">
-                      <div className="col text-center text-white">
+                      <div className="col-md text-center text-white">
                         #{id}
                       </div>
                     </div>
 
                     <div className='row pt-1 align-items-center d-flex justify-content-center'>
                       {types.map(type => (
-                        <div className={classNames('col-5 text-center pb-1 rounded-pill mx-1', {
+                        <div className={classNames('col-md-5 text-center pb-1 rounded-pill mx-1', {
                           'typebg-normal': type === 'normal',
                           'typebg-dragon': type === 'dragon',
                           'typebg-ice': type === 'ice',
