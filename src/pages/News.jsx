@@ -16,7 +16,7 @@ const News = () => {
 
 
     return (
-        <div className="BG">
+        <div className="BG ">
             <div className="row align-items-center aboutCol px-5 mx-5 mb-5">
 
                 <div className="col-md-6" data-aos="fade-up" data-aos-duration="2000">
