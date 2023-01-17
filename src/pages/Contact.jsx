@@ -45,7 +45,7 @@ const Contact = () => {
                 <div className="BG">
                     <div className="container contactMargin">
                         <div className="row contactCol1 d-flex align-items-center justify-content-center">
-                            <div className="col-md-6 text-white">
+                            <div className="col-6 text-white">
                                 {formSubmitted ? (
                                     <div className="text-center text-success pb-5">
                                         <h1 className="aboutUsHeader">Thank you for your message!</h1>

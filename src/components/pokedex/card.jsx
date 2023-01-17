@@ -31,8 +31,8 @@ function PokemonCard(props) {
 
     <div className="container my-4 px-4">
       <div className="row">
-        <div className="col-md-12">
-          <Button className='pokedeButton text-dark p-0 bg-transparent border-0 bgCardHover bgpokedexCards' data-aos="flip-left" onClick={clickInfo}>
+        <div className="col-12">
+          <Button className='pokedeButton text-dark p-0 bg-transparent border-0 bgCardHover bgpokedexCards' onClick={clickInfo}>
             <Card className="bg-transparent border-0 m-0 p-0">
               <div className="">
                 <Card.Img variant="top" src={sprites} alt={props.pokemonName} />
@@ -44,7 +44,7 @@ function PokemonCard(props) {
                   </Card.Title>
                   <Card.Text className='aboutUsHeader'>
                     <div className="row">
-                      <div className="col-md text-center text-white">
+                      <div className="col text-center text-white">
                         #{id}
                       </div>
                     </div>

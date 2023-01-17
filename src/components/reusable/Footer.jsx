@@ -7,7 +7,7 @@ function Footer() {
         <div>
             <div className='bg-danger py-5'>
                 <div className="row p-3">
-                    <div className="col-md-4">
+                    <div className="col-lg-4">
                         <div className='align-items-center justify-content-center d-flex'>
                         <a href="/" target="_blank" rel="noreferrer"><img src="logoPokemon.png" alt="logo" className='footerLogo1' /></a>
                         </div>
@@ -17,7 +17,7 @@ function Footer() {
                     </div>
                     <div className="col-md-4 mt-4">
                         <div className="row">
-                            <div className="col-md-6">
+                            <div className="col-6">
                                 <p className='aboutUsHeader text-white fw-bold'>Menu</p>
                                 <ul className='navbar-nav hero1SearchButton'>
                                     <li className="list-group-item pb-2"><Link to="/" className="footerText"><span className="footerLine"></span>Home</Link></li>
@@ -28,7 +28,7 @@ function Footer() {
                                 </ul>
                             </div>
 
-                            <div className="col-md-6 justify-content-center d-flex">
+                            <div className="col-6 justify-content-center d-flex">
                                 <div>
                                     <p className='text-white fw-bold'>Our Partners</p>
                                     <ul className='navbar-nav'>
@@ -41,7 +41,7 @@ function Footer() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-4 justify-content-center d-flex mt-4">
+                    <div className="col-lg-4 justify-content-center d-flex mt-4">
                         <div>
                             <p className='aboutUsHeader text-white fw-bold'>Follow us on Social Media</p>
                             <div>

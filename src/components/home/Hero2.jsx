@@ -15,7 +15,7 @@ const Hero2 = () => {
         <div className="hero2extend">
             <div className="container">
                 <div className="row">
-                    <div className="col-md-12">
+                    <div className="col-12">
                         {pokemons.length > 0 && (
                             <div className="row text-white d-flex align-items-center justify-content-center p-2">
                                 <div className="col-md-6 hero2img text-center" data-aos="zoom-in" data-aos-duration="2000">
