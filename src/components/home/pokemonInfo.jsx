@@ -47,7 +47,7 @@ function PokemonInfo(props) {
 
   return (
     <div className=''>
-      <div className="container">
+      <div className="container-fluid">
         <div className="row pb-3">
           <div className="col-1 text-center">
             <h2 className='bg-danger rounded aboutUsHeader'>#{id}</h2>
@@ -55,20 +55,20 @@ function PokemonInfo(props) {
         </div>
         <hr />
         <div className="row pt-3">
-          <div className="col-6 text-center">
+          <div className="col-md-6 text-center">
             <img src={`https://projectpokemon.org/images/normal-sprite/${props.pokemonName}.gif`} alt={props.pokemonName} style={{ width: '126px', height: '126px' }}/>
           </div>
-          <div className="col-6 pb-3">
+          <div className="col-md-6 pb-3">
             <div className="row hero1SearchButton">
 
             </div>
             <div className="row">
-              <div className="col-12">
+              <div className="col-md-12">
                 <h3 className="aboutUsHeader">{flavorText}</h3>
               </div>
             </div>
             <div className="row pt-3">
-              <div className="col-4">
+              <div className="col-md-4">
                 <div>
                   <h5 className='text-warning aboutUsHeader'> Type: </h5>
                 </div>
@@ -79,7 +79,7 @@ function PokemonInfo(props) {
                     ))}</p>
                 </div>
               </div>
-              <div className="col-4">
+              <div className="col-md-4">
                 <div>
                   <h5 className='text-warning aboutUsHeader'> Height: </h5>
                 </div>
@@ -87,7 +87,7 @@ function PokemonInfo(props) {
                   <p className='hero1SearchButton'>{pokemonHeight} m</p>
                 </div>
               </div>
-              <div className="col-4">
+              <div className="col-md-4">
                 <div>
                   <h5 className='text-warning aboutUsHeader'> Weight: </h5>
                 </div>
@@ -97,7 +97,7 @@ function PokemonInfo(props) {
               </div>
             </div>
             <div className="row">
-              <div className="col-4">
+              <div className="col-md-4">
                 <div>
                   <h5 className='text-warning aboutUsHeader'> Moves: </h5>
                 </div>
@@ -108,7 +108,7 @@ function PokemonInfo(props) {
                     ))}</p>
                 </div>
               </div>
-              <div className="col-4">
+              <div className="col-md-4">
                 <div>
                   <h5 className='text-warning aboutUsHeader'> Abilities: </h5>
                 </div>
@@ -121,7 +121,7 @@ function PokemonInfo(props) {
               </div>
             </div>
             <div className="row">
-              <div className="col-6">
+              <div className="col-md-6">
                 <div>
                   <h5 className='text-warning aboutUsHeader'> Stats: </h5>
                 </div>

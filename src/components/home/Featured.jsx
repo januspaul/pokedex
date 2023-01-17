@@ -27,17 +27,17 @@ const Featured = () => {
   return (
     <div className="featMargin">
 
-      <div className="container">
+      <div className="container-fluid">
         <hr className="text-white" />
         <div className="row">
-          <div className="col-12">
+          <div className="col-md-12">
             <h3 className="text-styleFeatured aboutUsHeader">
               <span className="lineFeatured"></span>Featured Pokemon
             </h3>
           </div>
         </div>
         <div className="row">
-          <div className="col-12">
+          <div className="col-md-12">
             <Carousel
               activeIndex={currentSlide}
               onSelect={handleSlideChange}
@@ -45,10 +45,10 @@ const Featured = () => {
               {[...Array(3)].map((_, index) => (
                 <Carousel.Item key={index}>
                   <CardGroup>
-                    <div className="container">
+                    <div className="container-fluid">
                       <div className="row">
                         {pokemons.map((pokemon) => (
-                          <div className="col-3" data-aos="flip-left">
+                          <div className="col-md-3" data-aos="flip-left">
                             <div>
                               <PokemonCard pokemonName={pokemon.name} />
                             </div>

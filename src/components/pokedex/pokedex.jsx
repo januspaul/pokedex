@@ -71,9 +71,9 @@ function PokemonCards() {
             <Accordion.Body className='bg-dark'>
               <div className="container">
                 <div className="row">
-                  <div className="col-3">
+                  <div className="col-md-3">
                     <div className="row align-items-center d-flex justify-content-center text-center">
-                      <div className="col-12">
+                      <div className="col-md-12">
                         <label htmlFor="type-filter" className='text-center text-white px-2'>Search:</label>
                         <input type="text" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="rounded border-primary ps-2 pe-3 py-1" />
                       </div>
@@ -82,9 +82,9 @@ function PokemonCards() {
 
 
                   </div>
-                  <div className="col-3">
+                  <div className="col-md-3">
                     <div className="row align-items-center d-flex justify-content-center text-center">
-                      <div className="col-12">
+                      <div className="col-md-12">
                         <label htmlFor="type-filter" className='text-center text-white px-2'>Type:</label>
                         <select id="type-filter" value={typeFilter} onChange={e => setTypeFilter(e.target.value)} className="rounded border-primary ps-2 pe-3 py-1">
                           <option value="">All</option>
@@ -113,9 +113,9 @@ function PokemonCards() {
                     </div>
 
                   </div>
-                  <div className="col-3">
+                  <div className="col-md-3">
                     <div className="row align-items-center d-flex justify-content-center text-center">
-                      <div className="col-12">
+                      <div className="col-md-12">
                         <label htmlFor="sort-by" className='text-center text-white px-2'>Sort by:</label>
                         <select id="sort-by" value={sortBy} onChange={e => setSortBy(e.target.value)} className="rounded border-primary ps-2 pe-3 py-1">
                           <option value="id">ID</option>
@@ -126,9 +126,9 @@ function PokemonCards() {
                     </div>
                   </div>
 
-                  <div className="col-3">
+                  <div className="col-md-3">
                     <div className="row align-items-center d-flex justify-content-center text-center">
-                      <div className="col-12">
+                      <div className="col-md-12">
                         <label htmlFor="sort-order" className='text-center text-white px-2'>Sort order:</label>
                         <select id="sort-order" value={sortOrder} onChange={e => setSortOrder(e.target.value)} className="rounded border-primary ps-2 pe-3 py-1">
                           <option value="asc">Ascending</option>
@@ -169,7 +169,7 @@ function PokemonCards() {
                 }
               })
               .map(p => (
-                <div className="col-3">
+                <div className="col-md-3">
                   <div key={p.id}>
                     <PokemonCard component={'span'} pokemonName={p.name} />
                   </div>
