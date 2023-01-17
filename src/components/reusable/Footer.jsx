@@ -8,10 +8,10 @@ function Footer() {
                 <div className="row p-3">
                     <div className="col-lg-4">
                         <div className='align-items-center justify-content-center d-flex'>
-                            <img src="logoPokemon.png" alt="logo" className='footerLogo1' />
+                        <a href="/" target="_blank" rel="noreferrer"><img src="logoPokemon.png" alt="logo" className='footerLogo1' /></a>
                         </div>
                         <div className='align-items-center justify-content-center d-flex'>
-                            <img src="privacy.png" alt="logo" className='footerLogo2' />
+                        <a href="https://caru.bbbprograms.org/seal/Confirmation/1596150491" target="_blank" rel="noreferrer"><img src="privacy.png" alt="logo" className='footerLogo2' /></a>
                         </div>
                     </div>
                     <div className="col-md-4 mt-4">
@@ -31,10 +31,10 @@ function Footer() {
                                 <div>
                                     <p className='text-white fw-bold'>Our Partners</p>
                                     <ul className='navbar-nav'>
-                                        <li className="list-group-item"><img src="/nintendo.png" alt="" className='footerPartners' /></li>
-                                        <li className="list-group-item" ><img src="/gamefreak.png" alt="" className='footerPartners' /></li>
-                                        <li className="list-group-item"><img src="/creatures.png" alt="" className='footerPartners' /></li>
-                                        <li className="list-group-item"><img src="/niantic.png" alt="" className='footerPartners' /></li>
+                                        <li className="list-group-item"><a href="https://www.nintendo.com/" target="_blank" rel="noreferrer"><img src="/nintendo.png" alt="" className='footerPartners' /></a></li>
+                                        <li className="list-group-item" ><a href="https://www.gamefreak.co.jp/" target="_blank" rel="noreferrer"><img src="/gamefreak.png" alt="" className='footerPartners' /></a></li>
+                                        <li className="list-group-item"><a href="https://www.creatures.co.jp/" target="_blank" rel="noreferrer"><img src="/creatures.png" alt="" className='footerPartners' /></a></li>
+                                        <li className="list-group-item"><a href="https://nianticlabs.com/" target="_blank" rel="noreferrer"><img src="/niantic.png" alt="" className='footerPartners' /></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -44,11 +44,11 @@ function Footer() {
                         <div>
                             <p className='aboutUsHeader text-white fw-bold'>Follow us on Social Media</p>
                             <div>
-                                <a href="https://www.facebook.com/profile.php?id=100089807640521"><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="facebook.png" alt="social media icons" /></span></a>
-                                <a href="https://www.youtube.com/channel/UCK-g2Qn524biJnCqNTuVYaw"><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="youtube.png" alt="social media icons" /></span></a>
-                                <a href="https://www.instagram.com/pokemonproject69/"><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="instagram.png" alt="social media icons" /></span></a>
-                                <a href="https://www.pinterest.ph/pokemonproject/"><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="pinterest.png" alt="social media icons" /></span></a>
-                                <a href="https://twitter.com/pokemonproject5"><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="twitter.png" alt="social media icons" /></span></a>
+                                <a href="https://www.facebook.com/profile.php?id=100089807640521" target="_blank" rel="noreferrer"><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="facebook.png" alt="social media icons" /></span></a>
+                                <a href="https://www.youtube.com/channel/UCK-g2Qn524biJnCqNTuVYaw" target="_blank" rel="noreferrer"><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="youtube.png" alt="social media icons" /></span></a>
+                                <a href="https://www.instagram.com/pokemonproject69/" target="_blank" rel="noreferrer"><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="instagram.png" alt="social media icons" /></span></a>
+                                <a href="https://www.pinterest.ph/pokemonproject/" target="_blank" rel="noreferrer"><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="pinterest.png" alt="social media icons" /></span></a>
+                                <a href="https://twitter.com/pokemonproject5" target="_blank" rel="noreferrer"><span><img className='img-fluid ms-2 mt-3 border border-4 rounded-circle' width={50} src="twitter.png" alt="social media icons" /></span></a>
                             </div>
                         </div>
 
