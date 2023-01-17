@@ -11,7 +11,7 @@ const About = () => {
                             the animated TV series, home entertainment, and the official Pokémon website.</p>
                     </div>
                     <div className="col-md-6 text-center" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-                        <img src="abouthero1.png" alt="" />
+                        <img className="img-fluid d-block w-100" src="abouthero1.png" alt="" />
                     </div>
                 </div>
             </div>
