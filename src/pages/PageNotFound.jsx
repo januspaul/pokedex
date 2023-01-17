@@ -2,7 +2,7 @@ import React from 'react';
 
 function PageNotFound() {
     return (
-        <div className='bg-dark'>
+        <div className=''>
             <div className='pageNF'>
                 <div className="row">
                     <div className="col-md-6 my-auto text-end">
