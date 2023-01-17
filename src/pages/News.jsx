@@ -1,6 +1,5 @@
 import { Button } from "@mui/material";
-
-
+import Badge from 'react-bootstrap/Badge';
 import Pokenews from '../components/reusable/news.json';
 
 
@@ -14,7 +13,7 @@ const News = () => {
         day: 'numeric'
     };
     const formatter = new Intl.DateTimeFormat('en-US', options);
-    
+
 
     return (
         <div className="BG">
@@ -29,7 +28,9 @@ const News = () => {
                     <Button variant="contained" color="primary" href="https://tagn.wordpress.com/2023/01/15/honest-game-trailers-does-pokemon-violet-and-scarlet/" target="_blank" className="readMoreButton">Read More</Button>
                 </div>
                 <div className="col-6" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                    <a href="https://tagn.wordpress.com/2023/01/15/honest-game-trailers-does-pokemon-violet-and-scarlet/" target="_blank" rel="noreferrer">
                     <img className="img-fluid d-block w-100 imageStyle" src="https://tagn.files.wordpress.com/2022/03/pokemonscarletandviolet.jpg" alt="" />
+                    </a>
                 </div>
             </div>
 
@@ -44,7 +45,7 @@ const News = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-12">
-                        <h2 className="text-white text-center pt-5 aboutUsHeader "> Latest News </h2>
+                        <h2 className="text-warning text-center pt-5 aboutUsHeader "> Latest News </h2>
                     </div>
                 </div>
             </div>
@@ -52,21 +53,29 @@ const News = () => {
             <div className="container p-5 d-flex justify-content-center align-items-center">
                 <div className="row">
                     {Pokenews.map(pokemonnews => {
-                        return(
-                            <div>
-                                <p>{pokemonnews.date }</p>
-                                <img src={pokemonnews.url} alt={pokemonnews.title } />
-                               <h1>{pokemonnews.title}</h1>
-                               <p>{pokemonnews.description}</p> 
+                        return (
+                            <div className="row pb-5 " data-aos="fade-up">
+                                <div className="col-6">
+                                    <a href={pokemonnews.redirectURL} target="_blank" rel="noreferrer">
+                                    <img src={pokemonnews.url} alt={pokemonnews.title} className="rounded-5 border border-5"/>
+                                    </a>
+                                </div>
+                                <div className="col-6">
+                                    <div className="pb-3">
+                                    <Badge className="bg-danger px-2 aboutUsHeader">{pokemonnews.type}</Badge> <span className="text-warning ps-2 aboutUsHeader">{pokemonnews.date}</span>
+                                    </div>
+                                    <h2 className="pb-3 aboutUsHeader text-warning">{pokemonnews.title}</h2>
+                                    <p className="hero1SearchButton text-white">{pokemonnews.description}</p>
+                                    <Button variant="contained" color="primary" href={pokemonnews.redirectURL} target="_blank" className="readMoreButton">Read More</Button>
+                                </div>
                             </div>
-                            
                         )
                     })
 
                     }
                 </div>
             </div>
-            
+
         </div>
     );
 }

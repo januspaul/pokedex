@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 
 function Footer() {
+    const currentYear = new Date().getFullYear();
     return (
         <div>
             <div className='bg-danger py-5'>
@@ -56,7 +57,7 @@ function Footer() {
                 </div>
             </div>
             <div className='footerCr text-center text-muted'>
-                <p>© 2022 Pokémon. © 1995 - 2022 Nintendo/Creatures Inc./GAMEFREAK Inc. TM, © Nintendo.</p>
+                <p>© {currentYear} Pokémon. © 1995 - {currentYear} Nintendo/Creatures Inc./GAMEFREAK Inc. TM, © Nintendo.</p>
             </div>
         </div>
     )
