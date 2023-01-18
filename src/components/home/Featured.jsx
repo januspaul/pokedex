@@ -48,7 +48,7 @@ const Featured = () => {
                     <div className="container">
                       <div className="row">
                         {pokemons.map((pokemon) => (
-                          <div className="col-md-3">
+                          <div className="col-lg-3 col-md-6">
                             <div>
                               <PokemonCard pokemonName={pokemon.name} />
                             </div>
