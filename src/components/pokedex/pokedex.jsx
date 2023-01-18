@@ -71,7 +71,7 @@ function PokemonCards() {
             <Accordion.Body className='bg-dark'>
               <div className="container">
                 <div className="row">
-                  <div className="col-md-3">
+                  <div className="col-lg-6 col-sm-3 col-md-6 col-xl-3">
                     <div className="row align-items-center d-flex justify-content-center text-center">
                       <div className="col-md-12">
                         <label htmlFor="type-filter" className='text-center text-white px-2'>Search:</label>
@@ -82,7 +82,7 @@ function PokemonCards() {
 
 
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-lg-6 col-sm-3 col-md-6 col-xl-3">
                     <div className="row align-items-center d-flex justify-content-center text-center">
                       <div className="col-md-12">
                         <label htmlFor="type-filter" className='text-center text-white px-2'>Type:</label>
@@ -113,7 +113,7 @@ function PokemonCards() {
                     </div>
 
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-lg-6 col-sm-3 col-md-6 col-xl-3">
                     <div className="row align-items-center d-flex justify-content-center text-center">
                       <div className="col-md-12">
                         <label htmlFor="sort-by" className='text-center text-white px-2'>Sort by:</label>
@@ -126,7 +126,7 @@ function PokemonCards() {
                     </div>
                   </div>
 
-                  <div className="col-md-3">
+                  <div className="col-lg-6 col-sm-3 col-md-6 col-xl-3">
                     <div className="row align-items-center d-flex justify-content-center text-center">
                       <div className="col-md-12">
                         <label htmlFor="sort-order" className='text-center text-white px-2'>Sort order:</label>
@@ -169,7 +169,7 @@ function PokemonCards() {
                 }
               })
               .map(p => (
-                <div className="col-md-3">
+                <div className="col-lg-6 col-sm-3 col-md-6 col-xl-3">
                   <div key={p.id} >
                     <PokemonCard component={'span'} pokemonName={p.name}/>
                   </div>
