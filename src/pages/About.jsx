@@ -84,7 +84,7 @@ const About = () => {
 
             <div className="container d-flex align-items-center justify-content-center pb-5">
                 <div className="row">
-                    <div className="col-md-6 col-lg-6 col-xl-4 pb-3" data-aos="fade-up" data-aos-duration="1000">
+                    <div className="col-md-6 col-lg-6 col-xl-3 pb-3" data-aos="fade-up" data-aos-duration="1000">
                         <a href="https://www.nintendo.com/" target="_blank" rel="noreferrer">
                             <div className="bgCardHoverAbout">
                                 <div className="aboutPartnersCol bg-warning d-flex align-items-center justify-content-center">
@@ -94,7 +94,7 @@ const About = () => {
                             </div>
                         </a>
                     </div>
-                    <div className="col-md-6 col-lg-6 col-xl-4 pb-3" data-aos="fade-up" data-aos-duration="1250">
+                    <div className="col-md-6 col-lg-6 col-xl-3 pb-3" data-aos="fade-up" data-aos-duration="1250">
                         <a href="https://www.gamefreak.co.jp/" target="_blank" rel="noreferrer">
                             <div className="bgCardHoverAbout">
                                 <div className="aboutPartnersCol bg-warning d-flex align-items-center justify-content-center">
@@ -104,7 +104,7 @@ const About = () => {
                             </div>
                         </a>
                     </div>
-                    <div className="col-md-6 col-lg-6 col-xl-4 pb-3" data-aos="fade-up" data-aos-duration="1500">
+                    <div className="col-md-6 col-lg-6 col-xl-3 pb-3" data-aos="fade-up" data-aos-duration="1500">
                         <a href="https://www.creatures.co.jp/" target="_blank" rel="noreferrer">
                             <div className="bgCardHoverAbout">
                                 <div className="aboutPartnersCol bg-warning d-flex align-items-center justify-content-center">
@@ -115,7 +115,7 @@ const About = () => {
                             </div>
                         </a>
                     </div>
-                    <div className="col-md-6 col-lg-6 col-xl-4 pb-3" data-aos="fade-up" data-aos-duration="1750">
+                    <div className="col-md-6 col-lg-6 col-xl-3 pb-3" data-aos="fade-up" data-aos-duration="1750">
                         <a href="https://nianticlabs.com/" target="_blank" rel="noreferrer">
                             <div className="bgCardHoverAbout">
                                 <div className="aboutPartnersCol bg-warning d-flex align-items-center justify-content-center">
