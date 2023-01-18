@@ -4,6 +4,7 @@ import { addDoc, collection, getFirestore } from "firebase/firestore";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Typist from 'react-typist';
+import Card from 'react-bootstrap/Card';
 
 
 const firebaseConfig = {
@@ -43,7 +44,7 @@ const Contact = () => {
         <div>
             <div className="allBG">
                 <div className="BG">
-                    <div className="container contactMargin">
+                    <div className="container">
                         <div className="row contactCol1 d-flex align-items-center justify-content-center">
                             <div className="col-md-6 text-white">
                                 {formSubmitted ? (
@@ -109,6 +110,59 @@ const Contact = () => {
                                         Send
                                     </Button>
                                 </Form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="container">
+                <div className="row">
+                    <div className="col-md-12">
+                        <hr className="text-white" />
+                    </div>
+                </div>
+            </div>
+
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-12">
+                        <h2 className="text-warning text-center pt-5 aboutUsHeader "> Our Team </h2>
+                    </div>
+                </div>
+            </div>
+
+                    <div className="container py-5">
+                        <div className="row pb-5">
+                            <div className="col-3" data-aos="flip-left" data-aos-duration="1000">
+                                <Card style={{ width: '18rem' }} className="bg-warning">
+                                    <Card.Img variant="top" src="janus.jpg" className="rounded img-fluid" />
+                                    <Card.Body className="bg-warning">
+                                        <Card.Title className="text-center">Janus Imus</Card.Title>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="col-3" data-aos="flip-left" data-aos-duration="1500">
+                                <Card style={{ width: '18rem' }} className="bg-warning">
+                                    <Card.Img variant="top" src="elmo.png" className="rounded" />
+                                    <Card.Body className="bg-warning">
+                                        <Card.Title className="text-center">Elmo Laplap</Card.Title>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="col-3" data-aos="flip-left" data-aos-duration="2000">
+                                <Card style={{ width: '18rem' }} className="bg-warning">
+                                    <Card.Img variant="top" src="charlie.jpg" className="rounded img-fluid" />
+                                    <Card.Body className="bg-warning">
+                                        <Card.Title className="text-center">Charlie Abrigo</Card.Title>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="col-3" data-aos="flip-left" data-aos-duration="2500">
+                                <Card style={{ width: '18rem' }} className="bg-warning">
+                                    <Card.Img variant="top" src="da.jpg" className="rounded img-fluid" />
+                                    <Card.Body className="bg-warning">
+                                        <Card.Title className="text-center">DA Sanga</Card.Title>
+                                    </Card.Body>
+                                </Card>
                             </div>
                         </div>
                     </div>
