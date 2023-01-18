@@ -12,7 +12,7 @@
 /*Font face end*/
 
 /*body start*/
-body, html {
+body {
     overflow-x: hidden;
     max-height: 100vh;
 }
