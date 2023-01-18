@@ -12,7 +12,7 @@
 /*Font face end*/
 
 /*body start*/
-body {
+body, html {
     overflow-x: hidden;
     max-height: 100vh;
 }
@@ -30,7 +30,7 @@ body {
 
 .navbarBG {
     padding: 30px;
-
+    max-width: 100vw;
 }
 
 .bg-activelink {
