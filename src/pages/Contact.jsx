@@ -132,7 +132,7 @@ const Contact = () => {
 
                     <div className="container py-5">
                         <div className="row pb-5">
-                            <div className="col-3" data-aos="flip-left" data-aos-duration="1000">
+                            <div className="col-md-3" data-aos="flip-left" data-aos-duration="1000">
                                 <Card style={{ width: '18rem' }} className="bg-warning">
                                     <Card.Img variant="top" src="janus.jpg" className="rounded img-fluid" />
                                     <Card.Body className="bg-warning">
@@ -140,7 +140,7 @@ const Contact = () => {
                                     </Card.Body>
                                 </Card>
                             </div>
-                            <div className="col-3" data-aos="flip-left" data-aos-duration="1500">
+                            <div className="col-md-3" data-aos="flip-left" data-aos-duration="1500">
                                 <Card style={{ width: '18rem' }} className="bg-warning">
                                     <Card.Img variant="top" src="elmo.png" className="rounded" />
                                     <Card.Body className="bg-warning">
@@ -148,7 +148,7 @@ const Contact = () => {
                                     </Card.Body>
                                 </Card>
                             </div>
-                            <div className="col-3" data-aos="flip-left" data-aos-duration="2000">
+                            <div className="col-md-3" data-aos="flip-left" data-aos-duration="2000">
                                 <Card style={{ width: '18rem' }} className="bg-warning">
                                     <Card.Img variant="top" src="charlie.jpg" className="rounded img-fluid" />
                                     <Card.Body className="bg-warning">
@@ -156,7 +156,7 @@ const Contact = () => {
                                     </Card.Body>
                                 </Card>
                             </div>
-                            <div className="col-3" data-aos="flip-left" data-aos-duration="2500">
+                            <div className="col-md-3" data-aos="flip-left" data-aos-duration="2500">
                                 <Card style={{ width: '18rem' }} className="bg-warning">
                                     <Card.Img variant="top" src="da.jpg" className="rounded img-fluid" />
                                     <Card.Body className="bg-warning">
