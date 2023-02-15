@@ -11,4 +11,4 @@
 
 ## Instructor
 
--Bryl Lim
+- Bryl Lim
