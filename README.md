@@ -4,10 +4,10 @@
 
 ## Members
 
--Janus Imus
--Charlie Abrigo
--Darryl Sanga
--Elmo Laplap
+- Janus Imus
+- Charlie Abrigo
+- Darryl Sanga
+- Elmo Laplap
 
 ## Instructor
 
