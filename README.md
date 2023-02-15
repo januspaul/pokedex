@@ -4,9 +4,9 @@
 
 ## 💻 Tech Stack
 > - React
-> - TailwindCSS
-> - Laravel
-> - MySQL
+> - Bootstrap
+> - Firebase
+> - Axios
 
 ## 👨‍💻 Authors
 > - **[Elmo Nickol Laplap](https://github.com/elmonickcool)**
